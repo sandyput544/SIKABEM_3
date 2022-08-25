@@ -7,10 +7,12 @@ use App\Controllers\BaseController;
 class Menus extends BaseController
 {
   protected $menus_model;
+  protected $pos_menu;
   public function __construct()
   {
     helper('bem');
     $this->menus_model = new \App\Models\MenusModel();
+    $this->pos_menu = new \App\Models\PositionMenuModel();
   }
 
   // Menampilkan list menu -> Start
@@ -20,9 +22,7 @@ class Menus extends BaseController
       'title'       => 'Master Menu',
       'navbar'      => 'Master Menu',
       'card'        => 'List Menu',
-      'menus'       => $this->menus_model
-        ->where('menu_name!="Master Menu"')
-        ->findAll()
+      'menus'       => $this->menus_model->findAll()
     ];
 
     return view('menus/index', $data);
@@ -45,23 +45,23 @@ class Menus extends BaseController
   {
     // Validasi input tambah menu
     $validate = [
-      'menu_name' => [
-        'rules' => 'required|alpha_space|is_unique[menus.menu_name]',
+      'nama_menu' => [
+        'rules' => 'required|alpha_space|is_unique[menus.nama_menu]',
         'errors' => [
           'required' => 'Mohon isi kolom nama menu.',
           'alpha_space' => 'Yang anda masukkan bukan karakter alfabet dan spasi.',
           'is_unique' => 'Nama menu sudah terdaftar.'
         ]
       ],
-      'menu_url' => [
-        'rules' => 'required|alpha_dash|is_unique[menus.menu_url]',
+      'url_menu' => [
+        'rules' => 'required|alpha_dash|is_unique[menus.url_menu]',
         'errors' => [
           'required' => 'Mohon isi kolom menu url.',
           'alpha_dash' => 'Yang anda masukkan bukan alfanumerik dan tanda pisah garis.',
           'is_unique' => 'Menu url sudah terdaftar.'
         ]
       ],
-      'menu_icon' => [
+      'ikon_menu' => [
         'rules' => 'required|alpha_dash',
         'errors' => [
           'required' => 'Mohon isi kolom icon.',
@@ -75,23 +75,23 @@ class Menus extends BaseController
     }
 
     // HTMLSpecialChars
-    $postName = htmlspecialchars($this->request->getVar('menu_name'));
-    $postUrl = htmlspecialchars($this->request->getVar('menu_url'));
-    $postIcon = htmlspecialchars($this->request->getVar('menu_icon'));
-    $postIsActive = htmlspecialchars($this->request->getVar('is_active'));
+    $postName = htmlspecialchars($this->request->getVar('nama_menu'));
+    $postUrl = htmlspecialchars($this->request->getVar('url_menu'));
+    $postIcon = htmlspecialchars($this->request->getVar('ikon_menu'));
+    $postIsActive = htmlspecialchars($this->request->getVar('menu_active'));
 
-    // Cek kolom is_active
+    // Cek kolom menu_active
     if ($postIsActive == null) {
-      $is_active = 0;
+      $menu_active = 0;
     } else {
-      $is_active = 1;
+      $menu_active = 1;
     }
 
     $this->menus_model->save([
-      'menu_name' => $postName,
-      'menu_url' => $postUrl,
-      'menu_icon' => $postIcon,
-      'is_active' => $is_active,
+      'nama_menu' => $postName,
+      'url_menu' => $postUrl,
+      'ikon_menu' => $postIcon,
+      'menu_active' => $menu_active,
     ]);
 
     $msg = "Anda berhasil menambah menu " . $postName . ".";
@@ -117,24 +117,24 @@ class Menus extends BaseController
   {
     // Validasi input update menu
     $getMenu = $this->menus_model->find($id);
-    $postName = htmlspecialchars($this->request->getVar('menu_name'));
-    $postUrl = htmlspecialchars($this->request->getVar('menu_url'));
-    $postIcon = htmlspecialchars($this->request->getVar('menu_icon'));
-    $postIsActive = htmlspecialchars($this->request->getVar('is_active'));
-    if ($postName != $getMenu['menu_name']) {
-      $ruleName = 'required|alpha_space|is_unique[menus.menu_name]';
+    $postName = htmlspecialchars($this->request->getVar('nama_menu'));
+    $postUrl = htmlspecialchars($this->request->getVar('url_menu'));
+    $postIcon = htmlspecialchars($this->request->getVar('ikon_menu'));
+    $postIsActive = htmlspecialchars($this->request->getVar('menu_active'));
+    if ($postName != $getMenu['nama_menu']) {
+      $ruleName = 'required|alpha_space|is_unique[menus.nama_menu]';
     } else {
       $ruleName = 'required|alpha_space';
     }
 
-    if ($postUrl != $getMenu['menu_url']) {
-      $ruleUrl = 'required|alpha_dash|is_unique[menus.menu_url]';
+    if ($postUrl != $getMenu['url_menu']) {
+      $ruleUrl = 'required|alpha_dash|is_unique[menus.url_menu]';
     } else {
       $ruleUrl = 'required|alpha_dash';
     }
 
     $validate = [
-      'menu_name' => [
+      'nama_menu' => [
         'rules' => $ruleName,
         'errors' => [
           'required' => 'Mohon isi kolom nama menu.',
@@ -142,7 +142,7 @@ class Menus extends BaseController
           'is_unique' => 'Nama menu sudah terdaftar.'
         ]
       ],
-      'menu_url' => [
+      'url_menu' => [
         'rules' => $ruleUrl,
         'errors' => [
           'required' => 'Mohon isi kolom menu url.',
@@ -150,7 +150,7 @@ class Menus extends BaseController
           'is_unique' => 'Menu url sudah terdaftar.'
         ]
       ],
-      'menu_icon' => [
+      'ikon_menu' => [
         'rules' => 'required|alpha_dash',
         'errors' => [
           'required' => 'Mohon isi kolom nama posisi.',
@@ -163,21 +163,21 @@ class Menus extends BaseController
       return redirect()->to(base_url('/menu/edit/' . $id))->withInput();
     }
 
-    // Cek kolom is_active
+    // Cek kolom menu_active
     if ($postIsActive == null) {
-      $is_active = 0;
+      $menu_active = 0;
     } else {
-      $is_active = 1;
+      $menu_active = 1;
     }
 
     $this->menus_model->save([
-      'id' => $id,
-      'menu_name' => $postName,
-      'menu_url' => $postUrl,
-      'menu_icon' => $postIcon,
-      'is_active' => $is_active,
+      'kd_menu' => $id,
+      'nama_menu' => $postName,
+      'url_menu' => $postUrl,
+      'ikon_menu' => $postIcon,
+      'menu_active' => $menu_active,
     ]);
-    $msg = "Anda berhasil memperbarui menu.";
+    $msg = "Anda berhasil memperbarui menu" . $postName . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/menu'));
   }
@@ -187,10 +187,10 @@ class Menus extends BaseController
   public function delete($id)
   {
     $getMenu = $this->menus_model->find($id);
-    $msg = "Berhasil menghapus menu " . $getMenu['menu_name'] . ".";
+    $msg = "Berhasil menghapus menu " . $getMenu['nama_menu'] . ".";
 
-    // set is_active = 0
-    $this->menus_model->save(['id' => $id, 'is_active' => 0]);
+    // set menu_active = 0
+    $this->menus_model->save(['kd_menu' => $id, 'menu_active' => 0]);
 
     $this->menus_model->delete($id);
 
@@ -218,9 +218,9 @@ class Menus extends BaseController
     $getPos = $this->menus_model->onlyDeleted()->find($id);
 
     $this->menus_model
-      ->save(['id' => $id, 'deleted_at' => null]);
+      ->save(['kd_menu' => $id, 'deleted_at' => null]);
 
-    $msg = "Berhasil mengembalikan " . $getPos['menu_name'] . ".";
+    $msg = "Berhasil mengembalikan " . $getPos['nama_menu'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('menu/terhapus'));
   }
@@ -242,6 +242,12 @@ class Menus extends BaseController
   // Fitur DeletePermament Menu Terhapus --> Start
   public function permanent_delete_all()
   {
+    // Hapus semua menu dari posisi menu
+    $getMenus = $this->menus_model->onlyDeleted()->findAll();
+    foreach ($getMenus as $m) {
+      $this->pos_menu->where('kd_menu', $m['kd_menu'])->delete();
+    }
+
     $this->menus_model->purgeDeleted();
 
     $msg = "Berhasil menghapus permanen semua menu yang terhapus. Data yang dihapus secara permanen tidak dapat dipulihkan.";
@@ -250,10 +256,12 @@ class Menus extends BaseController
   }
   public function permanent_delete_one($id)
   {
-    $getName = $this->menus_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus permanen menu " . $getName['menu_name'] . ". Data yang dihapus secara permanen tidak dapat dipulihkan.";
+    $this->pos_menu->where('kd_menu', $id)->delete();
 
-    $this->menus_model->where('id', $id)->purgeDeleted();
+    $getName = $this->menus_model->onlyDeleted()->find($id);
+    $msg = "Berhasil menghapus permanen menu " . $getName['nama_menu'] . ". Data yang dihapus secara permanen tidak dapat dipulihkan.";
+
+    $this->menus_model->where('kd_menu', $id)->purgeDeleted();
 
     flashAlert('success', $msg);
     return redirect()->to(base_url('/menu/terhapus'));

@@ -25,13 +25,13 @@ class PositionMenu extends BaseController
     $id = $this->request->uri->getSegment(3);
     // Ambil data posisi dan menu
     $getPos = $this->positions_model->find($id);
-    $getMenus = $this->menus_model->where('is_active', 1)->findAll();
+    $getMenus = $this->menus_model->where('menu_active', 1)->findAll();
     $data = [
-      'title'     => 'List Akses Menu ' . $getPos['pos_name'],
-      'card'      => 'List Akses Menu ' . $getPos['pos_name'],
-      'navbar'    => 'Master Posisi',
+      'title'     => 'List Hak Akses Menu ' . $getPos['nama_jbt'],
+      'card'      => 'List Hak Akses Menu ' . $getPos['nama_jbt'],
+      'navbar'    => 'Master Jabatan',
       'menus'     => $getMenus,
-      'pos_id'    => $id
+      'kd_jabatan' => $id
     ];
     return view('positions/menu-akses', $data);
   }
@@ -39,24 +39,24 @@ class PositionMenu extends BaseController
   // Simpan Akses
   public function post_access()
   {
-    $pos_id = $this->request->getVar('posId');
-    $menu_id = $this->request->getVar('menuId');
+    $kd_jabatan = $this->request->getVar('kd_jabatan');
+    $kd_menu = $this->request->getVar('kd_menu');
 
     $data = [
-      'pos_id' => $pos_id,
-      'menu_id' => $menu_id
+      'kd_jabatan' => $kd_jabatan,
+      'kd_menu' => $kd_menu
     ];
 
     $getPosMenu = $this->pos_menu_model->where($data)->get();
-    $getPos = $this->positions_model->find($pos_id);
-    $getMenu = $this->menus_model->find($menu_id);
+    $getPos = $this->positions_model->find($kd_jabatan);
+    $getMenu = $this->menus_model->find($kd_menu);
 
     // Cek apakah numrows < 1 | numrows > 0
     if ($getPosMenu->getNumRows() < 1) {
-      $msg = "Berhasil memberi " . $getPos['pos_name'] . " akses ke " . $getMenu['menu_name'] . ".";
+      $msg = "Berhasil memberi " . $getPos['nama_jbt'] . " akses ke " . $getMenu['nama_menu'] . ".";
       $this->pos_menu_model->save($data);
     } else {
-      $msg = "Berhasil menghapus akses " . $getPos['pos_name'] . " ke " . $getMenu['menu_name'] . ".";
+      $msg = "Berhasil menghapus akses " . $getPos['nama_jbt'] . " ke " . $getMenu['nama_menu'] . ".";
       $this->pos_menu_model->where($data)->delete();
     }
 

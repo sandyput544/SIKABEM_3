@@ -6,7 +6,7 @@
     <a href="<?= base_url('menu'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
   <div class="col-6">
-    <form action="<?= base_url('menu/update/' . $menus['id']); ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?= base_url('menu/update/' . $menus['kd_menu']); ?>" method="POST" enctype="multipart/form-data">
       <?= csrf_field(); ?>
       <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
         <div class="card-header fw-bold fs-5"><?= $card; ?></div>
@@ -22,21 +22,21 @@
               <div class="row g-3">
                 <div class="col-12">
                   <label for="inputMenu">Nama Menu</label>
-                  <input type="text" class="form-control" id="inputMenu" placeholder="Menu atau Dashboard" name="menu_name" value="<?= old('menu_name', $menus['menu_name']); ?>" autofocus>
-                  <?= showError('menu_name'); ?>
+                  <input type="text" class="form-control" id="inputMenu" placeholder="Menu atau Dashboard" name="nama_menu" value="<?= old('nama_menu', $menus['nama_menu']); ?>" autofocus>
+                  <?= showError('nama_menu'); ?>
                 </div>
                 <div class="col-12">
                   <label for="inputUrl">URL</label>
-                  <input type="text" class="form-control" id="inputUrl" placeholder="menu atau kritik-saran" name="menu_url" value="<?= old('menu_url', $menus['menu_url']); ?>">
-                  <?= showError('menu_url'); ?>
+                  <input type="text" class="form-control" id="inputUrl" placeholder="menu atau kritik-saran" name="url_menu" value="<?= old('url_menu', $menus['url_menu']); ?>">
+                  <?= showError('url_menu'); ?>
                 </div>
                 <div class="col-12">
                   <label for="inputIcon">Nama Icon</label>
-                  <input type="text" class="form-control" id="inputIcon" placeholder="bi-diagram-3-fill" name="menu_icon" value="<?= old('menu_icon', $menus['menu_icon']); ?>">
-                  <?= showError('menu_icon'); ?>
+                  <input type="text" class="form-control" id="inputIcon" placeholder="bi-diagram-3-fill" name="ikon_menu" value="<?= old('ikon_menu', $menus['ikon_menu']); ?>">
+                  <?= showError('ikon_menu'); ?>
                 </div>
                 <div class="col-12">
-                  <input class="form-check-input" type="checkbox" value="1" id="flexCheckIsActive" name="is_active" <?= checked($menus['is_active'], 1); ?>>
+                  <input class="form-check-input" type="checkbox" value="1" id="flexCheckIsActive" name="menu_active" <?= checked($menus['menu_active'], 1); ?>>
                   <label class="form-check-label" for="flexCheckIsActive">
                     Aktifkan
                   </label>

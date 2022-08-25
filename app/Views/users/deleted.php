@@ -33,8 +33,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama User</th>
-                    <th scope="col">Posisi</th>
-                    <th scope="col">Tanggal Terhapus</th>
+                    <th scope="col">Waktu Dihapus</th>
                     <th scope="col">Status</th>
                     <th scope="col">Aksi</th>
                   </tr>
@@ -45,19 +44,18 @@
                   foreach ($users as $u) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $u['full_name']; ?></td>
-                      <td><?= $u['pos_name']; ?></td>
+                      <td><?= $u['nama_user']; ?></td>
                       <td><?= $u['deleted_at']; ?></td>
-                      <td><span class="badge <?= ($u['is_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
-                          <?= ($u['is_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
+                      <td><span class="badge <?= ($u['user_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
+                          <?= ($u['user_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
                       <td>
-                        <form action="<?= base_url('user/pulihkan/' . $u['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('user/pulihkan/' . $u['kd_user']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="PUT">
-                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin mengembalikan <?= $u['full_name']; ?>?');"></button>
+                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin mengembalikan <?= $u['nama_user']; ?>?');"></button>
                         </form>
-                        <form action="<?= base_url('user/hapusPermanen/' . $u['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('user/hapusPermanen/' . $u['kd_user']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus user <?= $u['full_name']; ?> secara permanen?');"></button>
+                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus user <?= $u['nama_user']; ?> secara permanen?');"></button>
                         </form>
                       </td>
                     </tr>

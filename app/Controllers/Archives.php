@@ -1,19 +1,12 @@
 <?php
 
-<<<<<<< HEAD:app/Controllers/Archives.php
 namespace App\Controllers;
 
 use \App\Models\CategoriesModel;
-=======
-namespace App\Controllers\Pengurus;
-
-use App\Controllers\BaseController;
->>>>>>> 870ef8316b4b58e2b91ab22f3fcd9b473bf15a5c:app/Controllers/Pengurus/Archives.php
-use App\Models\ArchivesModel;
+use \App\Models\ArchivesModel;
 
 class Archives extends BaseController
 {
-<<<<<<< HEAD:app/Controllers/Archives.php
   protected $arc_model;
   protected $cat_model;
   public function __construct()
@@ -30,7 +23,8 @@ class Archives extends BaseController
       'navbar'      => 'Master Arsip',
       'card'        => 'List Arsip',
       'archives'  => $this->arc_model
-        ->join('categories', 'categories.id = archives.cat_id')
+        ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+        ->orderBy
         ->findAll()
     ];
 
@@ -53,7 +47,7 @@ class Archives extends BaseController
   }
   public function insert()
   {
-    $getCatId = implode(",", $this->cat_model->findColumn('id'));
+    $getCatId = implode(",", $this->cat_model->findColumn('kd_kategori'));
     // Validasi input tambah folder
     $validate = [
       'cat_id' => [
@@ -316,123 +310,4 @@ class Archives extends BaseController
     flashAlert('success', $msg);
     return redirect()->to(base_url('/arsip/terhapus'));
   }
-
-  public function detail($id)
-  {
-    $getArc = $this->arc_model->find($id);
-
-    $getCat = $this->cat_model->find($getArc['cat_id']);
-
-    $data = [
-      'title'       => 'Lihat Arsip',
-      'navbar'      => 'Master Arsip',
-      'card'        => 'Detail Arsip',
-      'cat_name'    => $getCat['cat_name'],
-      'archives'    => $getArc,
-    ];
-
-    return view('archives_view/detail', $data);
-  }
 }
-=======
-  protected $archivesModel;
-  public function __construct()
-  {
-    $this->archivesModel = new ArchivesModel();
-  }
-
-  // Index Start
-  public function index()
-  {
-    $data = [
-      'title'         => 'Data Arsip',
-      'navbar'        => 'Arsip',
-      'curr_page'     => 'Data Arsip',
-      'archives'       => $this->archivesModel
-        ->findAll(),
-    ];
-    return view('/pengurus/arsip/index', $data);
-  }
-  // Index End
-
-  // Buat Start
-  public function create()
-  {
-    $data = [
-      'title'         => 'Buat Arsip',
-      'navbar'        => 'Arsip',
-      'curr_page'     => 'Buat Arsip',
-      'form_create'   => 'Form Buat Arsip',
-      'validation'    => \Config\Services::validation()
-    ];
-    return view('/pengurus/arsip/buat', $data);
-  }
-  public function save()
-  {
-    if (!$this->validate([
-      'judul' => [
-        'rules'   => 'required',
-        'errors'  => [
-          'required'    => 'Mohon isi judul artikel',
-        ]
-      ],
-      'article_banner' => [
-        'rules' => 'max_size[article_banner,10000]|is_image[article_banner]|mime_in[article_banner,image/png,image/jpg,image/jpeg,image/webp]',
-        'errors' => [
-          'max_size' => 'Ukuran gambar yang anda upload terlalu besar',
-          'is_image' => 'File yang anda pilih bukan tipe gambar',
-          'mime_in' => 'File yang anda pilih bukan tipe gambar'
-        ]
-      ]
-    ])) {
-      return redirect()->to(base_url() . '/pengurus/artikel/buat')->withInput();
-    }
-
-    // Cek status submit
-    if ($this->request->getVar('article_status') == "Draft") {
-      $article_status = "Draft";
-    } else if ($this->request->getVar('article_status') == "Publish") {
-      $article_status = "Publish";
-    } else {
-      session()->setFlashdata('pesan', '
-      <div class="col-12">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          Mohon tekan Draft untuk menyimpan sebagai Draft, tekan Publish untuk mempublikasi artikel!
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      </div>
-      ');
-      return redirect()->to(base_url() . '/pengurus/artikel/buat')->withInput();
-    }
-
-    // Ambil gambar
-    $getFile = $this->request->getFile('article_banner');
-    // Memeriksa apakah ada tidaknya gambar yang diupload
-    if ($getFile->getError() == 4) {
-      $article_banner = 'default_article_banner.svg';
-    } else {
-      // Buat direktori jika belum ada
-      if (!is_dir('assets/img/article_banner')) {
-        mkdir('/assets/img/article_banner/', 0777, TRUE);
-      }
-      $article_banner = $getFile->getRandomName();
-      // Pindahkan file ke folder img menggunakan move()
-      $getFile->move('assets/img/article_banner', $article_banner);
-    }
-
-    $article_slug = url_title(htmlspecialchars($this->request->getVar('judul')), '-', true);
-
-    $this->articleModel->save([
-      'penulis' => session()->get('member_id'),
-      'judul' => htmlspecialchars(ucwords($this->request->getVar('judul'))),
-      'article_slug' => $article_slug,
-      'article_banner' => $article_banner,
-      'article_content' => $this->request->getVar('article_content'),
-      'article_status' => $article_status,
-    ]);
-
-    session()->setFlashdata('pesan', 'Berhasil membuat artikel baru ' . $this->request->getVar('judul') . '.');
-    return redirect()->to(base_url() . '/pengurus/artikel');
-  }
-  // Buat End
->>>>>>> 870ef8316b4b58e2b91ab22f3fcd9b473bf15a5c:app/Controllers/Pengurus/Archives.php

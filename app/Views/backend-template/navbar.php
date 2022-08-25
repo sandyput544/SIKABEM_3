@@ -4,10 +4,10 @@
 $menus = new \App\Models\MenusModel();
 
 $query = $menus
-  ->join('position_menu', 'position_menu.menu_id = menus.id')
-  ->join('positions', 'positions.id = position_menu.pos_id')
-  ->where('position_menu.pos_id = ' . session('pos_id'))
-  ->where('menus.is_active=1')
+  // ->join('position_menu', 'position_menu.menu_id = menus.id')
+  // ->join('positions', 'positions.id = position_menu.pos_id')
+  // ->where('position_menu.pos_id = ' . session('pos_id'))
+  // ->where('menus.is_active=1')
   ->findAll();
 
 ?>
@@ -28,13 +28,19 @@ $query = $menus
     <!-- Tampilkan menu dari user_menu_accesses berdasarkan  -->
     <?php foreach ($query as $q) : ?>
       <li>
-        <a href="<?= base_url($q['menu_url']); ?>" class="navlink <?= ($navbar == $q['menu_name']) ? "active" : ''; ?>">
-          <i class="<?= $q['menu_icon']; ?>"></i>
-          <span><?= $q['menu_name']; ?></span>
+        <a href="<?= base_url($q['url_menu']); ?>" class="navlink <?= ($navbar == $q['nama_menu']) ? "active" : ''; ?>">
+          <i class="<?= $q['ikon_menu']; ?>"></i>
+          <span><?= $q['nama_menu']; ?></span>
         </a>
       </li>
     <?php endforeach; ?>
 
+    <li>
+      <a href="/koleksi" class="navlink <?= ($navbar == 'Koleksi Arsip') ? "active" : ''; ?>">
+        <i class="bi-collection-fill"></i>
+        <span>Koleksi Arsip</span>
+      </a>
+    </li>
     <li>
       <a href="/auth/logout" class="navlink">
         <i class="bi-box-arrow-right"></i>

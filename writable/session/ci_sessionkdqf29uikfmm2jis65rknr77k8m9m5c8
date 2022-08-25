@@ -1,0 +1,8 @@
+__ci_last_regenerate|i:1661447421;_ci_previous_url|s:37:"http://localhost:8080/jabatan/akses/3";pesan|s:427:"
+        <div class="col-12">
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+                <i class="bi-check-circle-fill" flex-shrink-0 me-2"></i>
+                Berhasil memberi Sekretaris Jenderal akses ke Surat Keluar.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}

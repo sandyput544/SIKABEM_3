@@ -15,14 +15,13 @@
       </div>
       <div class="col-12">
         <div class="card text-dark shadow overflow-hidden rounded-4">
-          <div class="card-header fw-bold fs-5 d-flex justify-content-between">
+          <div class="card-header fw-bold fs-5">
             <?= $card; ?>
-            <a href="infoMenu" class="bi bi-info-circle text-secondary" data-bs-toggle="modal" data-bs-target="#infoMenu"></a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table align-middle">
-                <thead class="table-dark">
+              <table id="tabel" class="table align-middle">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Menu</th>
@@ -37,17 +36,19 @@
                   foreach ($menus as $m) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $m['menu_name']; ?></td>
-                      <td><?= $m['menu_url']; ?></td>
-                      <td><i class="<?= $m['menu_icon']; ?>"></i></td>
-                      <td><span class="badge <?= ($m['is_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
-                          <?= ($m['is_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
+                      <td><?= $m['nama_menu']; ?></td>
+                      <td><?= $m['url_menu']; ?></td>
+                      <td><i class="<?= $m['ikon_menu']; ?>"></i></td>
+                      <td><span class="badge <?= ($m['menu_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
+                          <?= ($m['menu_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
                       <td>
-                        <a href="<?= base_url('menu/edit/' . $m['id']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
-                        <form action="<?= base_url('menu/hapus/' . $m['id']); ?>" class="d-inline" method="post">
-                          <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $m['menu_name']; ?>?');"></button>
-                        </form>
+                        <a href="<?= base_url('menu/edit/' . $m['kd_menu']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
+                        <?php if ($m['nama_menu'] != "Master Menu") : ?>
+                          <form action="<?= base_url('menu/hapus/' . $m['kd_menu']); ?>" class="d-inline" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $m['nama_menu']; ?>?');"></button>
+                          </form>
+                        <?php endif; ?>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -60,32 +61,11 @@
     </div>
   </div>
 </div>
-
-<div class="modal fade" id="infoMenu" tabindex="-1" aria-labelledby="infoMenuModal" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="infoMenuModal">Info Menu Terhapus</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-3">
-          <div class="col-12">
-            <<p>Keterangan tombol aksi :</p>
-              <ol>
-                <li><button class="btn btn-primary"><i class="bi-plus-lg me-2"></i><span>Tambah Data</span></button> untuk menambah anggota.</li>
-                <li><button class="btn btn-secondary"><i class="bi-trash me-2"></i><span>Data Terhapus</span></button> untuk melihat menu yang terhapus.</li>
-                <li><button class="btn btn-warning"><i class="bi-pencil-fill"></i></button> untuk memperbarui data salah satu menu.</li>
-                <li><button class="btn btn-danger"><i class="bi-trash3-fill"></i></button> untuk menghapus data salah satu menu.</li>
-              </ol>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Mengerti</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+<?= $this->endSection(); ?>
+<?= $this->section('script'); ?>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#tabel').DataTable();
+  });
+</script>
 <?= $this->endSection(); ?>

@@ -28,7 +28,7 @@
           <div class="card-body row g-3">
             <div class="table-responsive">
               <table class="table align-middle">
-                <thead class="table-dark">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Menu</th>
@@ -42,17 +42,17 @@
                   foreach ($menus as $m) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $m['menu_name']; ?></td>
-                      <td><span class="badge <?= ($m['is_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
-                          <?= ($m['is_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
+                      <td><?= $m['nama_menu']; ?></td>
+                      <td><span class="badge <?= ($m['menu_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
+                          <?= ($m['menu_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
                       <td>
-                        <form action="<?= base_url('menu/pulihkan/' . $m['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('menu/pulihkan/' . $m['kd_menu']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="PUT">
-                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $m['menu_name']; ?>?');"></button>
+                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $m['nama_menu']; ?>?');"></button>
                         </form>
-                        <form action="<?= base_url('menu/hapusPermanen/' . $m['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('menu/hapusPermanen/' . $m['kd_menu']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="delete">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $m['menu_name']; ?> secara permanen?');"></button>
+                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $m['nama_menu']; ?> secara permanen?');"></button>
                         </form>
                       </td>
                     </tr>

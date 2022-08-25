@@ -30,11 +30,11 @@ function checked($data = null, $type = null)
 }
 
 // Function post_access
-function getPosAccess($pos_id, $menu_id)
+function getPosAccess($kd_jabatan, $kd_menu)
 {
     $db =  \Config\Database::connect();
     $get_posmenu = $db->query('
-    SELECT * FROM position_menu WHERE pos_id=' . $pos_id . ' AND menu_id=' . $menu_id . '
+    SELECT * FROM position_menu WHERE kd_jabatan=' . $kd_jabatan . ' AND kd_menu=' . $kd_menu . '
     ');
 
     if ($get_posmenu->getNumRows() > 0) {

@@ -15,37 +15,37 @@
         <div class="card-body">
           <div class="row g-3">
             <div class="col-12">
-              <label for="fullname">Nama Lengkap</label>
-              <input type="text" name="full_name" placeholder="Contoh: Armand Maumandi" id="full_name" class="form-control" value="<?= old('full_name'); ?>">
-              <?= showError('full_name'); ?>
+              <label for="nama_user">Nama Lengkap</label>
+              <input type="text" name="nama_user" placeholder="Contoh: Armand Maumandi" id="nama_user" class="form-control" value="<?= old('nama_user'); ?>">
+              <?= showError('nama_user'); ?>
             </div>
             <div class="col-12">
-              <label for="selectPosition">Pilih Posisi Jabatan</label>
-              <select class="form-select" id="selectPosition" name="pos_id">
+              <label for="selectPosition">Pilih Jabatan</label>
+              <select class="form-select" id="selectPosition" name="kd_jabatan">
                 <option value="0" selected>Pilih Posisi</option>
                 <?php foreach ($positions as $p) : ?>
-                  <option value="<?= $p['id']; ?>" <?php (old('pos_id', $p['id'])) ? 'selected' : ''; ?>><?= $p['pos_name']; ?></option>
+                  <option value="<?= $p['kd_jabatan']; ?>" <?php (old('kd_jabatan', $p['kd_jabatan'])) ? 'selected' : ''; ?>><?= $p['nama_jbt']; ?></option>
                 <?php endforeach; ?>
               </select>
-              <?= showError('pos_id'); ?>
+              <?= showError('kd_jabatan'); ?>
             </div>
             <div class="col-12">
               <label for="jk" class="form-label">Jenis Kelamin</label>
               <div id="jk">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Pria" checked>
+                  <input class="form-check-input" type="radio" name="jk" id="inlineRadio1" value="Pria" checked>
                   <label class="form-check-label" for="inlineRadio1">Pria</label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Wanita">
+                  <input class="form-check-input" type="radio" name="jk" id="inlineRadio2" value="Wanita">
                   <label class="form-check-label" for="inlineRadio2">Wanita</label>
                 </div>
               </div>
             </div>
             <div class="col-12">
               <label for="phoneInput">Nomor Ponsel</label>
-              <input type="text" name="phone" placeholder="Contoh: 081215633425" id="phoneInput" class="form-control" value="<?= old('phone'); ?>">
-              <?= showError('phone') ?>
+              <input type="text" name="no_hp" placeholder="Contoh: 081215633425" id="phoneInput" class="form-control" value="<?= old('no_hp'); ?>">
+              <?= showError('no_hp') ?>
             </div>
             <div class="col-12">
               <label for="emailInput">Email</label>

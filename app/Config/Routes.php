@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Dashboard');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Profile::index', ["filter" => "auth"]);
+$routes->get('/', 'Dashboard::index', ["filter" => "auth"]);
 
 // Auth
 $routes->add('auth', 'Auth::index', ["filter" => "noauth"]);
@@ -66,7 +66,7 @@ $routes->group('user', ["filter" => "auth"], function ($routes) {
 });
 
 // Grup Routes Posisi
-$routes->group('posisi', ["filter" => "auth"], function ($routes) {
+$routes->group('jabatan', ["filter" => "auth"], function ($routes) {
     $routes->add('', 'Positions::index');
     $routes->add('tambah', 'Positions::add');
     $routes->add('edit/(:num)', 'Positions::edit/$1');
@@ -131,7 +131,6 @@ $routes->group('arsip', ["filter" => "auth"], function ($routes) {
 // Grup Routes Koleksi Arsip
 $routes->group('koleksi', ["filter" => "auth"], function ($routes) {
     $routes->add('', 'Collection::index');
-    $routes->add('list/(:any)', 'Collection::getListArc/$1');
     $routes->add('detail/(:any)', 'Collection::detail/$1');
     $routes->add('download/(:any)', 'Collection::download/$1');
 });

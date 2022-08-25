@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\CategoriesModel;
-use App\Controllers\BaseController;
-
 class Categories extends BaseController
 {
   protected $cat_model;
@@ -12,7 +9,7 @@ class Categories extends BaseController
   public function __construct()
   {
     helper('bem');
-    $this->cat_model = new CategoriesModel();
+    $this->cat_model = new \App\Models\CategoriesModel();
     $this->arc_model = new \App\Models\ArchivesModel();
   }
 
@@ -47,31 +44,41 @@ class Categories extends BaseController
   {
     // Validasi input tambah folder
     $validate = [
-      'cat_name' => [
-        'rules' => 'required|alpha_space|is_unique[categories.cat_name]',
+      'nama_kat' => [
+        'rules' => 'required|alpha_space|is_unique[categories.nama_kat]',
         'errors' => [
           'required' => 'Mohon isi kolom nama kategori.',
           'alpha_space' => 'Yang anda masukkan bukan karakter alfabet atau spasi.',
-          'is_unique' => 'Nama menu sudah terdaftar.'
+          'is_unique' => 'Nama kategori sudah terdaftar.'
+        ]
+      ],
+      'singkatan_kat' => [
+        'rules' => 'required|alpha_numeric_punct|is_unique[categories.singkatan_kat]',
+        'errors' => [
+          'required' => 'Mohon isi kolom nama kategori.',
+          'alpha_numeric_punct' => 'Yang anda masukkan bukan karakter alfabet, angka atau tanda baca.',
+          'is_unique' => 'Nama singkatan sudah terdaftar.'
         ]
       ],
     ];
 
     if (!$this->validate($validate)) {
       return redirect()->to(base_url('kategori/tambah'))->withInput();
+    } else {
+      $postName = htmlspecialchars($this->request->getVar('nama_kat'));
+      $postAcronim = htmlspecialchars($this->request->getVar('singkatan_kat'));
+      $slug = url_title($postName, '-', true);
+
+      $this->cat_model->save([
+        'nama_kat' => $postName,
+        'singkatan_kat' => $postAcronim,
+        'slug' => $slug
+      ]);
+
+      $msg = "Anda berhasil menambah kategori " . $postName . ".";
+      flashAlert('success', $msg);
+      return redirect()->to(base_url('kategori'));
     }
-
-    $postName = htmlspecialchars($this->request->getVar('cat_name'));
-    $slug = url_title($postName, '-', true);
-
-    $this->cat_model->save([
-      'cat_name' => $postName,
-      'slug' => $slug
-    ]);
-
-    $msg = "Anda berhasil menambah kategori " . $postName . ".";
-    flashAlert('success', $msg);
-    return redirect()->to(base_url('kategori'));
   }
   // End <--
 
@@ -92,17 +99,23 @@ class Categories extends BaseController
   {
     // Validasi input update kategori
     $getCat = $this->cat_model->find($id);
-    $postName = htmlspecialchars($this->request->getVar('cat_name'));
+    $postName = htmlspecialchars($this->request->getVar('nama_kat'));
+    $postAcronim = htmlspecialchars($this->request->getVar('singkatan_kat'));
     $slug = url_title($postName, '-', true);
 
-    if ($postName != $getCat['cat_name']) {
-      $ruleName = "required|alpha_space|is_unique[categories.cat_name]";
+    if ($postName != $getCat['nama_kat']) {
+      $ruleName = "required|alpha_space|is_unique[categories.nama_kat]";
     } else {
       $ruleName = "required|alpha_space";
     }
+    if ($postName != $getCat['singkatan_kat']) {
+      $ruleAcronim = "required|alpha_numeric_punct|is_unique[categories.nama_kat]";
+    } else {
+      $ruleAcronim = "required|alpha_numeric_punct";
+    }
 
     $validate = [
-      'cat_name' => [
+      'nama_kat' => [
         'rules' => $ruleName,
         'errors' => [
           'required' => 'Mohon isi kolom nama kategori.',
@@ -110,21 +123,30 @@ class Categories extends BaseController
           'is_unique' => 'Nama kategori sudah terdaftar.'
         ]
       ],
+      'singkatan_kat' => [
+        'rules' => $ruleAcronim,
+        'errors' => [
+          'required' => 'Mohon isi kolom nama kategori.',
+          'alpha_numeric_punct' => 'Yang anda masukkan bukan karakter alfabet, angka atau tanda baca.',
+          'is_unique' => 'Nama kategori sudah terdaftar.'
+        ]
+      ],
     ];
 
     if (!$this->validate($validate)) {
       return redirect()->to(base_url('kategori/edit/' . $id))->withInput();
+    } else {
+      $this->cat_model->save([
+        'kd_kategori' => $id,
+        'nama_kat' => $postName,
+        'singkatan_kat' => $postAcronim,
+        'slug' => $slug,
+      ]);
+
+      $msg = "Anda berhasil memperbarui kategori" . $postName . ".";
+      flashAlert('success', $msg);
+      return redirect()->to(base_url('kategori'));
     }
-
-    $this->cat_model->save([
-      'id' => $id,
-      'cat_name' => $postName,
-      'slug' => $slug,
-    ]);
-
-    $msg = "Anda berhasil memperbarui kategori" . $postName . ".";
-    flashAlert('success', $msg);
-    return redirect()->to(base_url('kategori'));
   }
   // End <--
 
@@ -132,8 +154,14 @@ class Categories extends BaseController
   public function delete($id)
   {
     $getCat = $this->cat_model->find($id);
+    $msg = "Anda berhasil menghapus kategori " . $getCat['nama_kat'] . ".";
+    // Menghapus kd_kategori dari arsip.
+    $getArchives = $this->arc_model->where('kd_kategori', $id)->findAll();
+    foreach ($getArchives as $a) {
+      $this->arc_model->save(['kd_user' => $a['kd_user'], 'kd_kategori' => 0]);
+    }
+
     $this->cat_model->delete($id);
-    $msg = "Anda berhasil menghapus kategori " . $getCat['cat_name'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('kategori'));
   }
@@ -155,11 +183,11 @@ class Categories extends BaseController
   // Fitur Restore Kategori Terhapus --> Start
   public function restore_one($id)
   {
-    $this->cat_model->save(['id' => $id, 'deleted_at' => null]);
+    $this->cat_model->save(['kd_kategori' => $id, 'deleted_at' => null]);
 
     $getCat = $this->cat_model->find($id);
 
-    $msg = "Berhasil mengembalikan kategori " . $getCat['cat_name'] . ".";
+    $msg = "Berhasil mengembalikan kategori " . $getCat['nama_kat'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('kategori/terhapus'));
   }
@@ -182,9 +210,9 @@ class Categories extends BaseController
   public function permanent_delete_one($id)
   {
     $getCat = $this->cat_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus permanen kategori " . $getCat['cat_name'] . ". Semua data yang terhapus secara permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus permanen kategori " . $getCat['nama_kat'] . ". Semua data yang terhapus secara permanen tidak dapat dipulihkan.";
 
-    $this->cat_model->where('id', $id)->purgeDeleted();
+    $this->cat_model->where('kd_kategori', $id)->purgeDeleted();
 
     flashAlert('success', $msg);
     return redirect()->to(base_url('kategori/terhapus'));

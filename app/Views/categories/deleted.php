@@ -12,7 +12,7 @@
         <div>
           <form action="<?= base_url('kategori/pulihkanSemua'); ?>" class="d-inline" method="post">
             <input type="hidden" name="_method" value="PUT">
-            <button type="submit" class="btn btn-primary rounded-3" onclick="return confirm('Apakah anda ingin memulihkan semua kategori yang terhapus?');"><i class="bi-arrow-counterclockwise me-2"></i><span>Restore Semua</span></button>
+            <button type="submit" class="btn btn-primary rounded-3" onclick="return confirm('Apakah anda ingin memulihkan semua kategori yang terhapus?');"><i class="bi-arrow-counterclockwise me-2"></i><span>Pulihkan Semua</span></button>
           </form>
           <form action="<?= base_url('kategori/hapusPermanenSemua'); ?>" class="d-inline" method="post">
             <input type="hidden" name="_method" value="DELETE">
@@ -28,10 +28,12 @@
           <div class="card-body row g-3">
             <div class="table-responsive">
               <table class="table align-middle">
-                <thead class="table-dark">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Nama Menu</th>
+                    <th scope="col">Nama Kategori</th>
+                    <th scope="col">Singkatan</th>
+                    <th scope="col">Tanggal Terhapus</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
@@ -41,15 +43,17 @@
                   foreach ($categories as $c) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $c['cat_name']; ?></td>
+                      <td><?= $c['nama_kat']; ?></td>
+                      <td><?= $c['singkatan_kat']; ?></td>
+                      <td><?= $c['deleted_at']; ?></td>
                       <td>
-                        <form action="<?= base_url('kategori/pulihkan/' . $c['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('kategori/pulihkan/' . $c['kd_kategori']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="PUT">
-                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $c['cat_name']; ?>?');"></button>
+                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $c['nama_kat']; ?>?');"></button>
                         </form>
-                        <form action="<?= base_url('kategori/hapusPermanen/' . $c['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('kategori/hapusPermanen/' . $c['kd_kategori']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="delete">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $c['cat_name']; ?> secara permanen?');"></button>
+                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $c['nama_kat']; ?> secara permanen?');"></button>
                         </form>
                       </td>
                     </tr>

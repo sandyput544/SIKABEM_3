@@ -6,22 +6,24 @@ use App\Controllers\BaseController;
 
 class Positions extends BaseController
 {
-  protected $user_pos_model;
+  protected $users_model;
   protected $positions_model;
+  protected $pos_menu_model;
   public function __construct()
   {
     helper('bem');
-    $this->user_pos_model = new \App\Models\UserPositionModel();
+    $this->users_model = new \App\Models\UsersModel();
     $this->positions_model = new \App\Models\PositionsModel();
+    $this->pos_menu_model = new \App\Models\PositionMenuModel();
   }
 
-  // Menampilkan list posisi jabatan anggota BEM PNC -> Start
+  // Menampilkan list jabatan jabatan anggota BEM PNC -> Start
   public function index()
   {
     $data = [
-      'title'       => 'Master Posisi',
-      'navbar'      => 'Master Posisi',
-      'card'        => 'List Posisi',
+      'title'       => 'Master Jabatan',
+      'navbar'      => 'Master Jabatan',
+      'card'        => 'List Jabatan',
       'positions'   => $this->positions_model->findAll()
     ];
 
@@ -29,13 +31,13 @@ class Positions extends BaseController
   }
   // End <--
 
-  // Fitur tambah posisi --> Start
+  // Fitur tambah jabatan --> Start
   public function add()
   {
     $data = [
-      'title'       => 'Tambah Posisi',
-      'navbar'      => 'Master Posisi',
-      'card'        => 'Form Tambah Posisi',
+      'title'       => 'Tambah Jabatan',
+      'navbar'      => 'Master Jabatan',
+      'card'        => 'Form Tambah Jabatan',
       'validation'  => \Config\Services::validation()
     ];
 
@@ -43,49 +45,68 @@ class Positions extends BaseController
   }
   public function insert()
   {
-    $getName = $this->request->getVar('pos_name');
-    $getActive = $this->request->getVar('is_active');
+    $getName = $this->request->getVar('nama_jbt');
+    $getAcronim = $this->request->getVar('singkatan_jbt');
+    $getSeat = $this->request->getVar('jml_kursi');
+    $getActive = $this->request->getVar('jbt_active');
 
-    // Cek kolom is_active
+    // Cek kolom jbt_active
     if ($getActive == null) {
-      $is_active = 0;
+      $jbt_active = 0;
     } else {
-      $is_active = 1;
+      $jbt_active = 1;
     }
 
-    // Validasi input tambah posisi
+    // Validasi input tambah jabatan
     $validate = [
-      'pos_name' => [
-        'rules' => 'required|is_unique[positions.pos_name]',
+      'nama_jbt' => [
+        'rules' => 'required|is_unique[positions.nama_jbt]',
         'errors' => [
-          'required' => 'Mohon isi kolom nama posisi.',
-          'is_unique' => 'Nama posisi sudah terdaftar.'
+          'required' => 'Mohon isi kolom nama jabatan.',
+          'is_unique' => 'Nama jabatan sudah terdaftar.'
         ]
-      ]
+      ],
+      'singkatan_jbt' => [
+        'rules' => 'required|alpha_numeric_punct|is_unique[positions.singkatan_jbt]',
+        'errors' => [
+          'required' => 'Mohon isi kolom singkatan jabatan.',
+          'alpha_numeric_punct' => 'Yang anda masukkan bukan karakter alfabet, numerik dan tanda baca.',
+          'is_unique' => 'Singkatan jabatan sudah terdaftar.'
+        ]
+      ],
+      'jml_kursi' => [
+        'rules' => 'required|numeric',
+        'errors' => [
+          'required' => 'Mohon isi kolom jumlah kursi jabatan.',
+          'numeric' => 'Yang anda masukkan bukan karakter numerik.'
+        ]
+      ],
     ];
 
     if (!$this->validate($validate)) {
-      return redirect()->to(base_url('/posisi/tambah'))->withInput();
+      return redirect()->to(base_url('/jabatan/tambah'))->withInput();
+    } else {
+      $this->positions_model->save([
+        'nama_jbt' => $getName,
+        'singkatan_jbt' => $getAcronim,
+        'jml_kursi' => $getSeat,
+        'jbt_active' => $jbt_active,
+      ]);
+
+      $msg = "Anda berhasil menambah jabatan " . $getName . ".";
+      flashAlert('success', $msg);
+      return redirect()->to(base_url('/jabatan'));
     }
-
-    $this->positions_model->save([
-      'pos_name' => $getName,
-      'is_active' => $is_active,
-    ]);
-
-    $msg = "Anda berhasil menambah posisi/jabatan " . $getName . ".";
-    flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi'));
   }
   // End <--
 
-  // Fitur ubah posisi --> Start
+  // Fitur ubah jabatan --> Start
   public function edit($id)
   {
     $data = [
-      'title'       => 'Edit Posisi',
-      'navbar'      => 'Master Posisi',
-      'card'        => 'Form Edit Posisi',
+      'title'       => 'Edit Jabatan',
+      'navbar'      => 'Master Jabatan',
+      'card'        => 'Form Edit Jabatan',
       'position'    => $this->positions_model->find($id),
       'validation'  => \Config\Services::validation()
     ];
@@ -94,126 +115,161 @@ class Positions extends BaseController
   }
   public function update($id)
   {
-    $getName = $this->request->getVar('pos_name');
-    $getActive = $this->request->getVar('is_active');
+    $getName = $this->request->getVar('nama_jbt');
+    $getAcronim = $this->request->getVar('singkatan_jbt');
+    $getSeat = $this->request->getVar('jml_kursi');
+    $getActive = $this->request->getVar('jbt_active');
 
-    // Cek kolom is_active
+    // Cek kolom jbt_active
     if ($getActive == null) {
-      $is_active = 0;
+      $jbt_active = 0;
     } else {
-      $is_active = 1;
+      $jbt_active = 1;
     }
 
     // Cek apakah nama baru = nama lama
     $getPos = $this->positions_model->find($id);
-    if ($getName != $getPos['pos_name']) {
-      $ruleName = 'required|is_unique[positions.pos_name]';
+    if ($getName != $getPos['nama_jbt']) {
+      $ruleName = 'required|is_unique[positions.nama_jbt]';
     } else {
       $ruleName = 'required';
     }
+    if ($getAcronim != $getPos['singkatan_jbt']) {
+      $ruleAcronim = 'required|alpha_numeric_punct|is_unique[positions.singkatan_jbt]';
+    } else {
+      $ruleAcronim = 'required|alpha_numeric_punct';
+    }
 
     $validate = [
-      'pos_name' => [
+      'nama_jbt' => [
         'rules' => $ruleName,
         'errors' => [
-          'required' => 'Mohon isi kolom nama posisi.',
-          'is_unique' => 'Nama posisi sudah terdaftar.'
+          'required' => 'Mohon isi kolom nama jabatan.',
+          'is_unique' => 'Nama jabatan sudah terdaftar.'
         ]
-      ]
+      ],
+      'singkatan_jbt' => [
+        'rules' => $ruleAcronim,
+        'errors' => [
+          'required' => 'Mohon isi kolom singkatan jabatan.',
+          'alpha_numeric_punct' => 'Yang anda masukkan bukan karakter alfabet, numerik dan tanda baca.',
+          'is_unique' => 'Singkatan jabatan sudah terdaftar.'
+        ]
+      ],
+      'jml_kursi' => [
+        'rules' => 'required|numeric',
+        'errors' => [
+          'required' => 'Mohon isi kolom jumlah kursi jabatan.',
+          'numeric' => 'Yang anda masukkan bukan karakter numerik.'
+        ]
+      ],
     ];
 
     if (!$this->validate($validate)) {
-      return redirect()->to(base_url('/posisi/edit/' . $id))->withInput();
+      return redirect()->to(base_url('/jabatan/edit/' . $id))->withInput();
+    } else {
+      $this->positions_model->save([
+        'kd_jabatan' => $id,
+        'nama_jbt' => $getName,
+        'singkatan_jbt' => $getAcronim,
+        'jml_kursi' => $getSeat,
+        'jbt_active' => $jbt_active,
+      ]);
+      $msg = "Anda berhasil memperbarui jabatan user.";
+      flashAlert('success', $msg);
+      return redirect()->to(base_url('/jabatan'));
     }
-
-    $this->positions_model->save([
-      'id' => $id,
-      'pos_name' => $getName,
-      'is_active' => $is_active,
-    ]);
-    $msg = "Anda berhasil memperbarui posisi/jabatan anggota.";
-    flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi'));
   }
   // End <--
 
-  // Fitur Delete Posisi --> Start
+  // Fitur Delete Jabatan --> Start
   public function delete($id)
   {
     $getPos = $this->positions_model->find($id);
-    $this->positions_model->save(['id' => $id, 'is_active' => '0']);
+    $this->positions_model->save(['kd_jabatan' => $id, 'jbt_active' => '0']);
 
-    $this->user_pos_model->where(['pos_id' => $id])->delete();
+    // Hapus kd jabatan dari data user
+    $getUsers = $this->users_model->where(['kd_jabatan' => $id])->findAll();
+    foreach ($getUsers as $u) {
+      $this->users_model->save(['kd_user' => $u['kd_user'], 'kd_jabatan' => 0]);
+    }
 
     $this->positions_model->delete($id);
-    $msg = "Anda berhasil menghapus posisi/jabatan " . $getPos['pos_name'];
+
+    $msg = "Anda berhasil menghapus jabatan " . $getPos['nama_jbt'];
     flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi'));
+    return redirect()->to(base_url('/jabatan'));
   }
   // End <--
 
-  // Fitur Tampil Posisi Terhapus --> Start
+  // Fitur Tampil Jabatan Terhapus --> Start
   public function show_all_deleted()
   {
     $data = [
-      'title' => 'Posisi Terhapus',
-      'navbar'      => 'Master Posisi',
-      'card'  => 'List Posisi Terhapus',
+      'title' => 'Jabatan Terhapus',
+      'navbar' => 'Master Jabatan',
+      'card'  => 'List Jabatan Terhapus',
       'positions' => $this->positions_model->onlyDeleted()->findAll(),
     ];
     return view('positions/deleted', $data);
   }
   // End <--
 
-  // Fitur Restore Posisi Terhapus --> Start
+  // Fitur Restore Jabatan Terhapus --> Start
   public function restore_one($id)
   {
-    $this->positions_model
-      ->where(['id' => $id])
-      ->save(['id' => $id, 'deleted_at' => null]);
+    $this->positions_model->save(['kd_jabatan' => $id, 'deleted_at' => null]);
 
     $getPos = $this->positions_model->find($id);
 
-    $msg = "Berhasil memulihkan " . $getPos['pos_name'] . ".";
+    $msg = "Berhasil memulihkan " . $getPos['nama_jbt'] . ".";
     flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi/terhapus'));
+    return redirect()->to(base_url('/jabatan/terhapus'));
   }
   // End <--
 
-  // Fitur RestoreAll Posisi Terhapus --> Start
+  // Fitur RestoreAll Jabatan Terhapus --> Start
   public function restore_all()
   {
     $this->positions_model
       ->set(['deleted_at' => null])
       ->update();
 
-    $msg = "Berhasil memulihkan semua posisi yang terhapus.";
+    $msg = "Berhasil memulihkan semua jabatan yang terhapus.";
     flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi/terhapus'));
+    return redirect()->to(base_url('/jabatan/terhapus'));
   }
   // End <--
 
-  // Fitur DeletePermament Posisi Terhapus --> Start
+  // Fitur DeletePermament Jabatan Terhapus --> Start
   public function permanent_delete_all()
   {
+    // Hapus semua hak akses menu
+    $getJabatan = $this->positions_model->onlyDeleted()->findAll();
+    foreach ($getJabatan as $j) {
+      $this->pos_menu_model->where('kd_jabatan', $j['kd_jabatan'])->delete();
+    }
+
     $this->positions_model->purgeDeleted();
 
-    $msg = "Berhasil menghapus permanen semua posisi yang terhapus. Semua data tersebut tidak dapat dikembalikan/dipulihkan.";
+    $msg = "Berhasil menghapus permanen semua jabatan yang terhapus. Semua data tersebut tidak dapat dikembalikan/dipulihkan.";
     flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi/terhapus'));
+    return redirect()->to(base_url('/jabatan/terhapus'));
   }
 
   public function permanent_delete_one($id)
   {
-    // Ambil nama posisi
+    // hapus semua hak akses menu
+    $this->pos_menu_model->where('kd_jabatan', $id)->delete();
+
+    // Ambil nama jabatan
     $getPos = $this->positions_model->onlyDeleted()->find($id);
+    $msg = "Berhasil menghapus permanen " . $getPos['nama_jbt'] . ". Data " . $getPos['nama_jbt'] . " tidak bisa dikembalikan/dipulihkan.";
 
-    $msg = "Berhasil menghapus permanen " . $getPos['pos_name'] . ". Data " . $getPos['pos_name'] . " tidak bisa dikembalikan/dipulihkan.";
-
-    $this->positions_model->where(['id' => $id])->purgeDeleted();
+    $this->positions_model->where(['kd_jabatan' => $id])->purgeDeleted();
 
     flashAlert('success', $msg);
-    return redirect()->to(base_url('/posisi/terhapus'));
+    return redirect()->to(base_url('/jabatan/terhapus'));
   }
   // End <--
 }

@@ -21,7 +21,7 @@
           <div class="card-body">
             <div class="table-responsive">
               <table class="table align-middle">
-                <thead class="table-dark">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Kategori</th>
@@ -34,19 +34,19 @@
                   foreach ($categories as $c) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $c['cat_name']; ?></td>
+                      <td><?= $c['nama_kat']; ?></td>
                       <td><?php
-                          $cat_id = $c['id'];
+                          $cat_id = $c['kd_kategori'];
                           echo  $getRows = $instance
-                            ->where('cat_id', $cat_id)
+                            ->where('kd_kategori', $cat_id)
                             ->countAllResults();
                           ?> arsip tersimpan</td>
                       <td>
-                        <form action="<?= base_url('kategori/hapus/' . $c['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('kategori/hapus/' . $c['kd_kategori']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $c['cat_name']; ?>?');"></button>
+                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $c['nama_kat']; ?>?');"></button>
                         </form>
-                        <a href="<?= base_url('kategori/edit/' . $c['id']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
+                        <a href="<?= base_url('kategori/edit/' . $c['kd_kategori']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
                       </td>
                     </tr>
                   <?php endforeach; ?>

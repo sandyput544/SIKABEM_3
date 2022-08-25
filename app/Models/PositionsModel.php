@@ -12,7 +12,7 @@ class PositionsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama_jbt', 'singkatan_jbt', 'jbt_active', 'deleted_at'];
+    protected $allowedFields    = ['nama_jbt', 'singkatan_jbt', 'jml_kursi', 'jbt_active', 'deleted_at'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

@@ -6,7 +6,7 @@
     <a href="<?= base_url('kategori'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
   <div class="col-6">
-    <form action="<?= base_url('kategori/save'); ?>" method="POST" enctype="multipart/form-data">
+    <form action="<?= base_url('kategori/save'); ?>" method="POST">
       <?= csrf_field(); ?>
       <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
         <div class="card-header fw-bold fs-5"><?= $card; ?></div>
@@ -16,8 +16,13 @@
               <div class="row g-3">
                 <div class="col-12">
                   <label for="inputName">Nama Kategori</label>
-                  <input type="text" class="form-control" id="inputName" placeholder="Anggaran Dasar Aturan Rumah Tangga" name="cat_name" value="<?= old('cat_name'); ?>" autofocus>
-                  <?= showError('cat_name'); ?>
+                  <input type="text" class="form-control" id="inputName" placeholder="Anggaran Dasar Anggaran Rumah Tangga" name="nama_kat" value="<?= old('nama_kat'); ?>" autofocus>
+                  <?= showError('nama_kat'); ?>
+                </div>
+                <div class="col-12">
+                  <label for="inputAcronim">Singkatan Nama Kategori</label>
+                  <input type="text" class="form-control" id="inputAcronim" placeholder="AD ART" name="singkatan_kat" value="<?= old('singkatan_kat'); ?>" autofocus>
+                  <?= showError('singkatan_kat'); ?>
                 </div>
               </div>
             </div>

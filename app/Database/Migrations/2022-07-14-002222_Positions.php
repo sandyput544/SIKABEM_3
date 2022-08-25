@@ -12,6 +12,7 @@ class Positions extends Migration
       'kd_jabatan' => ['type' => 'int', 'constraint' => '2', 'auto_increment' => true, 'unsigned' => true],
       'nama_jbt' => ['type' => 'varchar', 'constraint' => 128],
       'singkatan_jbt' => ['type' => 'varchar', 'constraint' => 30],
+      'jml_kursi' => ['type' => 'int', 'constraint' => 3],
       'jbt_active' => ['type' => 'int', 'constraint' => 1],
       'created_at' => ['type' => 'datetime', 'null' => true],
       'updated_at' => ['type' => 'datetime', 'null' => true],

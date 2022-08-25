@@ -26,6 +26,8 @@ class Users extends BaseController
       'navbar'        => 'Master User',
       'card'          => 'List User',
       'users'         => $this->users_model
+        ->join('positions', 'positions.kd_jabatan = users.kd_jabatan', 'left')
+        ->where('is_login != 1')
         ->findAll(),
     ];
     return view('users/index', $data);
@@ -39,7 +41,8 @@ class Users extends BaseController
       'navbar'            => 'Master User',
       'card'              => 'Form Tambah User',
       'positions'         => $this->positions_model
-        ->where('is_active', 1)
+        ->where('jml_kursi != 0')
+        ->where('jbt_active', 1)
         ->findAll(),
       'validation'        => \Config\Services::validation()
     ];
@@ -48,18 +51,18 @@ class Users extends BaseController
 
   public function insert()
   {
-    $postFname = htmlspecialchars($this->request->getVar('full_name'));
-    $postGender = htmlspecialchars($this->request->getVar('gender'));
-    $postPhone = htmlspecialchars($this->request->getVar('phone'));
+    $postFname = htmlspecialchars($this->request->getVar('nama_user'));
+    $postGender = htmlspecialchars($this->request->getVar('jk'));
+    $postPhone = htmlspecialchars($this->request->getVar('no_hp'));
     $postEmail = htmlspecialchars($this->request->getVar('email'));
     $postPassword = htmlspecialchars($this->request->getVar('password1'));
     $postPasswordHash = password_hash($postPassword, PASSWORD_DEFAULT);
-    $postPosId = htmlspecialchars($this->request->getVar('pos_id'));
+    $postKdJBT = htmlspecialchars($this->request->getVar('kd_jabatan'));
 
-    $showPosId = implode(",", $this->positions_model->where('is_active', 1)->findColumn('id'));
+    $showPosId = implode(",", $this->positions_model->where('jbt_active', 1)->findColumn('kd_jabatan'));
 
     $validate = [
-      'full_name' => [
+      'nama_user' => [
         'rules'     => 'required|max_length[100]|alpha_space',
         'errors'    => [
           'required'      => 'Mohon isi kolom nama lengkap.',
@@ -67,13 +70,13 @@ class Users extends BaseController
           'alpha_space'   => 'Yang anda masukkan bukan karakter alfabet dan spasi.'
         ]
       ],
-      'gender' => [
+      'jk' => [
         'rules' => 'in_list[Pria,Wanita]',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.'
         ]
       ],
-      'phone' => [
+      'no_hp' => [
         'rules' => 'permit_empty|numeric',
         'errors' => [
           'numeric' => 'Yang anda masukkan bukan karakter numerik.',
@@ -101,7 +104,7 @@ class Users extends BaseController
           'required'    => 'Mohon isi kolom konfirmasi password.',
         ]
       ],
-      'pos_id' => [
+      'kd_jabatan' => [
         'rules' => 'in_list[0,' . $showPosId . ']',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.'
@@ -111,33 +114,38 @@ class Users extends BaseController
 
     if (!$this->validate($validate)) {
       return redirect()->to(base_url('/user/tambah'))->withInput();
-    }
+    } else {
+      // cek apakah kd_jabatan yang baru dimasukkan = kd_jabatan yang lama
+      if ($postKdJBT == '0') {
+        $kd_jabatan = '0';
+      } else {
+        // Simpan seat baru
+        $getnewSeat = $this->positions_model->find($postKdJBT);
+        $newSeat = intval($getnewSeat['jml_kursi']) - 1;
+        $this->positions_model->save([
+          'kd_jabatan' => $postKdJBT,
+          'jml_kursi' => $newSeat
+        ]);
+        $kd_jabatan = $postKdJBT;
+      }
 
-    $this->users_model->save([
-      'full_name'        => $postFname,
-      'gender'          => $postGender,
-      'phone'           => $postPhone,
-      'email'           => $postEmail,
-      'password'        => $postPassword,
-      'password_hash'   => $postPasswordHash,
-      'photo'           => 'default.svg',
-      'is_active'       => '1',
-    ]);
-
-    // Ambil id dengan full_name
-    $getUser = $this->users_model->where('full_name', $postFname)->first();
-
-    // Cek apakah pos_id != 0
-    if ($postPosId != "0") {
-      $this->user_pos_model->save([
-        'user_id' => $getUser['id'],
-        'pos_id' => $postPosId
+      $this->users_model->save([
+        'nama_user'       => $postFname,
+        'kd_jabatan'      => $kd_jabatan,
+        'jk'              => $postGender,
+        'no_hp'           => $postPhone,
+        'email'           => $postEmail,
+        'password'        => $postPassword,
+        'password_hash'   => $postPasswordHash,
+        'foto'            => 'default.svg',
+        'user_active'     => '1',
+        'is_login'        => '0',
       ]);
-    }
 
-    $msg = 'Berhasil menambahkan user ' . $postFname . '.';
-    flashAlert('success', $msg);
-    return redirect()->to(base_url() . '/user');
+      $msg = 'Berhasil menambahkan user ' . $postFname . '.';
+      flashAlert('success', $msg);
+      return redirect()->to(base_url() . '/user');
+    }
   }
   // Tambah End
 
@@ -145,7 +153,6 @@ class Users extends BaseController
   public function edit($id)
   {
     $getUser = $this->users_model
-      ->join('user_position', 'user_position.user_id = users.id')
       ->find($id);
 
     $data = [
@@ -154,7 +161,8 @@ class Users extends BaseController
       'card'              => 'Form Edit User',
       'user'              => $getUser,
       'positions'         => $this->positions_model
-        ->where('is_active', 1)
+        ->where('jml_kursi != 0')
+        ->where('jbt_active', 1)
         ->findAll(),
       'validation'        => \Config\Services::validation()
     ];
@@ -166,17 +174,17 @@ class Users extends BaseController
     // Get User
     $getUser = $this->users_model->find($id);
 
-    $postFname = htmlspecialchars($this->request->getVar('full_name'));
-    $postGender = htmlspecialchars($this->request->getVar('gender'));
-    $postPhone = htmlspecialchars($this->request->getVar('phone'));
+    $postFname = htmlspecialchars($this->request->getVar('nama_user'));
+    $postGender = htmlspecialchars($this->request->getVar('jk'));
+    $postPhone = htmlspecialchars($this->request->getVar('no_hp'));
     $postEmail = htmlspecialchars($this->request->getVar('email'));
     $postPassword = htmlspecialchars($this->request->getVar('password1'));
     $postPassword2 = htmlspecialchars($this->request->getVar('password2'));
-    $postPosId = htmlspecialchars($this->request->getVar('pos_id'));
-    $postActive = htmlspecialchars($this->request->getVar('is_active'));
+    $postKdJBT = htmlspecialchars($this->request->getVar('kd_jabatan'));
+    $postuserActive = htmlspecialchars($this->request->getVar('user_active'));
 
 
-    $showPosId = implode(",", $this->positions_model->where('is_active', 1)->findColumn('id'));
+    $showPosId = implode(",", $this->positions_model->where('jbt_active', 1)->findColumn('kd_jabatan'));
 
     /* Cek apakah password yang dimasukkan itu sama dengan password yang ada di tabel
     * Kalau sama maka perbolehkan untuk mengosongkan kolom password dan konfirmasi password
@@ -197,7 +205,7 @@ class Users extends BaseController
     }
 
     $validate = [
-      'full_name' => [
+      'nama_user' => [
         'rules'     => 'required|max_length[100]|alpha_space',
         'errors'    => [
           'required'      => 'Mohon isi kolom nama lengkap.',
@@ -205,13 +213,13 @@ class Users extends BaseController
           'alpha_space'   => 'Yang anda masukkan bukan karakter alfabet dan spasi.'
         ]
       ],
-      'gender' => [
+      'jk' => [
         'rules' => 'in_list[Pria,Wanita]',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.'
         ]
       ],
-      'phone' => [
+      'no_hp' => [
         'rules' => 'permit_empty|numeric',
         'errors' => [
           'numeric' => 'Yang anda masukkan bukan karakter numerik.',
@@ -239,7 +247,7 @@ class Users extends BaseController
           'required'    => 'Mohon isi kolom konfirmasi password.',
         ]
       ],
-      'pos_id' => [
+      'kd_jabatan' => [
         'rules' => 'in_list[0,' . $showPosId . ']',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.'
@@ -249,47 +257,62 @@ class Users extends BaseController
 
     if (!$this->validate($validate)) {
       return redirect()->to(base_url('/user/edit/' . $id))->withInput();
-    }
-
-    $postPasswordHash = password_hash($postPassword, PASSWORD_DEFAULT);
-
-    $this->users_model->save([
-      'id'              => $id,
-      'full_name'       => $postFname,
-      'gender'          => $postGender,
-      'phone'           => $postPhone,
-      'email'           => $postEmail,
-      'password'        => $postPassword,
-      'password_hash'   => $postPasswordHash,
-      'is_active'       => $postActive
-    ]);
-
-    // Ambil id dengan full_name
-    $getUser = $this->users_model->where('full_name', $postFname)->first();
-
-    // Cek apakah pos_id != 0
-    if ($postPosId != "0") {
-      // Ambil data posisi user, lalu cek apakah jumlah kolom data lebih dari 0
-      $get_pos = $this->user_pos_model
-        ->where(['user_id' => $id])
-        ->get();
-
-      if ($get_pos->getNumRows() < 1) {
-        $this->user_pos_model->save([
-          'user_id' => $id,
-          'pos_id' => $postPosId
-        ]);
+    } else {
+      // cek apakah kd_jabatan yang baru dimasukkan = kd_jabatan yang lama
+      if ($postKdJBT == $getUser['kd_jabatan']) {
+        $kd_jabatan = $getUser['kd_jabatan'];
+      } elseif ($postKdJBT == '0') {
+        // cek apakah kd jabatan sebelumnya bukan 0
+        if ($getUser['kd_jabatan'] !== "0") {
+          // Simpan seat lama
+          $getoldSeat = $this->positions_model->find($getUser['kd_jabatan']);
+          $oldSeat = intval($getoldSeat['jml_kursi']) + 1;
+          $this->positions_model->save([
+            'kd_jabatan' => $getoldSeat['kd_jabatan'],
+            'jml_kursi' => $oldSeat
+          ]);
+        }
+        $kd_jabatan = '0';
       } else {
-        $this->user_pos_model
-          ->where('user_id', $id)
-          ->set('pos_id', $postPosId)
-          ->update();
-      }
-    }
+        // cek apakah user tidak memiliki jabatan
+        if ($getUser['kd_jabatan'] !== "0") {
+          // Simpan seat lama
+          $getoldSeat = $this->positions_model->find($getUser['kd_jabatan']);
+          $oldSeat = intval($getoldSeat['jml_kursi']) + 1;
+          $this->positions_model->save([
+            'kd_jabatan' => $getoldSeat['kd_jabatan'],
+            'jml_kursi' => $oldSeat
+          ]);
+        }
 
-    $msg = 'Berhasil memperbarui data user ' . $postFname . '.';
-    flashAlert('success', $msg);
-    return redirect()->to(base_url() . '/user');
+        // Simpan seat baru
+        $getnewSeat = $this->positions_model->find($postKdJBT);
+        $newSeat = intval($getnewSeat['jml_kursi']) - 1;
+        $this->positions_model->save([
+          'kd_jabatan' => $getnewSeat['kd_jabatan'],
+          'jml_kursi' => $newSeat
+        ]);
+        $kd_jabatan = $postKdJBT;
+      }
+
+      $postPasswordHash = password_hash($postPassword, PASSWORD_DEFAULT);
+
+      $this->users_model->save([
+        'kd_user'         => $id,
+        'kd_jabatan'      => $kd_jabatan,
+        'nama_user'       => $postFname,
+        'jk'              => $postGender,
+        'no_hp'           => $postPhone,
+        'email'           => $postEmail,
+        'password'        => $postPassword,
+        'password_hash'   => $postPasswordHash,
+        'user_active'     => $postuserActive
+      ]);
+
+      $msg = 'Berhasil memperbarui data user ' . $postFname . '.';
+      flashAlert('success', $msg);
+      return redirect()->to(base_url() . '/user');
+    }
   }
   // Edit End
 
@@ -297,10 +320,10 @@ class Users extends BaseController
   public function delete($id)
   {
     // Set is_active menjadi 0
-    $this->users_model->save(['id' => $id, 'is_active' => 0]);
+    $this->users_model->save(['kd_user' => $id, 'kd_jabatan' => 0, 'user_active' => 0]);
     // Ambil data user
     $getUser = $this->users_model->find($id);
-    $msg = 'Berhasil menghapus ' . $getUser['full_name'] . '.';
+    $msg = 'Berhasil menghapus ' . $getUser['nama_user'] . '.';
 
     // Delete Data Member
     $this->users_model->delete($id);
@@ -314,17 +337,16 @@ class Users extends BaseController
   public function detail($id)
   {
     $getUser = $this->users_model
-      ->join('user_position', 'user_position.user_id = users.id')
-      ->join('positions', 'positions.id = user_position.pos_id')
+      ->join('positions', 'positions.kd_jabatan = users.kd_jabatan')->onlyDeleted()
       ->find($id);
-    $time = new \CodeIgniter\I18n\Time($getUser['created_at']);
+    // $time = new \CodeIgniter\I18n\Time($getUser['created_at']);
 
     $data = [
       'title'             => 'Detail User',
       'navbar'            => 'Master User',
-      'card'              => 'Profil ' . $getUser['full_name'],
+      'card'              => 'Profil ' . $getUser['nama_user'],
       'user'              => $getUser,
-      'created_date'      => $time
+      // 'created_date'      => $time
     ];
 
     return view('users/detail', $data);
@@ -334,8 +356,6 @@ class Users extends BaseController
   public function show_all_deleted()
   {
     $getUser = $this->users_model
-      ->join('user_position', 'user_position.user_id = users.id')
-      ->join('positions', 'positions.id = user_position.pos_id')
       ->onlyDeleted()
       ->findAll();
 
@@ -351,10 +371,10 @@ class Users extends BaseController
 
   public function restore_one($id)
   {
-    $this->users_model->where('id', $id)->set('deleted_at', null)->update();
+    $this->users_model->where('kd_user', $id)->set('deleted_at', null)->update();
     $getUsers = $this->users_model->find($id);
 
-    $msg = 'Berhasil mengembalikan ' . $getUsers['full_name'] . '.';
+    $msg = 'Berhasil mengembalikan ' . $getUsers['nama_user'] . '.';
     flashAlert('success', $msg);
     return redirect()->to(base_url('user/terhapus'));
   }
@@ -370,14 +390,6 @@ class Users extends BaseController
 
   public function permanent_delete_all()
   {
-    // Hapus semua posisi user dari tabel user_position
-    // Ambil semua data yang terhapus
-    $getDeleted = $this->users_model->onlyDeleted()->findAll();
-    // Lakukan foreach/loop untuk menghapus data
-    foreach ($getDeleted as $del) {
-      $this->user_pos_model->where('user_id', $del['id'])->delete();
-    }
-
     $this->users_model->purgeDeleted();
 
     flashAlert('success', 'Berhasil menghapus permanen semua data user yang terhapus. Semua data user tersebut yang dihapus permanen tidak dapat dipulihkan.');
@@ -388,11 +400,9 @@ class Users extends BaseController
   {
     // ambil data user
     $getName = $this->users_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus user " . $getName['full_name'] . " secara permanen. Data user yang dihapus permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus user " . $getName['nama_user'] . " secara permanen. Data user yang dihapus permanen tidak dapat dipulihkan.";
 
-    $this->user_pos_model->where('user_id', $id)->delete();
-
-    $this->users_model->where('id', $id)->purgeDeleted();
+    $this->users_model->where('kd_user', $id)->purgeDeleted();
 
     flashAlert('success', $msg);
     return redirect()->to(base_url('user/terhapus'));
