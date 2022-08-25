@@ -1,0 +1,730 @@
+CRITICAL - 2022-08-11 00:41:51 --> Undefined property: App\Controllers\Positions::$post_pos_name
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(78): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 78, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->insert()
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 01:05:17 -->  is not a valid rule.
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('is_active', 'is_active', NULL, Array, Array)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(72): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->insert()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-08-11 01:22:31 --> Undefined variable: menu
+#0 C:\xampp\htdocs\bempnc-1\app\Views\positions\edit.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/edit', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(90): view('positions/edit', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->edit('17')
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 01:39:21 --> Argument 1 passed to CodeIgniter\Validation\Validation::hasError() must be of the type string, null given, called in C:\xampp\htdocs\bempnc-1\app\Helpers\bem_helper.php on line 20
+#0 C:\xampp\htdocs\bempnc-1\app\Helpers\bem_helper.php(20): CodeIgniter\Validation\Validation->hasError(NULL)
+#1 C:\xampp\htdocs\bempnc-1\app\Views\positions\edit.php(20): showError()
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/edit', Array, true)
+#5 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(90): view('positions/edit', Array)
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->edit('17')
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-08-11 01:42:23 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(112): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 112, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->update('16')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 01:43:07 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(112): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 112, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->update('17')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 02:26:29 --> Undefined property: App\Controllers\Positions::$position_model
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(139): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 139, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->delete('17')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 02:30:57 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(206): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 206, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->permanent_delete_one('17')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 02:33:14 --> Call to a member function find() on null
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->permanent_delete_one('18')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-08-11 02:35:35 --> Cannot use object of type App\Models\PositionsModel as array
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->permanent_delete_one('18')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-08-11 02:37:06 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(206): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 206, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->permanent_delete_one('19')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 03:16:37 --> Undefined index: title
+#0 C:\xampp\htdocs\bempnc-1\app\Views\backend-template\navbar.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 37, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(424): CodeIgniter\View\View->render('\\backend-templa...', NULL, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Views\backend-template\index.php(16): CodeIgniter\View\View->include('\\backend-templa...')
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('\\backend-templa...', Array, true)
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/index', Array, true)
+#9 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(25): view('positions/index', Array)
+#10 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->index()
+#11 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#12 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2022-08-11 03:18:17 --> Undefined index: menu_name 
+#0 C:\xampp\htdocs\bempnc-1\app\Views\backend-template\navbar.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 37, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(424): CodeIgniter\View\View->render('\\backend-templa...', NULL, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Views\backend-template\index.php(16): CodeIgniter\View\View->include('\\backend-templa...')
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(226): CodeIgniter\View\View->render('\\backend-templa...', Array, true)
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/index', Array, true)
+#9 C:\xampp\htdocs\bempnc-1\app\Controllers\Positions.php(25): view('positions/index', Array)
+#10 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Positions->index()
+#11 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Positions))
+#12 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#14 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2022-08-11 03:23:19 --> Request URI segment is out of range: 2
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(2)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(2)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:24:07 --> Request URI segment is out of range: 1
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(1)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(1)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:25:08 --> Request URI segment is out of range: 2
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(2)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(2)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:29:21 --> Request URI segment is out of range: 2
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(2)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(2)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:29:33 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 03:29:42 --> Request URI segment is out of range: 1
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(1)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(1)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:30:09 --> Request URI segment is out of range: 1
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(1)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(1)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:30:24 --> Request URI segment is out of range: 2
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(2)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(2)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:30:39 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(31): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 31, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 03:32:38 --> Request URI segment is out of range: 2
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(2)
+#1 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(26): CodeIgniter\HTTP\URI->getSegment(2)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-08-11 03:33:53 --> Invalid file: posisi/menu.php
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('posisi/menu.php')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('posisi/menu', Array, true)
+#2 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(35): view('posisi/menu', Array)
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-08-11 03:34:19 --> Invalid file: posisi/menu-akses.php
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('posisi/menu-aks...')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('posisi/menu-aks...', Array, true)
+#2 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(35): view('posisi/menu-aks...', Array)
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-08-11 03:34:34 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\positions\menu-akses.php(15): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 15, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/menu-...', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(35): view('positions/menu-...', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 06:26:22 --> Undefined variable: pos_id
+#0 C:\xampp\htdocs\bempnc-1\app\Views\positions\menu-akses.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/menu-...', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(35): view('positions/menu-...', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 07:13:54 --> Undefined index: is_active
+#0 C:\xampp\htdocs\bempnc-1\app\Helpers\bem_helper.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 47, Array)
+#1 C:\xampp\htdocs\bempnc-1\app\Views\positions\menu-akses.php(36): getPosAccess('1', '6')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('positions/menu-...', Array, true)
+#5 C:\xampp\htdocs\bempnc-1\app\Controllers\PositionMenu.php(36): view('positions/menu-...', Array)
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\PositionMenu->index()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PositionMenu))
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-08-11 07:28:06 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\menu\index.php(25): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 25, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/index', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(25): view('menu/index', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 07:47:01 --> syntax error, unexpected '=>' (T_DOUBLE_ARROW), expecting ']'
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(241): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs...')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(219): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers...')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers...')
+#3 [internal function]: spl_autoload_call('App\\Controllers...')
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(797): class_exists('\\App\\Controller...', true)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(406): CodeIgniter\CodeIgniter->startController()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-08-11 07:47:38 --> Undefined variable: menu
+#0 C:\xampp\htdocs\bempnc-1\app\Views\menu\edit.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/edit', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(114): view('menu/edit', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->edit('6')
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 07:49:24 --> Undefined variable: menu
+#0 C:\xampp\htdocs\bempnc-1\app\Views\menu\edit.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/edit', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(114): view('menu/edit', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->edit('1')
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 08:00:39 --> Illegal string offset 'is_active'
+#0 C:\xampp\htdocs\bempnc-1\app\Helpers\bem_helper.php(28): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\xampp\\htdocs...', 28, Array)
+#1 C:\xampp\htdocs\bempnc-1\app\Views\menu\edit.php(39): checkedActive('menus')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/edit', Array, true)
+#5 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(114): view('menu/edit', Array)
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->edit('1')
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-08-11 08:02:05 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\menu\add.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/add', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(39): view('menu/add', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->add()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 08:08:20 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\menu\add.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/add', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(39): view('menu/add', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->add()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 14:47:26 --> Invalid file: menus/deleted.php
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('menus/deleted.p...')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menus/deleted', Array, true)
+#2 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(208): view('menus/deleted', Array)
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->show_all_deleted()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-08-11 14:48:26 --> Undefined variable: p
+#0 C:\xampp\htdocs\bempnc-1\app\Views\menus\deleted.php(41): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 41, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menus/deleted', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(208): view('menus/deleted', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->show_all_deleted()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 14:50:49 --> Invalid file: menu/index.php
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('menu/index.php')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('menu/index', Array, true)
+#2 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(25): view('menu/index', Array)
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->index()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-08-11 14:52:45 --> Object of class App\Controllers\Menus could not be converted to string
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->delete('6')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-08-11 16:14:08 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:15:01 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:15:31 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:18:48 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:21:21 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:23:21 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:29:53 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:35:59 --> Undefined variable: ruleMenuName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:39:44 --> Undefined variable: ruleMenuName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:40:52 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:42:12 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:51:20 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:53:51 --> Undefined variable: ruleUrl
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(138): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 138, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 16:58:18 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 130, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:04:54 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(128): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 128, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:08:09 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:10:40 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:12:48 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:17:06 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:19:01 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:24:54 --> Undefined variable: ruleName
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(129): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 129, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:29:49 --> Undefined variable: rule
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(127): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 127, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->update('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:39:10 --> Array to string conversion
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Menus.php(251): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\xampp\\htdocs...', 251, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Menus->permanent_delete_one('8')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Menus))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 17:49:33 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\users\index.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 23, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/index', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(29): view('users/index', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 18:13:44 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\users\index.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 23, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/index', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(29): view('users/index', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 19:31:44 -->  is not a valid rule.
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('phone', 'phone', '', Array, Array)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(117): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->insert()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-08-11 19:43:00 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(131): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 131, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->insert()
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 19:50:32 --> Undefined index: fullname
+#0 C:\xampp\htdocs\bempnc-1\app\Views\users\index.php(42): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 42, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/index', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(29): view('users/index', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 19:50:46 --> Undefined variable: p
+#0 C:\xampp\htdocs\bempnc-1\app\Views\users\index.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 43, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/index', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(29): view('users/index', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 19:51:00 --> Undefined index: fullname
+#0 C:\xampp\htdocs\bempnc-1\app\Views\users\index.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 48, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/index', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(29): view('users/index', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->index()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 19:53:56 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(132): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 132, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->insert()
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 20:08:48 --> Undefined variable: curr_page
+#0 C:\xampp\htdocs\bempnc-1\app\Views\users\deleted.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('users/deleted', Array, true)
+#4 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(303): view('users/deleted', Array)
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->show_all_deleted()
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-08-11 20:15:48 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$getNumRows
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(150): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 150, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->edit('3')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 20:16:34 --> Trying to get property 'getNumRows' of non-object
+#0 C:\xampp\htdocs\bempnc-1\app\Controllers\Users.php(150): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'C:\\xampp\\htdocs...', 150, Array)
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Users->edit('3')
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users))
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-08-11 21:02:23 --> Invalid file: categories/add.php
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('categories/add....')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('categories/add', Array, true)
+#2 C:\xampp\htdocs\bempnc-1\app\Controllers\Categories.php(40): view('categories/add', Array)
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Categories->add()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categories))
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-08-11 21:44:32 --> require is not a valid rule.
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Validation\Validation.php(300): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('require')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('cat_name', 'cat_name', 'Anggaran Dasar ...', Array, Array)
+#2 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#3 C:\xampp\htdocs\bempnc-1\app\Controllers\Categories.php(111): CodeIgniter\Controller->validate(Array)
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Categories->update('1')
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categories))
+#6 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-08-11 21:48:33 --> Invalid file: categories/deleted.php
+#0 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('categories/dele...')
+#1 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('categories/dele...', Array, true)
+#2 C:\xampp\htdocs\bempnc-1\app\Controllers\Categories.php(147): view('categories/dele...', Array)
+#3 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Categories->show_all_deleted()
+#4 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categories))
+#5 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc-1\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc-1\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}

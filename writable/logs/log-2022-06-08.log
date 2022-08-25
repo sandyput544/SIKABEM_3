@@ -1,0 +1,120 @@
+CRITICAL - 2022-06-08 02:56:10 --> Undefined variable: encrypter
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\anggota\edit.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 12, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(183): view('/pengurus/anggo...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('2')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-08 03:29:47 --> Decrypting: authentication failed.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 C:\xampp\htdocs\bempnc\app\Views\pengurus\anggota\edit.php(13): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('\x1F\x17"Q?q???v??\x05\x7F?...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#5 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(183): view('/pengurus/anggo...', Array)
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('2')
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-06-08 19:02:29 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(243): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 243, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->update('1')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-08 19:05:50 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(243): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 243, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->update('1')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-08 19:07:05 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(243): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 243, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->update('1')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-08 19:09:29 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(265): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 265, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->update('9')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-08 19:37:47 --> Unknown column 'username_slug' in 'field list'
+CRITICAL - 2022-06-08 19:37:47 --> Unknown column 'username_slug' in 'field list'
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE `members...', 0)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `members...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `members...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1913): CodeIgniter\Database\BaseConnection->query('UPDATE `members...', Array, false)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(298): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(865): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(651): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(656): CodeIgniter\Model->update('9', Array)
+#8 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(283): CodeIgniter\BaseModel->save(Array)
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->update('9')
+#10 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#11 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+CRITICAL - 2022-06-08 21:12:33 --> Call to undefined method App\Models\ArticleModel::getArticle
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Artikel.php(21): CodeIgniter\Model->__call('getArticle', Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Artikel->index()
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Artikel))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-08 21:20:29 --> Table 'sibem.articles' doesn't exist
+CRITICAL - 2022-06-08 21:20:29 --> Table 'sibem.articles' doesn't exist
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\bempnc\app\Models\ArticleModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Artikel.php(21): App\Models\ArticleModel->getArticle()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Artikel->index()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Artikel))
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-06-08 22:52:06 --> Undefined variable: articles
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\artikel\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/artik...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Artikel.php(23): view('/pengurus/artik...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Artikel->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Artikel))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-08 22:52:40 --> Undefined variable: articles
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\artikel\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/artik...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Artikel.php(23): view('/pengurus/artik...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Artikel->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Artikel))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

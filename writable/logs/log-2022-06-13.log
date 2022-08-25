@@ -1,0 +1,184 @@
+ERROR - 2022-06-13 02:39:14 --> Table 'events' already exists
+CRITICAL - 2022-06-13 05:08:07 --> Undefined index: event_id
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\event\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(24): view('/pengurus/event...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-13 05:10:09 --> Table 'sibem.events' doesn't exist
+CRITICAL - 2022-06-13 05:10:09 --> Table 'sibem.events' doesn't exist
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(22): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->index()
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-13 05:10:12 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-06-13 05:11:17 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+ERROR - 2022-06-13 05:11:27 --> Incorrect table definition; there can be only one auto column and it must be defined as a key
+CRITICAL - 2022-06-13 05:15:17 --> Undefined variable: article
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\event\preview.php(6): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(144): view('/pengurus/event...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->preview('makan-makan')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 05:15:54 --> Undefined index: content
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\event\preview.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(144): view('/pengurus/event...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->preview('makan-makan')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 05:17:01 --> Undefined variable: article
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\event\edit.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(85): view('/pengurus/event...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->edit('makan-makan')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 05:19:12 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\event\edit.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(85): view('/pengurus/event...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->edit('makan-makan')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 05:19:58 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\event\edit.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(85): view('/pengurus/event...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->edit('makan-makan')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 05:20:53 --> Cannot use object of type App\Models\EventsModel as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/event...', Array, true)
+#3 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Events.php(85): view('/pengurus/event...', Array)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Events->edit('makan-makan')
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Events))
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+ERROR - 2022-06-13 13:37:26 --> Table 'sibem.criticsuggestions' doesn't exist
+CRITICAL - 2022-06-13 13:37:26 --> Table 'sibem.criticsuggestions' doesn't exist
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Criticsuggestions.php(22): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Criticsuggestions->index()
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Criticsuggestions))
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-13 15:41:16 --> Table 'sibem.criticsuggestions' doesn't exist
+CRITICAL - 2022-06-13 15:41:16 --> Table 'sibem.criticsuggestions' doesn't exist
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(183): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(584): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Criticsuggestions.php(22): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Criticsuggestions->index()
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Criticsuggestions))
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-06-13 18:42:58 --> Unknown table 'sibem.criticsuggestions'
+ERROR - 2022-06-13 18:43:07 --> Error connecting to the database: Class 'SQLite3' not found
+ERROR - 2022-06-13 18:53:26 --> Unknown table 'sibem.criticsuggestions'
+ERROR - 2022-06-13 18:53:26 --> Error connecting to the database: Class 'SQLite3' not found
+CRITICAL - 2022-06-13 22:06:46 --> Undefined variable: events
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\kritik-saran\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/kriti...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Criticsuggestions.php(24): view('/pengurus/kriti...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Criticsuggestions->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Criticsuggestions))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 22:07:28 --> Undefined variable: events
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\kritik-saran\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/kriti...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Criticsuggestions.php(24): view('/pengurus/kriti...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Criticsuggestions->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Criticsuggestions))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 22:09:53 --> Undefined variable: events
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\kritik-saran\index.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 35, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/kriti...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Criticsuggestions.php(24): view('/pengurus/kriti...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Criticsuggestions->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Criticsuggestions))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-13 22:21:06 --> Undefined variable: critics
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\kritik-saran\index.php(36): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 36, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/kriti...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Criticsuggestions.php(24): view('/pengurus/kriti...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Criticsuggestions->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Criticsuggestions))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

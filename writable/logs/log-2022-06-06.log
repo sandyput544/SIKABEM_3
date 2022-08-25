@@ -1,0 +1,79 @@
+CRITICAL - 2022-06-06 00:51:18 --> Undefined property: App\Controllers\Pengurus\Anggota::$encryption
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(107): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 107, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->save()
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:16:13 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:18:52 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:20:22 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:25:54 --> Undefined index: nama_lengkap
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:27:59 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:29:30 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 04:31:45 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(149): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\xampp\\htdocs...', 149, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->edit('gitagitaaa')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-06 15:19:00 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-06-06 19:29:38 --> Undefined property: stdClass::$dept_name
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\anggota\tambah.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(52): view('/pengurus/anggo...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->add()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

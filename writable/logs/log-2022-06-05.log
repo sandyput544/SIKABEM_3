@@ -1,0 +1,35 @@
+CRITICAL - 2022-06-05 22:11:06 --> Encrypter needs a starter key.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Config\Services.php(215): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Config\BaseService.php(248): CodeIgniter\Config\Services::encrypter()
+#3 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(18): CodeIgniter\Config\BaseService::__callStatic('encrypter', Array)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->index()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-05 22:11:46 --> Encrypter needs a starter key.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Encryption\Encryption.php(124): CodeIgniter\Encryption\Exceptions\EncryptionException::forNeedsStarterKey()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Config\Services.php(215): CodeIgniter\Encryption\Encryption->initialize(Object(Config\Encryption))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Config\BaseService.php(248): CodeIgniter\Config\Services::encrypter()
+#3 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(18): CodeIgniter\Config\BaseService::__callStatic('encrypter', Array)
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->index()
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-05 22:18:57 --> Decrypting: authentication failed.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Encryption\Handlers\OpenSSLHandler.php(98): CodeIgniter\Encryption\Exceptions\EncryptionException::forAuthenticationFailed()
+#1 C:\xampp\htdocs\bempnc\app\Views\pengurus\anggota\index.php(12): CodeIgniter\Encryption\Handlers\OpenSSLHandler->decrypt('')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#5 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Anggota.php(30): view('/pengurus/anggo...', Array)
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Anggota->index()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Anggota))
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}

@@ -1,0 +1,279 @@
+CRITICAL - 2022-07-03 02:08:48 --> Call to a member function getNumRows() on array
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\user-role\menu-akses.php(44): checked_user_access('1', '1')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/user-...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(194): view('/pengurus/user-...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->user_akses('1')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-07-03 02:09:47 --> Call to undefined method App\Models\UserMenuAccessModel::getRowArray
+#0 C:\xampp\htdocs\bempnc\app\Helpers\bem_helper.php(10): CodeIgniter\Model->__call('getRowArray', Array)
+#1 C:\xampp\htdocs\bempnc\app\Views\pengurus\user-role\menu-akses.php(44): checked_user_access('1', '1')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/user-...', Array, true)
+#5 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(194): view('/pengurus/user-...', Array)
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->user_akses('1')
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#8 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-07-03 06:21:51 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\anggota\level-anggota\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(31): view('/pengurus/anggo...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-07-03 06:21:58 --> Invalid argument supplied for foreach()
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\anggota\level-anggota\index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'C:\\xampp\\htdocs...', 44, Array)
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(31): view('/pengurus/anggo...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->index()
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-07-03 07:20:51 --> Maximum execution time of 60 seconds exceeded
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2022-07-03 07:44:32 --> Invalid file: /pengurus/level-anggota/edit.php
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pengurus/level...')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/level...', Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(106): view('/pengurus/level...', Array)
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->edit('1')
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 08:44:49 --> Invalid file: /pengurus/anggota/level-anggota/index.php
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pengurus/anggo...')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(31): view('/pengurus/anggo...', Array)
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->index()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 08:45:09 --> Invalid file: /pengurus/anggota/level-anggota/index.php
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pengurus/anggo...')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(31): view('/pengurus/anggo...', Array)
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->index()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 08:46:20 --> Invalid file: /pengurus/anggota/level-anggota/index.php
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pengurus/anggo...')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(31): view('/pengurus/anggo...', Array)
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->index()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 08:46:59 --> Invalid file: /pengurus/anggota/level-anggota/index.php
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('/pengurus/anggo...')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/anggo...', Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Memberlevels.php(31): view('/pengurus/anggo...', Array)
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Memberlevels->index()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Memberlevels))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 11:38:31 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:38:53 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:39:02 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:39:03 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:39:10 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:39:17 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:39:18 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:43:55 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:44:56 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:46:16 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:46:18 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:46:19 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:46:35 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:46:53 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 11:47:32 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 18:50:27 --> There is no data to insert.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(224): CodeIgniter\Model->insert()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 18:50:28 --> There is no data to insert.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(224): CodeIgniter\Model->insert()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 18:50:29 --> There is no data to insert.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(224): CodeIgniter\Model->insert()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-07-03 18:50:35 --> There is no data to insert.
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\BaseModel.php(718): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('insert')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Model.php(625): CodeIgniter\BaseModel->insert(Array, true)
+#2 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(224): CodeIgniter\Model->insert()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+ERROR - 2022-07-03 19:06:11 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':1:' at line 3
+CRITICAL - 2022-07-03 19:06:11 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->edit_akses()
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-07-03 22:49:35 --> Call to a member function getNumRows() on array
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\user-role\menu-akses.php(42): checked_user_access('1', '1')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/user-...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(194): view('/pengurus/user-...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->user_akses('1')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-07-03 23:12:21 --> Cannot use object of type CodeIgniter\Database\MySQLi\Result as array
+#0 C:\xampp\htdocs\bempnc\app\Views\pengurus\user-role\menu-akses.php(42): checked_user_access('1', '1')
+#1 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Common.php(1089): CodeIgniter\View\View->render('/pengurus/user-...', Array, true)
+#4 C:\xampp\htdocs\bempnc\app\Controllers\Pengurus\Userrole.php(194): view('/pengurus/user-...', Array)
+#5 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(832): App\Controllers\Pengurus\Userrole->user_akses('1')
+#6 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pengurus\Userrole))
+#7 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\bempnc\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\bempnc\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

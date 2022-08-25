@@ -1,0 +1,8 @@
+__ci_last_regenerate|i:1660485003;_ci_previous_url|s:33:"http://localhost:8080/profil/edit";pos_id|s:1:"2";photo|s:35:"1660461545_9c5739f2c011f05644cf.png";is_logged_in|b:1;email|s:16:"rendikp@mail.com";full_name|s:19:"Rendi Karisma Putra";pesan|s:403:"
+        <div class="col-12">
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+                <i class="bi-check-circle-fill flex-shrink-0 me-2"></i>
+                Anda berhasil memperbarui akun anda!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}

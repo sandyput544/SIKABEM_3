@@ -1,0 +1,73 @@
+<?php
+
+namespace App\Filters;
+
+use CodeIgniter\Database\Database;
+use CodeIgniter\Filters\FilterInterface;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+
+class Auth implements FilterInterface
+{
+    /**
+     * Do whatever processing this filter needs to do.
+     * By default it should not return anything during
+     * normal execution. However, when an abnormal state
+     * is found, it should return an instance of
+     * CodeIgniter\HTTP\Response. If it does, script
+     * execution will end and that Response will be
+     * sent back to the client, allowing for error pages,
+     * redirects, etc.
+     *
+     * @param RequestInterface $request
+     * @param array|null       $arguments
+     *
+     * @return mixed
+     */
+    public function before(RequestInterface $request, $arguments = null)
+    {
+        if (!session()->get('is_logged_in')) {
+            return redirect()->to(base_url('auth/'));
+        }
+        // else {
+        //     $uri = new \CodeIgniter\HTTP\URI();
+        //     $getUri = $uri->getSegment(1);
+
+        //     if ($getUri === 'profil') {
+        //         return redirect()->to(base_url('profil'));
+        //     } else {
+        //         $db =  \Config\Database::connect();
+        //         Ambil data session pos_id lalu cek dengan uri segment dan mengambil data menu id
+        //         $pos_id = session('pos_id');
+        //         $menu_id = $db->query('
+        //         SELECT id FROM menus WHERE menu_url=' . $getUri . '
+        //         ');
+
+        //         $get_posmenu = $db->query('
+        //         SELECT * FROM position_menu WHERE pos_id=' . $pos_id . ' AND menu_id=' . $menu_id . '
+        //         ');
+
+        //         if ($get_posmenu->getNumRows() < 1) {
+        //             return redirect()->to(base_url('auth/blocked'));
+        //         }
+        //     }
+        // }
+    }
+
+    /**
+     * Allows After filters to inspect and modify the response
+     * object as needed. This method does not allow any way
+     * to stop execution of other after filters, short of
+     * throwing an Exception or Error.
+     *
+     * @param RequestInterface  $request
+     * @param ResponseInterface $response
+     * @param array|null        $arguments
+     *
+     * @return mixed
+     */
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
+    {
+        //
+    }
+}
