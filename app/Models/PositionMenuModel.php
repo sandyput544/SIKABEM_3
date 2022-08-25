@@ -9,5 +9,5 @@ class PositionMenuModel extends Model
     protected $table            = 'position_menu';
     protected $returnType       = 'array';
     protected $protectFields    = true;
-    protected $allowedFields    = ['pos_id', 'menu_id'];
+    protected $allowedFields    = ['kd_jabatan', 'kd_menu'];
 }

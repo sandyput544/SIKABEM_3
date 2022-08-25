@@ -9,14 +9,15 @@ class Categories extends Migration
   public function up()
   {
     $this->forge->addField([
-      'id' => ['type' => 'int', 'constraint' => 3, 'auto_increment' => true, 'unsigned' => true],
-      'cat_name' => ['type' => 'varchar', 'constraint' => 128],
+      'kd_kategori' => ['type' => 'int', 'constraint' => 3, 'auto_increment' => true, 'unsigned' => true],
+      'nama_kat' => ['type' => 'varchar', 'constraint' => 128],
+      'singkatan_kat' => ['type' => 'varchar', 'constraint' => 20],
       'slug' => ['type' => 'varchar', 'constraint' => 128],
       'created_at' => ['type' => 'datetime', 'null' => true],
       'updated_at' => ['type' => 'datetime', 'null' => true],
       'deleted_at' => ['type' => 'datetime', 'null' => true],
     ]);
-    $this->forge->addPrimaryKey('id');
+    $this->forge->addPrimaryKey('kd_kategori');
     $this->forge->createTable('categories');
   }
 

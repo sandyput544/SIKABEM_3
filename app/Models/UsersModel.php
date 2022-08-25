@@ -12,9 +12,10 @@ class UsersModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['full_name', 'gender', 'religion', 'email', 'password', 'password_hash', 'address', 'phone', 'birthplace', 'birthdate', 'photo', 'is_active', 'deleted_at'];
+    protected $allowedFields    = ['kd_jabatan', 'nama_user', 'tmp_lahir', 'tgl_lahir', 'jk', 'agama', 'no_hp', 'alamat', 'email', 'password', 'password_hash', 'foto', 'user_active', 'is_login', 'deleted_at'];
 
-    // Dates
     protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 }

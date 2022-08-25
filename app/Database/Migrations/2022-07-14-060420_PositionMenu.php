@@ -9,8 +9,8 @@ class PositionMenu extends Migration
   public function up()
   {
     $this->forge->addField([
-      'pos_id' => ['type' => 'int', 'constraint' => 2],
-      'menu_id' => ['type' => 'int', 'constraint' => 2],
+      'kd_jabatan' => ['type' => 'int', 'constraint' => 2],
+      'kd_menu' => ['type' => 'int', 'constraint' => 2],
     ]);
     $this->forge->createTable('position_menu');
   }

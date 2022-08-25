@@ -7,14 +7,15 @@ use CodeIgniter\Model;
 class CategoriesModel extends Model
 {
     protected $table            = 'categories';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'kd_kategori';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['cat_name', 'slug', 'deleted_at'];
+    protected $allowedFields    = ['nama_kat', 'singkatan_kat', 'slug', 'deleted_at'];
 
-    // Dates
     protected $useTimestamps = true;
-    protected $dateFormat    = 'datetime';
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
+    protected $deletedField  = 'deleted_at';
 }

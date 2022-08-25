@@ -5,24 +5,18 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b7f719ecc72fcc11fd7c6935095aa68796eca58c',
+        'reference' => '81c6432f6b82a0ef455cdd8bb066f94fce5aa593',
         'name' => 'codeigniter4/bempnc',
         'dev' => true,
     ),
     'versions' => array(
-        'codeigniter4/authentication-implementation' => array(
-            'dev_requirement' => false,
-            'provided' => array(
-                0 => '1.0',
-            ),
-        ),
         'codeigniter4/bempnc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b7f719ecc72fcc11fd7c6935095aa68796eca58c',
+            'reference' => '81c6432f6b82a0ef455cdd8bb066f94fce5aa593',
             'dev_requirement' => false,
         ),
         'codeigniter4/framework' => array(
@@ -87,15 +81,6 @@
             'aliases' => array(),
             'reference' => '14daed4296fae74d9e3201d2c4925d1acb7aa614',
             'dev_requirement' => true,
-        ),
-        'myth/auth' => array(
-            'pretty_version' => 'v1.2.1',
-            'version' => '1.2.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../myth/auth',
-            'aliases' => array(),
-            'reference' => '7d0347faa47bd754d2dc49593a9852800be73986',
-            'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
             'pretty_version' => 'v4.14.0',

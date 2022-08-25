@@ -4,15 +4,15 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ArchivesModel extends Model
+class OutgoingMail extends Model
 {
-    protected $table            = 'archives';
-    protected $primaryKey       = 'kd_arsip';
+    protected $table            = 'outgoing_mail';
+    protected $primaryKey       = 'kd_suratkeluar';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = true;
     protected $protectFields    = true;
-    protected $allowedFields    = ['kd_kategori', 'nomor_arsip', 'nama_arsip', 'nama_file', 'ukuran_file', 'mime', 'tgl_buat', 'nama_pembuat', 'deleted_at'];
+    protected $allowedFields    = ['kd_jenissurat', 'nomor_surat', 'kd_user', 'tgl_buat', 'tgl_ttd', 'perihal', 'lampiran', 'deleted_at'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';

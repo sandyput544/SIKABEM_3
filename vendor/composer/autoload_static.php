@@ -24,10 +24,6 @@ class ComposerStaticInitcffba630aeabcb0ceb0a30a086365495
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
         ),
-        'M' => 
-        array (
-            'Myth\\Auth\\' => 10,
-        ),
         'L' => 
         array (
             'Laminas\\Escaper\\' => 16,
@@ -72,10 +68,6 @@ class ComposerStaticInitcffba630aeabcb0ceb0a30a086365495
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
-        ),
-        'Myth\\Auth\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/myth/auth/src',
         ),
         'Laminas\\Escaper\\' => 
         array (
