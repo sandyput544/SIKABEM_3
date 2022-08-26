@@ -1,0 +1,8 @@
+__ci_last_regenerate|i:1661474312;_ci_previous_url|s:27:"http://localhost:8080/arsip";pesan|s:469:"
+        <div class="col-12">
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+                <i class="bi-check-circle-fill" bi flex-shrink-0 me-3"></i>
+                <span>Anda berhasil memperbarui arsip Laporan Pertanggungjawaban Kegiatan Open Recruitment.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}

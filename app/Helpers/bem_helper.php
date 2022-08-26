@@ -6,8 +6,8 @@ function flashAlert($alert_type = null, $alert_msg = null, $icon = 'bi-check-cir
     session()->setFlashdata('pesan', '
         <div class="col-12">
             <div class="alert alert-' . $alert_type . ' d-flex align-items-center alert-dismissible" role="alert">
-                <i class="' . $icon . '" flex-shrink-0 me-2"></i>
-                ' . $alert_msg . '
+                <i class="' . $icon . '" bi flex-shrink-0 me-3"></i>
+                <span>' . $alert_msg . '</span>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>');

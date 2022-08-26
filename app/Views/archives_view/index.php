@@ -15,19 +15,19 @@
       </div>
       <div class="col-12">
         <div class="card text-dark shadow overflow-hidden rounded-3">
-          <div class="card-header fw-bold fs-5 d-flex justify-content-between">
+          <div class="card-header fw-bold fs-5">
             <?= $card; ?>
-            <a href="infoUserPos" class="bi bi-info-circle text-secondary" data-bs-toggle="modal" data-bs-target="#infoUserPos"></a>
           </div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table align-middle">
-                <thead class="table-dark">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Kategori</th>
                     <th scope="col">Nama Arsip</th>
-                    <th scope="col">Tanggal Update</th>
+                    <th scope="col">Tahun Buat</th>
+                    <th scope="col">Nama Pembuat</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
@@ -36,16 +36,17 @@
                   foreach ($archives as $a) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $a['cat_name']; ?></td>
-                      <td><?= $a['archive_name']; ?></td>
-                      <td><?= $a['updated_at']; ?></td>
+                      <td><?= $a['nama_kat']; ?></td>
+                      <td><?= $a['nama_arsip']; ?></td>
+                      <td><?= $a['tgl_buat']; ?></td>
+                      <td><?= $a['nama_pembuat']; ?></td>
                       <td>
-                        <form action="<?= base_url('arsip/hapus/' . $a['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('arsip/hapus/' . $a['kd_arsip']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="DELETE">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $a['archive_name']; ?>?');"></button>
+                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $a['nama_arsip']; ?>?');"></button>
                         </form>
-                        <a href="<?= base_url('arsip/edit/' . $a['id']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
-                        <a href="<?= base_url('arsip/detail/' . $a['id']); ?>" class="btn btn-sm btn-info bi-eye-fill"></a>
+                        <a href="<?= base_url('arsip/edit/' . $a['kd_arsip']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
+                        <a href="<?= base_url('arsip/detail/' . $a['kd_arsip']); ?>" class="btn btn-sm btn-info bi-eye-fill"></a>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -54,33 +55,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="modal fade" id="infoUserPos" tabindex="-1" aria-labelledby="infoUserPosModal" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="infoUserPosModal">Info Menu Terhapus</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row g-3">
-          <div class="col-12">
-            <<p>Keterangan tombol aksi :</p>
-              <ol>
-                <li><button class="btn btn-primary"><i class="bi-plus-lg me-2"></i><span>Tambah Data</span></button> untuk menambah anggota.</li>
-                <li><button class="btn btn-secondary"><i class="bi-trash me-2"></i><span>Data Terhapus</span></button> untuk melihat menu yang terhapus.</li>
-                <li><button class="btn btn-warning"><i class="bi-pencil-fill"></i></button> untuk memperbarui data salah satu menu.</li>
-                <li><button class="btn btn-danger"><i class="bi-trash3-fill"></i></button> untuk menghapus data salah satu menu.</li>
-              </ol>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Mengerti</button>
       </div>
     </div>
   </div>

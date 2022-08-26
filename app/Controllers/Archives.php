@@ -24,13 +24,12 @@ class Archives extends BaseController
       'card'        => 'List Arsip',
       'archives'  => $this->arc_model
         ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
-        ->orderBy
+        ->orderBy('kd_arsip', 'DESC')
         ->findAll()
     ];
 
     return view('archives_view/index', $data);
   }
-
 
   // Fitur tambah archives --> Start
   public function add()
@@ -50,22 +49,42 @@ class Archives extends BaseController
     $getCatId = implode(",", $this->cat_model->findColumn('kd_kategori'));
     // Validasi input tambah folder
     $validate = [
-      'cat_id' => [
+      'kd_kategori' => [
         'rules' => 'required|in_list[' . $getCatId . ']',
         'errors' => [
           'in_list' => 'Kategori tidak terdaftar/tidak ada.'
         ]
       ],
-      'archive_name' => [
-        'rules' => 'required|alpha_numeric_space|is_unique[archives.archive_name]',
+      'nomor_arsip' => [
+        'rules' => 'required|string|is_unique[archives.nama_arsip]',
         'errors' => [
-          'required' => 'Mohon isi kolom nama folder.',
-          'alpha_numeric_space' => 'Yang anda masukkan bukan karakter alfabet, numerik dan spasi.',
-          'is_unique' => 'Nama menu sudah terdaftar.'
+          'required' => 'Mohon isi kolom nomor arsip.',
+          'is_unique' => 'Nomor arsip sudah terdaftar.'
         ]
       ],
-      'archive_file' => [
-        'rules' => 'max_size[archive_file,5120]|mime_in[archive_file,application/pdf]',
+      'nama_arsip' => [
+        'rules' => 'required|alpha_numeric_space|is_unique[archives.nama_arsip]',
+        'errors' => [
+          'required' => 'Mohon isi kolom nama arsip.',
+          'alpha_numeric_space' => 'Yang anda masukkan bukan karakter alfabet, numerik dan spasi.',
+          'is_unique' => 'Nama arsip sudah terdaftar.'
+        ]
+      ],
+      'tgl_buat' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Mohon isi kolom nama pembuat arsip.',
+        ]
+      ],
+      'nama_pembuat' => [
+        'rules' => 'required|alpha_space',
+        'errors' => [
+          'required' => 'Mohon isi kolom nama pembuat arsip.',
+          'alpha_numeric_space' => 'Yang anda masukkan bukan karakter alfabet dan spasi.',
+        ]
+      ],
+      'file_arsip' => [
+        'rules' => 'max_size[file_arsip,5120]|mime_in[file_arsip,application/pdf]',
         'errors' => [
           'max_size' => 'Ukuran file melebihi 5Mb.',
           'mime_in' => 'File yang diunggah bukan pdf.'
@@ -73,44 +92,48 @@ class Archives extends BaseController
       ],
     ];
     if (!$this->validate($validate)) {
-      return redirect()->to(base_url('/arsip/tambah'))->withInput();
-    }
-
-    // HTMLSpecialChars
-    $postCatId = htmlspecialchars($this->request->getVar('cat_id'));
-    $postArsip = htmlspecialchars($this->request->getVar('archive_name'));
-    $postFile = $this->request->getFile('archive_file');
-
-    $get_randname = $postFile->getRandomName();
-    $get_mime = $postFile->getMimeType();
-    $get_ext = $postFile->guessExtension('mb');
-    $get_size = $postFile->getSizeByUnit();
-
-    // Upload File
-    if ($postFile->getError() == 4) {
-      $msg = "Mohon unggah file terlebih dahulu.";
-      flashAlert('danger', $msg);
-      redirect()->to(base_url('arsip/tambah'));
+      return redirect()->to(base_url('arsip/tambah'))->withInput();
     } else {
-      // Buat direktori jika belum ada
-      if (!is_dir('archives')) {
-        mkdir('/archives', 0777, TRUE);
-      }
-      // Pindahkan file ke folder img menggunakan move()
-      $postFile->move('archives/', $get_randname);
+      // HTMLSpecialChars
+      $postKategori = htmlspecialchars($this->request->getVar('kd_kategori'));
+      $postNoArsip = htmlspecialchars($this->request->getVar('nomor_arsip'));
+      $postNamaArsip = htmlspecialchars($this->request->getVar('nama_arsip'));
+      $postCreatedDate = htmlspecialchars($this->request->getVar('tgl_buat'));
+      $postNamaPembuat = htmlspecialchars($this->request->getVar('nama_pembuat'));
+      $postFile = $this->request->getFile('file_arsip');
 
-      $this->arc_model->save([
-        'cat_id' => $postCatId,
-        'archive_name' => $postArsip,
-        'file_name' => $get_randname,
-        'file_ext' => $get_ext,
-        'file_size' => $get_size,
-        'mime_type' => $get_mime,
-      ]);
-      $msg = "Anda berhasil menambah arsip " . $postArsip . ".";
-      flashAlert('success', $msg);
+      $get_randname = $postFile->getRandomName();
+      $get_mime = $postFile->getMimeType();
+      $get_size = $postFile->getSizeByUnit('mb');
+
+      // Upload File
+      if ($postFile->getError() == 4) {
+        $msg = "Mohon unggah file terlebih dahulu.";
+        flashAlert('danger', $msg, 'bi-exclamation-circle-fill');
+        return redirect()->to(base_url('/arsip/tambah'))->withInput();
+      } else {
+        // Buat direktori jika belum ada
+        if (!is_dir('archives')) {
+          mkdir('/archives', 0777, TRUE);
+        }
+        // Pindahkan file ke folder img menggunakan move()
+        $postFile->move('archives/', $get_randname);
+
+        $this->arc_model->save([
+          'kd_kategori' => $postKategori,
+          'nomor_arsip' => $postNoArsip,
+          'nama_arsip' => $postNamaArsip,
+          'tgl_buat' => $postCreatedDate,
+          'nama_pembuat' => $postNamaPembuat,
+          'nama_file' => $get_randname,
+          'ukuran_file' => $get_size,
+          'mime' => $get_mime,
+        ]);
+        $msg = "Anda berhasil menambah arsip " . $postNamaArsip . ".";
+        flashAlert('success', $msg);
+        return redirect()->to(base_url('/arsip'));
+      }
     }
-    return redirect()->to(base_url('/arsip'));
   }
 
 
@@ -131,37 +154,65 @@ class Archives extends BaseController
   public function update($id)
   {
     // HTMLSpecialChars
-    $postCatId = htmlspecialchars($this->request->getVar('cat_id'));
-    $postArsip = htmlspecialchars($this->request->getVar('archive_name'));
-    $postFile = $this->request->getFile('archive_file');
+    $postKategori = htmlspecialchars($this->request->getVar('kd_kategori'));
+    $postNoArsip = htmlspecialchars($this->request->getVar('nomor_arsip'));
+    $postNamaArsip = htmlspecialchars($this->request->getVar('nama_arsip'));
+    $postCreatedDate = htmlspecialchars($this->request->getVar('tgl_buat'));
+    $postNamaPembuat = htmlspecialchars($this->request->getVar('nama_pembuat'));
+    $postFile = $this->request->getFile('file_arsip');
 
     $getArc = $this->arc_model->find($id);
     // Rule nama arsip
-    if ($postArsip != $getArc['archive_name']) {
-      $ruleName = 'required|alpha_numeric_space|is_unique[archives.archive_name]';
+    if ($postNamaArsip != $getArc['nama_arsip']) {
+      $ruleName = 'required|alpha_numeric_space|is_unique[archives.nama_arsip]';
     } else {
       $ruleName = 'required|alpha_numeric_space';
     }
+    if ($postNoArsip != $getArc['nomor_arsip']) {
+      $ruleNo = 'required|string|is_unique[archives.nama_arsip]';
+    } else {
+      $ruleNo = 'required|string';
+    }
 
-    $getCatId = implode(",", $this->cat_model->findColumn('id'));
+    $getCatId = implode(",", $this->cat_model->findColumn('kd_kategori'));
     // Validasi input tambah folder
     $validate = [
-      'cat_id' => [
+      'kd_kategori' => [
         'rules' => 'required|in_list[' . $getCatId . ']',
         'errors' => [
           'in_list' => 'Kategori tidak terdaftar/tidak ada.'
         ]
       ],
-      'archive_name' => [
-        'rules' => $ruleName,
+      'nomor_arsip' => [
+        'rules' => $ruleNo,
         'errors' => [
-          'required' => 'Mohon isi kolom nama folder.',
-          'alpha_numeric_space' => 'Yang anda masukkan bukan karakter alfabet, numerik dan spasi.',
-          'is_unique' => 'Nama menu sudah terdaftar.'
+          'required' => 'Mohon isi kolom nomor arsip.',
+          'is_unique' => 'Nomor arsip sudah terdaftar.'
         ]
       ],
-      'archive_file' => [
-        'rules' => 'max_size[archive_file,5120]|mime_in[archive_file,application/pdf]',
+      'nama_arsip' => [
+        'rules' => $ruleName,
+        'errors' => [
+          'required' => 'Mohon isi kolom nama arsip.',
+          'alpha_numeric_space' => 'Yang anda masukkan bukan karakter alfabet, numerik dan spasi.',
+          'is_unique' => 'Nama arsip sudah terdaftar.'
+        ]
+      ],
+      'tgl_buat' => [
+        'rules' => 'required',
+        'errors' => [
+          'required' => 'Mohon isi kolom nama pembuat arsip.',
+        ]
+      ],
+      'nama_pembuat' => [
+        'rules' => 'required|alpha_space',
+        'errors' => [
+          'required' => 'Mohon isi kolom nama pembuat arsip.',
+          'alpha_numeric_space' => 'Yang anda masukkan bukan karakter alfabet dan spasi.',
+        ]
+      ],
+      'file_arsip' => [
+        'rules' => 'max_size[file_arsip,5120]|mime_in[file_arsip,application/pdf]',
         'errors' => [
           'max_size' => 'Ukuran file melebihi 5Mb.',
           'mime_in' => 'File yang diunggah bukan pdf.'
@@ -170,42 +221,41 @@ class Archives extends BaseController
     ];
     if (!$this->validate($validate)) {
       return redirect()->to(base_url('/arsip/edit' . $id))->withInput();
-    }
-
-
-    // Upload File
-    if ($postFile->getError() == 4) {
-      $file_name = $getArc['file_name'];
-      $get_mime = $getArc['mime_type'];
-      $get_ext = $getArc['file_ext'];
-      $get_size = $getArc['file_size'];
     } else {
-      // Buat direktori jika belum ada
-      if (!is_dir('archives')) {
-        mkdir('/archives', 0777, TRUE);
+      // Upload File
+      if ($postFile->getError() == 4) {
+        $file_name = $getArc['nama_file'];
+        $get_mime = $getArc['mime'];
+        $get_size = $getArc['ukuran_file'];
+      } else {
+        // Buat direktori jika belum ada
+        if (!is_dir('archives')) {
+          mkdir('/archives', 0777, TRUE);
+        }
+        $file_name = $postFile->getRandomName();
+        $get_mime = $postFile->getMimeType();
+        $get_size = $postFile->getSizeByUnit('mb');
+
+        // Pindahkan file ke folder img menggunakan move()
+        $postFile->move('archives/', $file_name);
       }
-      $file_name = $postFile->getRandomName();
-      $get_mime = $postFile->getMimeType();
-      $get_ext = $postFile->guessExtension('mb');
-      $get_size = $postFile->getSizeByUnit();
 
-      // Pindahkan file ke folder img menggunakan move()
-      $postFile->move('archives/', $file_name);
+      $this->arc_model->save([
+        'id' => $id,
+        'kd_kategori' => $postKategori,
+        'nomor_arsip' => $postNoArsip,
+        'nama_arsip' => $postNamaArsip,
+        'tgl_buat' => $postCreatedDate,
+        'nama_pembuat' => $postNamaPembuat,
+        'nama_file' => $file_name,
+        'ukuran_file' => $get_size,
+        'mime' => $get_mime,
+      ]);
+
+      $msg = "Anda berhasil memperbarui arsip " . $postNamaArsip . ".";
+      flashAlert('success', $msg);
+      return redirect()->to(base_url('/arsip'));
     }
-
-    $this->arc_model->save([
-      'id' => $id,
-      'cat_id' => $postCatId,
-      'archive_name' => $postArsip,
-      'file_name' => $file_name,
-      'file_ext' => $get_ext,
-      'file_size' => $get_size,
-      'mime_type' => $get_mime,
-    ]);
-
-    $msg = "Anda berhasil memperbarui arsip " . $postArsip . ".";
-    flashAlert('success', $msg);
-    return redirect()->to(base_url('/arsip'));
   }
 
 
@@ -219,11 +269,10 @@ class Archives extends BaseController
     $file->move('archives/terhapus/');
 
     $this->arc_model->delete($id);
-    $msg = "Anda berhasil menghapus arsip " . $getArc['archive_name'] . ".";
+    $msg = "Anda berhasil menghapus arsip " . $getArc['nama_arsip'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/arsip'));
   }
-
 
   // Fitur Tampil Arsip Terhapus --> Start
   public function show_all_deleted()
@@ -237,7 +286,6 @@ class Archives extends BaseController
     return view('archives_view/deleted', $data);
   }
 
-
   // Fitur Restore Arsip Terhapus --> Start
   public function restore_one($id)
   {
@@ -249,7 +297,7 @@ class Archives extends BaseController
     $file = new \CodeIgniter\Files\File($path);
     $file->move('archives/');
 
-    $msg = "Berhasil mengembalikan " . $getArc['archive_name'] . ".";
+    $msg = "Berhasil mengembalikan " . $getArc['nama_arsip'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('arsip/terhapus'));
   }
@@ -278,7 +326,6 @@ class Archives extends BaseController
 
   public function permanent_delete_all()
   {
-
     // Ambil semua data yang terhapus dulu
     $getDelArc = $this->arc_model->onlyDeleted()->findAll();
     // Perulangan move file
@@ -298,7 +345,7 @@ class Archives extends BaseController
   public function permanent_delete_one($id)
   {
     $getArc = $this->arc_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus permanen " . $getArc['archive_name'] . " yang terhapus.";
+    $msg = "Berhasil menghapus permanen " . $getArc['nama_arsip'] . " yang terhapus.";
 
     // File mana yang ingin dihapus
     $path = "archives/terhapus/" . $getArc['file_name'];
