@@ -3,7 +3,7 @@
 
 <div class="row g-3">
   <div class="col-12">
-    <a href="<?= base_url('koleksi/list/' . $slug); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
+    <a href="<?= base_url('koleksi'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
   <div class="col-12">
     <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
@@ -16,17 +16,27 @@
                 <tr>
                   <td>Nama Arsip</td>
                   <td>:</td>
-                  <td><?= $archives['archive_name']; ?></td>
+                  <td><?= $archives['nama_arsip']; ?></td>
                 </tr>
                 <tr>
                   <td>Jenis Arsip</td>
                   <td>:</td>
-                  <td><?= $cat_name; ?></td>
+                  <td><?= $nama_kat; ?></td>
                 </tr>
                 <tr>
-                  <td>Ukuran File</td>
+                  <td>Nomor Arsip</td>
                   <td>:</td>
-                  <td><?= $archives['file_size']; ?></td>
+                  <td><?= $archives['nomor_arsip']; ?></td>
+                </tr>
+                <tr>
+                  <td>Pembuat Arsip</td>
+                  <td>:</td>
+                  <td><?= $archives['nama_pembuat']; ?></td>
+                </tr>
+                <tr>
+                  <td>Tanggal Buat</td>
+                  <td>:</td>
+                  <td><?= $archives['tgl_buat']; ?></td>
                 </tr>
               </tbody>
             </table>
@@ -35,14 +45,19 @@
             <table class="table table-borderless">
               <tbody>
                 <tr>
-                  <td>MIME Type</td>
+                  <td>Ukuran File</td>
                   <td>:</td>
-                  <td><?= $archives['mime_type']; ?></td>
+                  <td><?= $archives['ukuran_file']; ?> Mb</td>
                 </tr>
                 <tr>
-                  <td>Ekstensi</td>
+                  <td>MIME Type</td>
                   <td>:</td>
-                  <td><?= $archives['file_ext']; ?></td>
+                  <td><?= $archives['mime']; ?></td>
+                </tr>
+                <tr>
+                  <td>Tanggal Upload</td>
+                  <td>:</td>
+                  <td><?= $archives['created_at']; ?></td>
                 </tr>
                 <tr>
                   <td>Tanggal Diperbarui</td>
@@ -53,7 +68,7 @@
             </table>
           </div>
           <div class="col-12 d-flex justify-content-end">
-            <a href="<?= base_url('koleksi/download/' . $archives['file_name']); ?>" class="btn btn-secondary rounded-3"><i class="bi-download me-2"></i><span>Download File</span></a>
+            <a href="<?= base_url('koleksi/download/' . $archives['nama_file']); ?>" class="btn btn-secondary rounded-3"><i class="bi-download me-2"></i><span>Download File</span></a>
           </div>
         </div>
       </div>
@@ -63,7 +78,7 @@
     <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
       <div class="card-header fw-bold fs-5">Preview File</div>
       <div class="card-body">
-        <iframe src="<?= base_url('archives/' . $archives['file_name']); ?>" width="100%" height="500px"></iframe>
+        <iframe src="<?= base_url('archives/' . $archives['nama_file']); ?>" width="100%" height="500px"></iframe>
       </div>
     </div>
   </div>

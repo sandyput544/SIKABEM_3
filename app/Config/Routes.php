@@ -120,12 +120,27 @@ $routes->group('arsip', ["filter" => "auth"], function ($routes) {
     $routes->add('edit/(:num)', 'Archives::edit/$1');
     $routes->post('update/(:num)', 'Archives::update/$1');
     $routes->delete('hapus/(:num)', 'Archives::delete/$1');
-    $routes->add('detail/(:num)', 'Archives::detail/$1');
+    $routes->add('detail/(:any)', 'Archives::detail/$1');
     $routes->add('terhapus', 'Archives::show_all_deleted');
     $routes->put('pulihkan/(:num)', 'Archives::restore_one/$1');
     $routes->put('pulihkanSemua/', 'Archives::restore_all');
     $routes->delete('hapusPermanenSemua', 'Archives::permanent_delete_all');
     $routes->delete('hapusPermanen/(:num)', 'Archives::permanent_delete_one/$1');
+});
+
+// Grup Routes Arsip
+$routes->group('jenis-surat', ["filter" => "auth"], function ($routes) {
+    $routes->add('', 'MailType::index');
+    $routes->add('tambah', 'MailType::add');
+    $routes->post('save', 'MailType::insert');
+    $routes->add('edit/(:num)', 'MailType::edit/$1');
+    $routes->post('update/(:num)', 'MailType::update/$1');
+    $routes->delete('hapus/(:num)', 'MailType::delete/$1');
+    $routes->add('terhapus', 'MailType::show_all_deleted');
+    $routes->put('pulihkan/(:num)', 'MailType::restore_one/$1');
+    $routes->put('pulihkanSemua/', 'MailType::restore_all');
+    $routes->delete('hapusPermanenSemua', 'MailType::permanent_delete_all');
+    $routes->delete('hapusPermanen/(:num)', 'MailType::permanent_delete_one/$1');
 });
 
 // Grup Routes Koleksi Arsip

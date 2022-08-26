@@ -4,15 +4,18 @@ namespace App\Controllers;
 
 use \App\Models\CategoriesModel;
 use \App\Models\ArchivesModel;
+use \App\Models\ArchivesAccessModel;
 
 class Archives extends BaseController
 {
   protected $arc_model;
   protected $cat_model;
+  protected $acc_model;
   public function __construct()
   {
     $this->arc_model = new ArchivesModel();
     $this->cat_model = new CategoriesModel();
+    $this->acc_model = new ArchivesAccessModel();
   }
 
   // Menampilkan list archives -> Start
@@ -241,7 +244,7 @@ class Archives extends BaseController
       }
 
       $this->arc_model->save([
-        'id' => $id,
+        'kd_arsip' => $id,
         'kd_kategori' => $postKategori,
         'nomor_arsip' => $postNoArsip,
         'nama_arsip' => $postNamaArsip,
@@ -264,14 +267,33 @@ class Archives extends BaseController
   {
     $getArc = $this->arc_model->find($id);
 
-    $path = "archives/" . $getArc['file_name'];
+    $path = "archives/" . $getArc['nama_file'];
     $file = new \CodeIgniter\Files\File($path);
     $file->move('archives/terhapus/');
 
     $this->arc_model->delete($id);
-    $msg = "Anda berhasil menghapus arsip " . $getArc['nama_arsip'] . ".";
+    $msg = "Anda berhasil menghapus arsip " . $getArc['nama_arsip'] . ". Anda dapat memulihkan " . $getArc['nama_arsip'] . " di halaman arsip terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/arsip'));
+  }
+
+  public function detail($slug)
+  {
+    $getArc = $this->arc_model->where('nama_file', $slug)->first();
+    $getCat = $this->cat_model->find($getArc['kd_kategori']);
+    $data = [
+      'title'        => 'Detail Arsip',
+      'navbar'       => 'Master Arsip',
+      'accessing'    => 'List Akun Pengakses Arsip',
+      'card'         => 'Detail Arsip',
+      'nama_kat'     => $getCat['nama_kat'],
+      'archives'     => $getArc,
+      'list_access'  => $this->acc_model
+        ->join('users', 'users.kd_user = archives_access.kd_user')
+        ->join('positions', 'positions.kd_jabatan = users.kd_jabatan')
+        ->where('kd_arsip', $getArc['kd_arsip'])->findAll()
+    ];
+    return view('archives_view/detail', $data);
   }
 
   // Fitur Tampil Arsip Terhapus --> Start
@@ -281,7 +303,9 @@ class Archives extends BaseController
       'title'        => 'Arsip Terhapus',
       'navbar'       => 'Master Arsip',
       'card'         => 'List Arsip Terhapus',
-      'archives'     => $this->arc_model->onlyDeleted()->findAll(),
+      'archives'     => $this->arc_model->onlyDeleted()
+        ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+        ->findAll(),
     ];
     return view('archives_view/deleted', $data);
   }
@@ -293,7 +317,7 @@ class Archives extends BaseController
 
     $getArc = $this->arc_model->find($id);
 
-    $path = "archives/terhapus/" . $getArc['file_name'];
+    $path = "archives/terhapus/" . $getArc['nama_file'];
     $file = new \CodeIgniter\Files\File($path);
     $file->move('archives/');
 
@@ -310,7 +334,7 @@ class Archives extends BaseController
     $getDelArc = $this->arc_model->onlyDeleted()->findAll();
     // Perulangan move file
     foreach ($getDelArc as $del) {
-      $path = "archives/terhapus/" . $del['file_name'];
+      $path = "archives/terhapus/" . $del['nama_file'];
       $file = new \CodeIgniter\Files\File($path);
       $file->move('archives/');
     }
@@ -330,15 +354,14 @@ class Archives extends BaseController
     $getDelArc = $this->arc_model->onlyDeleted()->findAll();
     // Perulangan move file
     foreach ($getDelArc as $del) {
-      $path = "archives/terhapus/" . $del['file_name'];
+      $path = "archives/terhapus/" . $del['nama_file'];
       // Unlink file
       unlink($path);
-      $this->arc_model->purgeDeleted();
-
-      $msg = "Berhasil menghapus permanen semua arsip yang terhapus.";
-      flashAlert('success', $msg);
     }
+    $this->arc_model->purgeDeleted();
 
+    $msg = "Berhasil menghapus permanen semua arsip yang terhapus.";
+    flashAlert('success', $msg);
     return redirect()->to(base_url('/arsip/terhapus'));
   }
 
@@ -348,7 +371,7 @@ class Archives extends BaseController
     $msg = "Berhasil menghapus permanen " . $getArc['nama_arsip'] . " yang terhapus.";
 
     // File mana yang ingin dihapus
-    $path = "archives/terhapus/" . $getArc['file_name'];
+    $path = "archives/terhapus/" . $getArc['nama_file'];
     // Unlink file
     unlink($path);
 

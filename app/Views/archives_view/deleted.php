@@ -27,10 +27,11 @@
           </div>
           <div class="card-body row g-3">
             <div class="table-responsive">
-              <table class="table align-middle">
-                <thead class="table-dark">
+              <table class="table align-middle table-striped">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Kategori</th>
                     <th scope="col">Nama Arsip</th>
                     <th scope="col">Aksi</th>
                   </tr>
@@ -41,15 +42,16 @@
                   foreach ($archives as $a) : ?>
                     <tr>
                       <th scope="row"><?= $i++; ?></th>
-                      <td><?= $a['archive_name']; ?></td>
+                      <td><?= $a['nama_kat']; ?></td>
+                      <td><?= $a['nama_arsip']; ?></td>
                       <td>
-                        <form action="<?= base_url('arsip/pulihkan/' . $a['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('arsip/pulihkan/' . $a['kd_arsip']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="PUT">
-                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $a['file_name']; ?>?');"></button>
+                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $a['nama_file']; ?>?');"></button>
                         </form>
-                        <form action="<?= base_url('arsip/hapusPermanen/' . $a['id']); ?>" class="d-inline" method="post">
+                        <form action="<?= base_url('arsip/hapusPermanen/' . $a['kd_arsip']); ?>" class="d-inline" method="post">
                           <input type="hidden" name="_method" value="delete">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $a['file_name']; ?> secara permanen?');"></button>
+                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $a['nama_file']; ?> secara permanen?');"></button>
                         </form>
                       </td>
                     </tr>

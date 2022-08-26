@@ -46,7 +46,7 @@
                           <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $a['nama_arsip']; ?>?');"></button>
                         </form>
                         <a href="<?= base_url('arsip/edit/' . $a['kd_arsip']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
-                        <a href="<?= base_url('arsip/detail/' . $a['kd_arsip']); ?>" class="btn btn-sm btn-info bi-eye-fill"></a>
+                        <a href="<?= base_url('arsip/detail/' . $a['nama_file']); ?>" class="btn btn-sm btn-info bi-eye-fill"></a>
                       </td>
                     </tr>
                   <?php endforeach; ?>

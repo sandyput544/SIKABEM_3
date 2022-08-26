@@ -19,58 +19,38 @@ class Collection extends BaseController
     $data = [
       'title'       => 'Koleksi Arsip',
       'navbar'      => 'Koleksi Arsip',
-      'card'        => 'List Kategori Arsip',
-      'instance'    => $this->arc_model,
-      'categories'  => $this->cat_model->findAll()
+      'card'        => 'List Koleksi Arsip',
+      'archives'  => $this->arc_model
+        ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+        ->orderBy('categories.kd_kategori ASC, archives.kd_arsip DESC')
+        ->findAll()
     ];
 
     return view('collection/index', $data);
   }
 
-  public function getListArc($slug)
+  public function detail($nama_file)
   {
-    $getCat = $this->cat_model->where('slug', $slug)->first();
-
-    $data = [
-      'title'       => 'Koleksi Arsip',
-      'navbar'      => 'Koleksi Arsip',
-      'card'        => 'List Arsip ' . $getCat['cat_name'],
-      'count'       => $this->arc_model->where(['cat_id' => $getCat['id']])->countAllResults(),
-      'cat_id'      => $getCat['id'],
-      'archives'  => $this->arc_model
-        ->where(['cat_id' => $getCat['id']])
-        ->findAll()
-    ];
-
-    return view('collection/list', $data);
-  }
-
-  public function detail($file_name)
-  {
-    $getArc = $this->arc_model
-      ->where('file_name', $file_name)
-      ->first();
-
-    $getCat = $this->cat_model->find($getArc['cat_id']);
+    $getArc = $this->arc_model->where('nama_file', $nama_file)->first();
+    $getCat = $this->cat_model->find($getArc['kd_kategori']);
 
     $data = [
       'title'       => 'Lihat Arsip',
       'navbar'      => 'Koleksi Arsip',
       'card'        => 'Detail Arsip',
-      'cat_name'    => $getCat['cat_name'],
+      'nama_kat'    => $getCat['nama_kat'],
       'archives'    => $getArc,
-      'slug'        => $getCat['slug'],
     ];
 
     return view('collection/detail', $data);
   }
 
-  public function download($file_name)
+  public function download($nama_file)
   {
     // Ambil data arsip
-    $getArc = $this->arc_model->where('file_name', $file_name)->first();
+    $getArc = $this->arc_model->where('nama_file', $nama_file)->first();
 
-    $name = $getArc['archive_name'] . '.pdf';
-    return $this->response->download('archives/' . $file_name, null)->setFileName($name);
+    $name = $getArc['nama_arsip'] . '.pdf';
+    return $this->response->download('archives/' . $nama_file, null)->setFileName($name);
   }
 }
