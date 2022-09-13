@@ -21,7 +21,7 @@
                 <tr>
                   <td>Jenis Arsip</td>
                   <td>:</td>
-                  <td><?= $nama_kat; ?></td>
+                  <td><?= $archives['kategori']; ?></td>
                 </tr>
                 <tr>
                   <td>Nomor Arsip</td>
@@ -31,7 +31,7 @@
                 <tr>
                   <td>Pembuat Arsip</td>
                   <td>:</td>
-                  <td><?= $archives['nama_pembuat']; ?></td>
+                  <td><?= $archives['pembuat']; ?></td>
                 </tr>
                 <tr>
                   <td>Tanggal Buat</td>
@@ -57,12 +57,12 @@
                 <tr>
                   <td>Tanggal Upload</td>
                   <td>:</td>
-                  <td><?= $archives['created_at']; ?></td>
+                  <td><?= $archives['pertama_up']; ?></td>
                 </tr>
                 <tr>
                   <td>Tanggal Diperbarui</td>
                   <td>:</td>
-                  <td><?= $archives['updated_at']; ?></td>
+                  <td><?= $archives['tgl_modif']; ?></td>
                 </tr>
               </tbody>
             </table>

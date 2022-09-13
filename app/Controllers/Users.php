@@ -10,13 +10,11 @@ class Users extends BaseController
 {
   protected $users_model;
   protected $positions_model;
-  protected $user_pos_model;
   public function __construct()
   {
     helper('bem');
     $this->users_model = new UsersModel();
     $this->positions_model = new PositionsModel();
-    $this->user_pos_model = new UserPositionModel();
   }
 
   public function index()
@@ -26,8 +24,8 @@ class Users extends BaseController
       'navbar'        => 'Master User',
       'card'          => 'List User',
       'users'         => $this->users_model
+        ->select('users.kd_user AS kd_user, users.kd_jabatan AS id_jbt, positions.singkatan_jbt AS jabatan, users.nama_user AS nama_user, users.created_at AS tgl_terdaftar, users.user_active AS user_active, users.is_login AS is_login')
         ->join('positions', 'positions.kd_jabatan = users.kd_jabatan', 'left')
-        ->where('is_login != 1')
         ->findAll(),
     ];
     return view('users/index', $data);
@@ -153,6 +151,7 @@ class Users extends BaseController
   public function edit($id)
   {
     $getUser = $this->users_model
+      ->join('positions', 'positions.kd_jabatan = users.kd_jabatan', 'LEFT')
       ->find($id);
 
     $data = [
@@ -248,7 +247,7 @@ class Users extends BaseController
         ]
       ],
       'kd_jabatan' => [
-        'rules' => 'in_list[0,' . $showPosId . ']',
+        'rules' => 'in_list[0,alt,' . $showPosId . ']',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.'
         ]
@@ -258,25 +257,21 @@ class Users extends BaseController
     if (!$this->validate($validate)) {
       return redirect()->to(base_url('/user/edit/' . $id))->withInput();
     } else {
-      // cek apakah kd_jabatan yang baru dimasukkan = kd_jabatan yang lama
-      if ($postKdJBT == $getUser['kd_jabatan']) {
+      // cek apakah kd_jabatan yang baru dimasukkan = 0 berarti tidak mengubah jabatan
+      if ($postKdJBT == '0') {
         $kd_jabatan = $getUser['kd_jabatan'];
-      } elseif ($postKdJBT == '0') {
-        // cek apakah kd jabatan sebelumnya bukan 0
-        if ($getUser['kd_jabatan'] !== "0") {
-          // Simpan seat lama
-          $getoldSeat = $this->positions_model->find($getUser['kd_jabatan']);
-          $oldSeat = intval($getoldSeat['jml_kursi']) + 1;
-          $this->positions_model->save([
-            'kd_jabatan' => $getoldSeat['kd_jabatan'],
-            'jml_kursi' => $oldSeat
-          ]);
-        }
+      } elseif ($postKdJBT == 'alt') {
+        $getoldSeat = $this->positions_model->find($getUser['kd_jabatan']);
+        $oldSeat = intval($getoldSeat['jml_kursi']) + 1;
+        $this->positions_model->save([
+          'kd_jabatan' => $getoldSeat['kd_jabatan'],
+          'jml_kursi' => $oldSeat
+        ]);
         $kd_jabatan = '0';
       } else {
         // cek apakah user tidak memiliki jabatan
         if ($getUser['kd_jabatan'] !== "0") {
-          // Simpan seat lama
+          // Jabatan lama kursi ditambah 1
           $getoldSeat = $this->positions_model->find($getUser['kd_jabatan']);
           $oldSeat = intval($getoldSeat['jml_kursi']) + 1;
           $this->positions_model->save([
@@ -309,7 +304,11 @@ class Users extends BaseController
         'user_active'     => $postuserActive
       ]);
 
-      $msg = 'Berhasil memperbarui data user ' . $postFname . '.';
+      if ($postFname == $getUser['nama_user']) {
+        $msg = 'Berhasil memperbarui data user : ' . $postFname . '.';
+      } else {
+        $msg = 'Berhasil memperbarui data user : ' . $getUser['nama_user'] . ' <span class="bi-arrow-right"></span> ' . $postFname . '.';
+      }
       flashAlert('success', $msg);
       return redirect()->to(base_url() . '/user');
     }
@@ -319,11 +318,21 @@ class Users extends BaseController
   // Hapus Start
   public function delete($id)
   {
-    // Set is_active menjadi 0
-    $this->users_model->save(['kd_user' => $id, 'kd_jabatan' => 0, 'user_active' => 0]);
     // Ambil data user
     $getUser = $this->users_model->find($id);
-    $msg = 'Berhasil menghapus ' . $getUser['nama_user'] . '.';
+    // cek apakah user tidak memiliki jabatan
+    if ($getUser['kd_jabatan'] !== "0") {
+      // Jabatan lama kursi ditambah 1
+      $getoldSeat = $this->positions_model->find($getUser['kd_jabatan']);
+      $oldSeat = intval($getoldSeat['jml_kursi']) + 1;
+      $this->positions_model->save([
+        'kd_jabatan' => $getoldSeat['kd_jabatan'],
+        'jml_kursi' => $oldSeat
+      ]);
+    }
+    // Set is_active menjadi 0
+    $this->users_model->save(['kd_user' => $id, 'kd_jabatan' => 0, 'user_active' => 0]);
+    $msg = 'Berhasil menghapus data user : ' . $getUser['nama_user'] . '.';
 
     // Delete Data Member
     $this->users_model->delete($id);
@@ -356,6 +365,8 @@ class Users extends BaseController
   public function show_all_deleted()
   {
     $getUser = $this->users_model
+      ->select('users.kd_user AS kd_user, users.kd_jabatan AS id_jbt, positions.singkatan_jbt AS jabatan, users.nama_user AS nama_user, users.deleted_at AS tgl_delete, users.user_active AS user_active')
+      ->join('positions', 'positions.kd_jabatan = users.kd_jabatan', 'left')
       ->onlyDeleted()
       ->findAll();
 
@@ -374,7 +385,7 @@ class Users extends BaseController
     $this->users_model->where('kd_user', $id)->set('deleted_at', null)->update();
     $getUsers = $this->users_model->find($id);
 
-    $msg = 'Berhasil mengembalikan ' . $getUsers['nama_user'] . '.';
+    $msg = 'Berhasil memulihkan data user : ' . $getUsers['nama_user'] . '.';
     flashAlert('success', $msg);
     return redirect()->to(base_url('user/terhapus'));
   }
@@ -392,7 +403,7 @@ class Users extends BaseController
   {
     $this->users_model->purgeDeleted();
 
-    flashAlert('success', 'Berhasil menghapus permanen semua data user yang terhapus. Semua data user tersebut yang dihapus permanen tidak dapat dipulihkan.');
+    flashAlert('success', 'Berhasil menghapus permanen semua data user yang terhapus.');
     return redirect()->to(base_url('user/terhapus'));
   }
 
@@ -400,7 +411,7 @@ class Users extends BaseController
   {
     // ambil data user
     $getName = $this->users_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus user " . $getName['nama_user'] . " secara permanen. Data user yang dihapus permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus permanen data user : " . $getName['nama_user'] . ".";
 
     $this->users_model->where('kd_user', $id)->purgeDeleted();
 

@@ -1,8 +1,0 @@
-__ci_last_regenerate|i:1660519620;_ci_previous_url|s:26:"http://localhost:8080/auth";pesan|s:392:"
-        <div class="col-12">
-            <div class="alert alert-danger d-flex align-items-center alert-dismissible" role="alert">
-                <i class="bi-check-circle-fill flex-shrink-0 me-2"></i>
-                Email atau Password salah.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>";__ci_vars|a:2:{s:5:"pesan";s:3:"old";s:13:"_ci_old_input";s:3:"old";}_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:3:{s:14:"csrf_test_name";s:32:"e0005b32a89eb8389d3b03f84fec53ea";s:5:"email";s:19:"indikaadep@mail.com";s:8:"password";s:5:"12345";}}

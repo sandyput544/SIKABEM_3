@@ -6,40 +6,36 @@
     <a href="<?= base_url('arsip'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
   <div class="col-12">
-    <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
-      <div class="card-header fw-bold fs-5"><?= $accessing; ?></div>
+    <div class="card text-dark shadow overflow-hidden rounded-4">
+      <div class="card-header fw-bold fs-5">
+        <?= $accessing; ?>
+      </div>
       <div class="card-body">
-        <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
+        <table id="access" class="table align-middle table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nama User</th>
+              <th scope="col">Jabatan</th>
+              <th scope="col">Tanggal Akses</th>
+              <th scope="col">Keterangan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($list_access as $a) : ?>
               <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nama User</th>
-                <th scope="col">Jabatan</th>
-                <th scope="col">Tanggal Akses</th>
-                <th scope="col">Keterangan</th>
+                <td><?= $a['nama_user']; ?></td>
+                <td><?= $a['singkatan_jbt']; ?></td>
+                <td><?= $a['tgl_akses']; ?></td>
+                <td><?= $a['keterangan']; ?></td>
               </tr>
-            </thead>
-            <tbody>
-              <?php
-              $i = 1;
-              foreach ($list_access as $a) : ?>
-                <tr>
-                  <th scope="row"><?= $i++; ?></th>
-                  <td><?= $a['nama_user']; ?></td>
-                  <td><?= $a['singkatan_jbt']; ?></td>
-                  <td><?= $a['tgl_akses']; ?></td>
-                  <td><?= $a['keterangan']; ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
-        </div>
+            <?php endforeach; ?>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
   <div class="col-12">
-    <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
+    <div class="card text-dark mb-3 shadow overflow-hidden rounded-4">
       <div class="card-header fw-bold fs-5"><?= $card; ?></div>
       <div class="card-body">
         <div class="row">
@@ -54,7 +50,7 @@
                 <tr>
                   <td>Jenis Arsip</td>
                   <td>:</td>
-                  <td><?= $nama_kat; ?></td>
+                  <td><?= $archives['kategori']; ?></td>
                 </tr>
                 <tr>
                   <td>Nomor Arsip</td>
@@ -64,7 +60,7 @@
                 <tr>
                   <td>Pembuat Arsip</td>
                   <td>:</td>
-                  <td><?= $archives['nama_pembuat']; ?></td>
+                  <td><?= $archives['pembuat']; ?></td>
                 </tr>
                 <tr>
                   <td>Tanggal Buat</td>
@@ -90,12 +86,17 @@
                 <tr>
                   <td>Tanggal Upload</td>
                   <td>:</td>
-                  <td><?= $archives['created_at']; ?></td>
+                  <td><?= $archives['pertama_up']; ?></td>
                 </tr>
                 <tr>
                   <td>Tanggal Diperbarui</td>
                   <td>:</td>
-                  <td><?= $archives['updated_at']; ?></td>
+                  <td><?= $archives['tgl_modif']; ?></td>
+                </tr>
+                <tr>
+                  <td>Nama Uploader</td>
+                  <td>:</td>
+                  <td><?= $archives['nama_uploader']; ?></td>
                 </tr>
               </tbody>
             </table>
@@ -105,7 +106,7 @@
     </div>
   </div>
   <div class="col-12">
-    <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
+    <div class="card text-dark mb-3 shadow overflow-hidden rounded-4">
       <div class="card-header fw-bold fs-5">Preview File</div>
       <div class="card-body">
         <iframe src="<?= base_url('archives/' . $archives['nama_file']); ?>" width="100%" height="500px"></iframe>
@@ -114,4 +115,14 @@
   </div>
 </div>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+<script>
+  $(document).ready(function() {
+    $('#access').DataTable({
+      
+    });
+  });
+</script>
 <?= $this->endSection(); ?>

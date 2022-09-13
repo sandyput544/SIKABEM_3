@@ -26,39 +26,55 @@
             <?= $card; ?>
           </div>
           <div class="card-body row g-3">
-            <div class="table-responsive">
-              <table class="table align-middle table-striped">
-                <thead>
+            <table id="arsip" class="table align-middle table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Kategori</th>
+                  <th scope="col">Nomor Arsip</th>
+                  <th scope="col">Nama Arsip</th>
+                  <th scope="col">Pembuat Arsip</th>
+                  <th scope="col">Tanggal Dihapus</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                foreach ($archives as $a) : ?>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Kategori</th>
-                    <th scope="col">Nama Arsip</th>
-                    <th scope="col">Aksi</th>
+                    <td><?= $a['kategori']; ?></td>
+                    <td><?= $a['nomor_arsip']; ?></td>
+                    <td><?= $a['nama_arsip']; ?></td>
+                    <td><?= $a['pembuat']; ?></td>
+                    <td><?= $a['tgl_delete']; ?></td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="text-secondary dropdown-toggle" href="#" role="button" id="dropdown<?= $a['kd_arsip']; ?>" data-bs-toggle="dropdown" aria-expanded="false">
+                          Aksi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown<?= $a['kd_arsip']; ?>">
+                          <li>
+                            <div>
+                              <form id="restoreMe_<?= $a['kd_arsip']; ?>" action="<?= base_url('arsip/pulihkan/' . $a['kd_arsip']) ?>" method="post">
+                                <input type="hidden" name="_method" value="PUT">
+                                <a href="javascript:void(0);" onclick="return restConf('<?= $a['nama_arsip']; ?>','<?= $a['nomor_arsip']; ?>','<?= $a['kd_arsip']; ?>');" class="dropdown-item">Pulihkan</a>
+                              </form>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <form id="deleteMe_<?= $a['kd_arsip']; ?>" action="<?= base_url('arsip/hapusPermanen/' . $a['kd_arsip']) ?>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <a href="javascript:void(0);" onclick="return delConf('<?= $a['nama_arsip']; ?>','<?= $a['nomor_arsip']; ?>','<?= $a['kd_arsip']; ?>');" class="dropdown-item">Hapus</a>
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $i = 1;
-                  foreach ($archives as $a) : ?>
-                    <tr>
-                      <th scope="row"><?= $i++; ?></th>
-                      <td><?= $a['nama_kat']; ?></td>
-                      <td><?= $a['nama_arsip']; ?></td>
-                      <td>
-                        <form action="<?= base_url('arsip/pulihkan/' . $a['kd_arsip']); ?>" class="d-inline" method="post">
-                          <input type="hidden" name="_method" value="PUT">
-                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $a['nama_file']; ?>?');"></button>
-                        </form>
-                        <form action="<?= base_url('arsip/hapusPermanen/' . $a['kd_arsip']); ?>" class="d-inline" method="post">
-                          <input type="hidden" name="_method" value="delete">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $a['nama_file']; ?> secara permanen?');"></button>
-                        </form>
-                      </td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
-            </div>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -66,4 +82,27 @@
   </div>
 </div>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+<script>
+  function restConf(nama, nomor, id) {
+    if (confirm("Yakin ingin memulihkan data arsip : " + nama + " dengan nomor arsip : " + nomor + "?")) {
+      document.getElementById('restoreMe_' + id).submit();
+    } else {
+      return false;
+    }
+  }
+
+  function delConf(nama, nomor, id) {
+    if (confirm("Yakin ingin menghapus permanen data arsip : " + nama + " dengan nomor arsip : " + nomor + "?")) {
+      document.getElementById('deleteMe_' + id).submit();
+    } else {
+      return false;
+    }
+  }
+  $(document).ready(function() {
+    $('#arsip').DataTable();
+  });
+</script>
 <?= $this->endSection(); ?>

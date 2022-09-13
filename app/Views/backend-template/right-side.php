@@ -5,9 +5,9 @@
       <span class="text-dark align-middle fw-bold text-uppercase"><?= $title; ?></span>
       <div class="d-flex justify-content-end align-items-center">
         <span class="text-dark me-3">
-          <?= session('full_name'); ?>
+          <?= session('nama_user'); ?>
         </span>
-        <img src="<?= base_url('foto_profil/' . session('photo')); ?>" alt="" width="32" height="32" class="rounded-circle me-2" <?= (session('photo') == "default.svg") ? 'class="bg-light"' : ''; ?>>
+        <img src="<?= base_url('foto_profil/' . session('foto')); ?>" alt="" width="32" height="32" class="rounded-circle me-2 <?= (session('foto') == "default.svg") ? 'class="bg-light"' : ''; ?>">
       </div>
     </div>
   </nav>

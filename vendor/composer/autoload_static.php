@@ -23,6 +23,7 @@ class ComposerStaticInitcffba630aeabcb0ceb0a30a086365495
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
+            'PhpOffice\\PhpWord\\' => 18,
         ),
         'L' => 
         array (
@@ -68,6 +69,10 @@ class ComposerStaticInitcffba630aeabcb0ceb0a30a086365495
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PhpOffice\\PhpWord\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
         ),
         'Laminas\\Escaper\\' => 
         array (

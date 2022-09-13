@@ -19,42 +19,49 @@
             <?= $card; ?>
           </div>
           <div class="card-body">
-            <div class="table-responsive">
-              <table id="tabel" class="table align-middle">
-                <thead>
+            <table id="menu" class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Nama Menu</th>
+                  <th scope="col">Url Menu</th>
+                  <th scope="col">Ikon Menu</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                foreach ($menus as $m) : ?>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama Menu</th>
-                    <th scope="col">Url</th>
-                    <th scope="col">Icon</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Aksi</th>
+                    <td><?= $m['nama_menu']; ?></td>
+                    <td><?= $m['url_menu']; ?></td>
+                    <td><i class="<?= $m['ikon_menu']; ?>"></i></td>
+                    <td><span class="badge <?= ($m['menu_active'] == "1") ? "bg-success" : "bg-warning text-dark"; ?>">
+                        <?= ($m['menu_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="text-secondary dropdown-toggle" href="#" role="button" id="dropdown_<?= $m['kd_menu']; ?>" data-bs-toggle="dropdown" aria-expanded="false">
+                          Aksi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown_<?= $m['kd_menu']; ?>">
+                          <li><a class="dropdown-item" href="<?= base_url('/menu/edit/' . $m['kd_menu']); ?>">Ubah</a></li>
+                          <?php if ($m['nama_menu'] != "Master Menu") : ?>
+                            <li>
+                              <div>
+                                <form id="deleteMe_<?= $m['kd_menu']; ?>" action="<?= base_url('menu/hapus/' . $m['kd_menu']); ?>" method="post">
+                                  <input type="hidden" name="_method" value="DELETE">
+                                  <a href="javascript:void(0);" onclick="return confirmation('<?= $m['nama_menu']; ?>','<?= $m['kd_menu']; ?>');" class="dropdown-item">Hapus</a>
+                                </form>
+                              </div>
+                            </li>
+                          <?php endif; ?>
+                        </ul>
+                      </div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  <?php $i = 1;
-                  foreach ($menus as $m) : ?>
-                    <tr>
-                      <th scope="row"><?= $i++; ?></th>
-                      <td><?= $m['nama_menu']; ?></td>
-                      <td><?= $m['url_menu']; ?></td>
-                      <td><i class="<?= $m['ikon_menu']; ?>"></i></td>
-                      <td><span class="badge <?= ($m['menu_active'] == "1") ? "text-bg-success" : "text-bg-warning"; ?>">
-                          <?= ($m['menu_active'] == "1") ? "Aktif" : "Nonaktif"; ?></span></td>
-                      <td>
-                        <a href="<?= base_url('menu/edit/' . $m['kd_menu']); ?>" class="btn btn-sm btn-warning bi-pencil-fill"></a>
-                        <?php if ($m['nama_menu'] != "Master Menu") : ?>
-                          <form action="<?= base_url('menu/hapus/' . $m['kd_menu']); ?>" class="d-inline" method="post">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $m['nama_menu']; ?>?');"></button>
-                          </form>
-                        <?php endif; ?>
-                      </td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
-            </div>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -64,8 +71,15 @@
 <?= $this->endSection(); ?>
 <?= $this->section('script'); ?>
 <script type="text/javascript">
+  function confirmation(nama, id) {
+    if (confirm("Yakin ingin menghapus data menu : " + nama + "?")) {
+      document.getElementById('deleteMe_' + id).submit();
+    } else {
+      return false;
+    }
+  }
   $(document).ready(function() {
-    $('#tabel').DataTable();
+    $('#menu').DataTable();
   });
 </script>
 <?= $this->endSection(); ?>

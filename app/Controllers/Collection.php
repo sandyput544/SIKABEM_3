@@ -31,14 +31,20 @@ class Collection extends BaseController
 
   public function detail($nama_file)
   {
-    $getArc = $this->arc_model->where('nama_file', $nama_file)->first();
-    $getCat = $this->cat_model->find($getArc['kd_kategori']);
+    // $getArc = $this->arc_model
+    //   ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+    //   ->where('nama_file', $nama_file)->first();
+
+    $getArc = $this->arc_model
+      ->select('archives.kd_kategori AS kd_kategori, archives.kd_arsip AS kd_arsip, archives.nama_arsip AS nama_arsip, categories.nama_kat AS kategori, archives.nomor_arsip AS nomor_arsip, archives.nama_pembuat AS pembuat, archives.tgl_buat AS tgl_buat, archives.ukuran_file AS ukuran_file, archives.created_at AS pertama_up, archives.updated_at AS tgl_modif, archives.nama_file AS nama_file, archives.mime AS mime')
+      ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+      ->where('archives.nama_file = ', $nama_file)
+      ->first();
 
     $data = [
       'title'       => 'Lihat Arsip',
       'navbar'      => 'Koleksi Arsip',
       'card'        => 'Detail Arsip',
-      'nama_kat'    => $getCat['nama_kat'],
       'archives'    => $getArc,
     ];
 

@@ -26,41 +26,51 @@
             <?= $card; ?>
           </div>
           <div class="card-body row g-3">
-            <div class="table-responsive">
-              <table class="table align-middle">
-                <thead>
+            <table id="kat" class="table align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">Nama Kategori</th>
+                  <th scope="col">Singkatan</th>
+                  <th scope="col">Tanggal Dihapus</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                foreach ($categories as $c) : ?>
                   <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nama Kategori</th>
-                    <th scope="col">Singkatan</th>
-                    <th scope="col">Tanggal Terhapus</th>
-                    <th scope="col">Aksi</th>
+                    <td><?= $c['nama_kat']; ?></td>
+                    <td><?= $c['singkatan_kat']; ?></td>
+                    <td><?= $c['deleted_at']; ?></td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="text-secondary dropdown-toggle" href="#" role="button" id="dropdown<?= $c['kd_kategori']; ?>" data-bs-toggle="dropdown" aria-expanded="false">
+                          Aksi
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown<?= $c['kd_kategori']; ?>">
+                          <li>
+                            <div>
+                              <form id="restoreMe_<?= $c['kd_kategori']; ?>" action="<?= base_url('kategori/pulihkan/' . $c['kd_kategori']) ?>" method="post">
+                                <input type="hidden" name="_method" value="PUT">
+                                <a href="javascript:void(0);" onclick="return restConf('<?= $c['nama_kat']; ?>','<?= $c['kd_kategori']; ?>');" class="dropdown-item">Pulihkan</a>
+                              </form>
+                            </div>
+                          </li>
+                          <li>
+                            <div>
+                              <form id="deleteMe_<?= $c['kd_kategori']; ?>" action="<?= base_url('kategori/hapusPermanen/' . $c['kd_kategori']) ?>" method="post">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <a href="javascript:void(0);" onclick="return delConf('<?= $c['nama_kat']; ?>','<?= $c['kd_kategori']; ?>');" class="dropdown-item">Hapus</a>
+                              </form>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  <?php
-                  $i = 1;
-                  foreach ($categories as $c) : ?>
-                    <tr>
-                      <th scope="row"><?= $i++; ?></th>
-                      <td><?= $c['nama_kat']; ?></td>
-                      <td><?= $c['singkatan_kat']; ?></td>
-                      <td><?= $c['deleted_at']; ?></td>
-                      <td>
-                        <form action="<?= base_url('kategori/pulihkan/' . $c['kd_kategori']); ?>" class="d-inline" method="post">
-                          <input type="hidden" name="_method" value="PUT">
-                          <button type="submit" class="btn btn-sm btn-primary bi-arrow-counterclockwise" onclick="return confirm('Apakah anda ingin memulihkan <?= $c['nama_kat']; ?>?');"></button>
-                        </form>
-                        <form action="<?= base_url('kategori/hapusPermanen/' . $c['kd_kategori']); ?>" class="d-inline" method="post">
-                          <input type="hidden" name="_method" value="delete">
-                          <button type="submit" class="btn btn-sm btn-danger bi-trash3-fill" onclick="return confirm('Apakah anda yakin ingin menghapus <?= $c['nama_kat']; ?> secara permanen?');"></button>
-                        </form>
-                      </td>
-                    </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
-            </div>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -68,4 +78,27 @@
   </div>
 </div>
 
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+<script>
+  function restConf(nama, id) {
+    if (confirm("Yakin ingin memulihkan data kategori : " + nama + "?")) {
+      document.getElementById('restoreMe_' + id).submit();
+    } else {
+      return false;
+    }
+  }
+
+  function delConf(nama, id) {
+    if (confirm("Yakin ingin menghapus permanen data kategori : " + nama + "?")) {
+      document.getElementById('deleteMe_' + id).submit();
+    } else {
+      return false;
+    }
+  }
+  $(document).ready(function() {
+    $('#kat').DataTable();
+  });
+</script>
 <?= $this->endSection(); ?>

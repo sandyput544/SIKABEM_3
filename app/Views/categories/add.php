@@ -8,7 +8,7 @@
   <div class="col-6">
     <form action="<?= base_url('kategori/save'); ?>" method="POST">
       <?= csrf_field(); ?>
-      <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
+      <div class="card text-dark mb-3 shadow overflow-hidden rounded-4">
         <div class="card-header fw-bold fs-5"><?= $card; ?></div>
         <div class="card-body">
           <div class="row">

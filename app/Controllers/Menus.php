@@ -220,7 +220,7 @@ class Menus extends BaseController
     $this->menus_model
       ->save(['kd_menu' => $id, 'deleted_at' => null]);
 
-    $msg = "Berhasil mengembalikan " . $getPos['nama_menu'] . ".";
+    $msg = "Berhasil memulihkan data menu : " . $getPos['nama_menu'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('menu/terhapus'));
   }
@@ -233,7 +233,7 @@ class Menus extends BaseController
       ->set(['deleted_at' => null])
       ->update();
 
-    $msg = "Berhasil mengembalikan semua menu yang terhapus.";
+    $msg = "Berhasil memulihkan semua data menu yang terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('menu/terhapus'));
   }
@@ -250,7 +250,7 @@ class Menus extends BaseController
 
     $this->menus_model->purgeDeleted();
 
-    $msg = "Berhasil menghapus permanen semua menu yang terhapus. Data yang dihapus secara permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus permanen semua data menu yang terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('menu/terhapus'));
   }
@@ -259,7 +259,7 @@ class Menus extends BaseController
     $this->pos_menu->where('kd_menu', $id)->delete();
 
     $getName = $this->menus_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus permanen menu " . $getName['nama_menu'] . ". Data yang dihapus secara permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus permanen data menu : " . $getName['nama_menu'] . ".";
 
     $this->menus_model->where('kd_menu', $id)->purgeDeleted();
 

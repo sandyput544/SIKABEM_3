@@ -3,33 +3,30 @@
 
 <div class="row g-3">
   <div class="col-12">
-    <a href="<?= base_url('koleksi'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
-  </div>
-  <div class="col-12">
     <div class="card text-dark shadow overflow-hidden rounded-4">
       <div class="card-header fw-bold fs-5 d-flex justify-content-between">
         <?= $card; ?>
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table align-middle">
-            <thead class="table-dark">
+          <table id="arsip" class="table align-middle table-striped">
+            <thead>
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Kategori</th>
-                <th scope="col">Nama Arsip</th>
                 <th scope="col">Nomor Arsip</th>
+                <th scope="col">Nama Arsip</th>
+                <th scope="col">Tanggal Dibuat</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
-              <?php $i = 1;
+              <?php
               foreach ($archives as $a) : ?>
                 <tr>
-                  <th scope="row"><?= $i++; ?></th>
-                  <td><?= $a['nama_kat']; ?></td>
-                  <td><?= $a['nama_arsip']; ?></td>
+                  <td><?= ($a['kd_kategori'] != 0) ? $a['nama_kat'] : '-'; ?></td>
                   <td><?= $a['nomor_arsip']; ?></td>
+                  <td><?= $a['nama_arsip']; ?></td>
+                  <td><?= $a['tgl_buat']; ?></td>
                   <td>
                     <a href="<?= base_url('koleksi/detail/' . $a['nama_file']); ?>" class="btn btn-sm btn-info bi-eye-fill"></a>
                   </td>
@@ -42,4 +39,12 @@
     </div>
   </div>
 </div>
+<?= $this->endSection(); ?>
+
+<?= $this->section('script'); ?>
+<script>
+  $(document).ready(function() {
+    $('#arsip').DataTable();
+  });
+</script>
 <?= $this->endSection(); ?>

@@ -28,28 +28,27 @@ class Auth implements FilterInterface
     {
         // if (!session()->get('is_logged_in')) {
         //     return redirect()->to(base_url('auth/'));
-        // }
-        // else {
+        // } else {
         //     $uri = new \CodeIgniter\HTTP\URI();
         //     $getUri = $uri->getSegment(1);
 
         //     if ($getUri === 'profil') {
         //         return redirect()->to(base_url('profil'));
         //     } else {
-        //         $db =  \Config\Database::connect();
-        //         Ambil data session pos_id lalu cek dengan uri segment dan mengambil data menu id
-        //         $pos_id = session('pos_id');
-        //         $menu_id = $db->query('
-        //         SELECT id FROM menus WHERE menu_url=' . $getUri . '
-        //         ');
+        // $db =  \Config\Database::connect();
+        // // Ambil data session pos_id lalu cek dengan uri segment dan mengambil data menu id
+        // $pos_id = session('pos_id');
+        // $menu_id = $db->query('
+        // SELECT id FROM menus WHERE menu_url=' . $getUri . '
+        // ');
 
-        //         $get_posmenu = $db->query('
-        //         SELECT * FROM position_menu WHERE pos_id=' . $pos_id . ' AND menu_id=' . $menu_id . '
-        //         ');
+        // $get_posmenu = $db->query('
+        // SELECT * FROM position_menu WHERE pos_id=' . $pos_id . ' AND menu_id=' . $menu_id . '
+        // ');
 
-        //         if ($get_posmenu->getNumRows() < 1) {
-        //             return redirect()->to(base_url('auth/blocked'));
-        //         }
+        // if ($get_posmenu->getNumRows() < 1) {
+        //     return redirect()->to(base_url('auth/blocked'));
+        // }
         //     }
         // }
     }

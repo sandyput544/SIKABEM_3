@@ -1,0 +1,371 @@
+INFO - 2022-09-03 01:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 01:28:54 --> Undefined variable: u
+in APPPATH\Views\mailtype_v\index.php on line 53.
+ 1 APPPATH\Views\mailtype_v\index.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: u', 'APPPATH\\Views\\mailtype_v\\index.php', 53, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\mailtype_v\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('mailtype_v/index', [], true)
+ 5 APPPATH\Controllers\MailType.php(22): view('mailtype_v/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\MailType->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MailType))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-03 01:28:58 --> Maximum execution time of 60 seconds exceeded
+in APPPATH\Views\errors\html\error_exception.php on line 161.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2022-09-03 01:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 01:29:14 --> Undefined variable: u
+in APPPATH\Views\mailtype_v\index.php on line 53.
+ 1 APPPATH\Views\mailtype_v\index.php(53): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: u', 'APPPATH\\Views\\mailtype_v\\index.php', 53, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\mailtype_v\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('mailtype_v/index', [], true)
+ 5 APPPATH\Controllers\MailType.php(22): view('mailtype_v/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\MailType->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MailType))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-03 01:30:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:33:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:35:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:36:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:54:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:57:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 01:57:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:00:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:02:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:07:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:07:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:08:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:09:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:12:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:12:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:15:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:15:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:16:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:16:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:17:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:18:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 02:18:40 --> syntax error, unexpected ';', expecting ')'
+in APPPATH\Views\mailtype_v\edit.php on line 24.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('mailtype_v/edit', [], true)
+ 3 APPPATH\Controllers\MailType.php(89): view('mailtype_v/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\MailType->edit('1')
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MailType))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-03 02:19:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 02:21:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 03:37:03 --> Undefined property: App\Controllers\MailType::$mail_type
+in APPPATH\Controllers\MailType.php on line 147.
+ 1 APPPATH\Controllers\MailType.php(147): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined property: App\\Controllers\\MailType::$mail_type', 'APPPATH\\Controllers\\MailType.php', 147, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\MailType->delete('1')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MailType))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-03 03:43:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:43:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:43:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:44:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:45:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 03:45:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 04:40:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 05:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 05:43:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 05:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 05:51:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:01:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:01:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:06:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:10:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:11:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:11:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 06:13:08 --> Call to undefined method App\Models\MailTypeModel::purgeDelete
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\MailType.php(209): CodeIgniter\Model->__call('purgeDelete', [])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\MailType->permanent_delete_one('3')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MailType))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-03 06:13:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 06:14:04 --> Call to undefined method App\Models\MailTypeModel::purgeDelete
+in SYSTEMPATH\Model.php on line 773.
+ 1 APPPATH\Controllers\MailType.php(209): CodeIgniter\Model->__call('purgeDelete', [])
+ 2 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\MailType->permanent_delete_one('3')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MailType))
+ 4 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-03 06:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:29:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:29:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:29:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 06:30:45 --> syntax error, unexpected 'flashAlert' (T_STRING)
+in APPPATH\Controllers\MailType.php on line 213.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\MailType.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\MailType')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\MailType')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\MailType')
+ 5 SYSTEMPATH\CodeIgniter.php(854): class_exists('\\App\\Controllers\\MailType', true)
+ 6 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-03 06:30:48 --> syntax error, unexpected 'flashAlert' (T_STRING)
+in APPPATH\Controllers\MailType.php on line 213.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\MailType.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\MailType')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\MailType')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\MailType')
+ 5 SYSTEMPATH\CodeIgniter.php(854): class_exists('\\App\\Controllers\\MailType', true)
+ 6 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-03 06:31:04 --> syntax error, unexpected 'flashAlert' (T_STRING)
+in APPPATH\Controllers\MailType.php on line 213.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\MailType.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\MailType')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\MailType')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\MailType')
+ 5 SYSTEMPATH\CodeIgniter.php(854): class_exists('\\App\\Controllers\\MailType', true)
+ 6 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-03 06:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:33:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:37:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:37:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:37:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 06:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 07:03:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 07:04:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 07:04:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 12:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 12:09:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 12:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 12:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 12:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-03 17:17:43 --> Maximum execution time of 60 seconds exceeded
+in SYSTEMPATH\View\View.php on line 195.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2022-09-03 17:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-03 17:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2022-09-03 22:58:38 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users as c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+  ...' at line 4 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-03 22:58:39 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users as c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+  ...' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT b.nama_jenis as nama_jenis FROM outgoing_mail as a
+        LEFT JOIN mail_type as b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users as c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT b.nama_jenis as nama_jenis FROM outgoing_mail as a
+        LEFT JOIN mail_type as b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users as c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT b.nama_jenis as nama_jenis FROM outgoing_mail as a
+        LEFT JOIN mail_type as b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users as c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('
+        SELECT b.nama_jenis as nama_jenis FROM outgoing_mail as a
+        LEFT JOIN mail_type as b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users as c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-03 22:59:17 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+     ...' at line 4 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-03 22:59:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+     ...' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-03 23:00:02 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+     ...' at line 4 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-03 23:00:02 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+     ...' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')

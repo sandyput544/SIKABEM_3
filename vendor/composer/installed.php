@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '81c6432f6b82a0ef455cdd8bb066f94fce5aa593',
+        'reference' => 'fd908cf332b36f66453a949510c31915f52ac7d2',
         'name' => 'codeigniter4/bempnc',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '81c6432f6b82a0ef455cdd8bb066f94fce5aa593',
+            'reference' => 'fd908cf332b36f66453a949510c31915f52ac7d2',
             'dev_requirement' => false,
         ),
         'codeigniter4/framework' => array(
@@ -108,6 +108,15 @@
             'aliases' => array(),
             'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
             'dev_requirement' => true,
+        ),
+        'phpoffice/phpword' => array(
+            'pretty_version' => '0.18.3',
+            'version' => '0.18.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpoffice/phpword',
+            'aliases' => array(),
+            'reference' => 'be0190cd5d8f95b4be08d5853b107aa4e352759a',
+            'dev_requirement' => false,
         ),
         'phpunit/php-code-coverage' => array(
             'pretty_version' => '9.2.16',

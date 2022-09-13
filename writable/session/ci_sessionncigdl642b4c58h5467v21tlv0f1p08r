@@ -1,8 +1,0 @@
-__ci_last_regenerate|i:1660543443;_ci_previous_url|s:33:"http://localhost:8080/profil/edit";pos_id|s:1:"2";is_logged_in|b:1;email|s:19:"indikaadep@mail.com";full_name|s:12:"Indika Ade P";photo|s:35:"1660534809_8c7e7caec999ff7c6662.png";_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:3:{s:14:"csrf_test_name";s:32:"109956990e9ca129bcd982c672860b56";s:9:"password1";s:0:"";s:9:"password2";s:0:"";}}__ci_vars|a:3:{s:13:"_ci_old_input";s:3:"old";s:21:"_ci_validation_errors";s:3:"old";s:5:"pesan";s:3:"old";}_ci_validation_errors|s:125:"a:2:{s:9:"password1";s:30:"Mohon isi kolom password baru.";s:9:"password2";s:41:"Mohon isi kolom konfirmasi password baru.";}";pesan|s:406:"
-        <div class="col-12">
-            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
-                <i class="bi-check-circle-fill" flex-shrink-0 me-2"></i>
-                Anda berhasil mengganti password anda!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>";

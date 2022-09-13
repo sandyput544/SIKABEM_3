@@ -4,17 +4,18 @@
 $menus = new \App\Models\MenusModel();
 
 $query = $menus
-  // ->join('position_menu', 'position_menu.menu_id = menus.id')
-  // ->join('positions', 'positions.id = position_menu.pos_id')
-  // ->where('position_menu.pos_id = ' . session('pos_id'))
-  // ->where('menus.is_active=1')
+  ->join('position_menu', 'position_menu.kd_menu = menus.kd_menu')
+  ->join('positions', 'positions.kd_jabatan = position_menu.kd_jabatan')
+  ->where('position_menu.kd_jabatan = ' . session('id_jabatan'))
+  ->where('menus.menu_active=1')
+  ->orderBy('menus.kd_menu')
   ->findAll();
 
 ?>
 
 <nav class="d-flex flex-column p-3 text-white bg-dark-bem left-side" id="leftSideContent">
   <a href="/" class="d-flex justify-content-center text-white text-decoration-none">
-    <span class="fs-4 fw-bold">SIBEM PNC</span>
+    <span class="fs-4 fw-bold">SIKABEM PNC</span>
   </a>
   <hr class="text-orange-bem">
   <ul class="nav d-flex flex-row mb-auto gap-3">

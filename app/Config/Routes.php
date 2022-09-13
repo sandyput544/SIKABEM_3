@@ -42,7 +42,6 @@ $routes->add('auth/blocked', 'Auth::blocked');
 // Grup Routes Profil
 $routes->group('profil', ["filter" => "auth"], function ($routes) {
     $routes->add('', 'Profile::index');
-    $routes->add('edit', 'Profile::edit_page');
     $routes->post('edit_profil', 'Profile::edit_profil');
     $routes->post('ganti_foto', 'Profile::change_photo');
     $routes->delete('hapus_foto', 'Profile::delete_photo');
@@ -128,7 +127,7 @@ $routes->group('arsip', ["filter" => "auth"], function ($routes) {
     $routes->delete('hapusPermanen/(:num)', 'Archives::permanent_delete_one/$1');
 });
 
-// Grup Routes Arsip
+// Grup Routes Jenis Surat
 $routes->group('jenis-surat', ["filter" => "auth"], function ($routes) {
     $routes->add('', 'MailType::index');
     $routes->add('tambah', 'MailType::add');
@@ -136,11 +135,27 @@ $routes->group('jenis-surat', ["filter" => "auth"], function ($routes) {
     $routes->add('edit/(:num)', 'MailType::edit/$1');
     $routes->post('update/(:num)', 'MailType::update/$1');
     $routes->delete('hapus/(:num)', 'MailType::delete/$1');
+    $routes->add('detail/(:any)', 'MailType::detail/$1');
     $routes->add('terhapus', 'MailType::show_all_deleted');
     $routes->put('pulihkan/(:num)', 'MailType::restore_one/$1');
     $routes->put('pulihkanSemua/', 'MailType::restore_all');
     $routes->delete('hapusPermanenSemua', 'MailType::permanent_delete_all');
     $routes->delete('hapusPermanen/(:num)', 'MailType::permanent_delete_one/$1');
+});
+
+// Grup Routes Surat Keluar
+$routes->group('surat-keluar', ["filter" => "auth"], function ($routes) {
+    $routes->add('', 'OutgoingMail::index');
+    $routes->add('buat', 'OutgoingMail::add');
+    $routes->post('create', 'OutgoingMail::insert');
+    $routes->add('edit/(:num)', 'OutgoingMail::edit/$1');
+    $routes->post('update/(:num)', 'OutgoingMail::update/$1');
+    $routes->delete('hapus/(:num)', 'OutgoingMail::delete/$1');
+    $routes->add('terhapus', 'OutgoingMail::show_all_deleted');
+    $routes->put('pulihkan/(:num)', 'OutgoingMail::restore_one/$1');
+    $routes->put('pulihkanSemua/', 'OutgoingMail::restore_all');
+    $routes->delete('hapusPermanenSemua', 'OutgoingMail::permanent_delete_all');
+    $routes->delete('hapusPermanen/(:num)', 'OutgoingMail::permanent_delete_one/$1');
 });
 
 // Grup Routes Koleksi Arsip

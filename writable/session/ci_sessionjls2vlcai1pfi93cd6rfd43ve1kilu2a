@@ -1,0 +1,7 @@
+__ci_last_regenerate|i:1663007284;_ci_previous_url|s:35:"http://localhost:8080/user/terhapus";pesan|s:411:"
+        <div class="col-12">
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+                <span class="bi-check-circle-fill" flex-shrink-0">  Berhasil menghapus permanen semua data user yang terhapus.</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}

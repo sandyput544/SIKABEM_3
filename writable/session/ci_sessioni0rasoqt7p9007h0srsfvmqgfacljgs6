@@ -1,8 +1,0 @@
-__ci_last_regenerate|i:1660560762;_ci_previous_url|s:28:"http://localhost:8080/posisi";email|s:19:"indikaadep@mail.com";pos_id|s:1:"2";full_name|s:12:"Indika Ade P";photo|s:35:"1660534809_8c7e7caec999ff7c6662.png";is_logged_in|b:1;pesan|s:429:"
-        <div class="col-12">
-            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
-                <i class="bi-check-circle-fill" flex-shrink-0 me-2"></i>
-                Anda berhasil menambah posisi/jabatan Kepala Departemen PSDM.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}

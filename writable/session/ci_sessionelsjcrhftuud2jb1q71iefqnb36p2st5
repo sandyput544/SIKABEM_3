@@ -1,8 +1,0 @@
-__ci_last_regenerate|i:1661463804;_ci_previous_url|s:38:"http://localhost:8080/jabatan/akses/10";pesan|s:446:"
-        <div class="col-12">
-            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
-                <i class="bi-check-circle-fill" flex-shrink-0 me-2"></i>
-                Berhasil memberi Departemen Komunikasi dan Informasi akses ke Master Kategori.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}

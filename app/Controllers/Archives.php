@@ -26,6 +26,7 @@ class Archives extends BaseController
       'navbar'      => 'Master Arsip',
       'card'        => 'List Arsip',
       'archives'  => $this->arc_model
+        ->select('archives.kd_arsip AS kd_arsip, categories.nama_kat AS kategori, archives.nomor_arsip AS nomor_arsip, archives.nama_arsip AS nama_arsip, archives.nama_pembuat AS pembuat, archives.tgl_buat AS tgl_buat, archives.nama_file AS nama_file')
         ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
         ->orderBy('kd_arsip', 'DESC')
         ->findAll()
@@ -128,6 +129,7 @@ class Archives extends BaseController
           'nama_arsip' => $postNamaArsip,
           'tgl_buat' => $postCreatedDate,
           'nama_pembuat' => $postNamaPembuat,
+          'id_uploader' => session('kd_user'),
           'nama_file' => $get_randname,
           'ukuran_file' => $get_size,
           'mime' => $get_mime,
@@ -235,7 +237,7 @@ class Archives extends BaseController
         if (!is_dir('archives')) {
           mkdir('/archives', 0777, TRUE);
         }
-        $file_name = $postFile->getRandomName();
+        $file_name = $getArc['nama_file'];
         $get_mime = $postFile->getMimeType();
         $get_size = $postFile->getSizeByUnit('mb');
 
@@ -255,7 +257,11 @@ class Archives extends BaseController
         'mime' => $get_mime,
       ]);
 
-      $msg = "Anda berhasil memperbarui arsip " . $postNamaArsip . ".";
+      if ($postNamaArsip == $getArc['nama_arsip']) {
+        $msg = "Anda berhasil memperbarui arsip : " . $getArc['nama_arsip'] . ".";
+      } else {
+        $msg = "Anda berhasil memperbarui arsip " . $getArc['nama_arsip'] . " <span class='bi-arrow-right'></span> " . $postNamaArsip . ".";
+      }
       flashAlert('success', $msg);
       return redirect()->to(base_url('/arsip'));
     }
@@ -272,26 +278,31 @@ class Archives extends BaseController
     $file->move('archives/terhapus/');
 
     $this->arc_model->delete($id);
-    $msg = "Anda berhasil menghapus arsip " . $getArc['nama_arsip'] . ". Anda dapat memulihkan " . $getArc['nama_arsip'] . " di halaman arsip terhapus.";
+    $msg = "Anda berhasil menghapus arsip : " . $getArc['nama_arsip'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/arsip'));
   }
 
   public function detail($slug)
   {
-    $getArc = $this->arc_model->where('nama_file', $slug)->first();
-    $getCat = $this->cat_model->find($getArc['kd_kategori']);
+    $getArc = $this->arc_model
+      ->select('archives.kd_kategori AS kd_kategori, archives.kd_arsip AS kd_arsip, archives.nama_arsip AS nama_arsip, categories.nama_kat AS kategori, archives.nomor_arsip AS nomor_arsip, archives.nama_pembuat AS pembuat, archives.tgl_buat AS tgl_buat, archives.ukuran_file AS ukuran_file, archives.created_at AS pertama_up, archives.updated_at AS tgl_modif, archives.nama_file AS nama_file, archives.mime AS mime, users.nama_user AS nama_uploader')
+      ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+      ->join('users', 'users.kd_user = archives.id_uploader')
+      ->where('archives.nama_file = ', $slug)
+      ->first();
+
     $data = [
       'title'        => 'Detail Arsip',
       'navbar'       => 'Master Arsip',
       'accessing'    => 'List Akun Pengakses Arsip',
       'card'         => 'Detail Arsip',
-      'nama_kat'     => $getCat['nama_kat'],
       'archives'     => $getArc,
       'list_access'  => $this->acc_model
-        ->join('users', 'users.kd_user = archives_access.kd_user')
-        ->join('positions', 'positions.kd_jabatan = users.kd_jabatan')
-        ->where('kd_arsip', $getArc['kd_arsip'])->findAll()
+        ->select('archives_access.kd_arsip AS id_arsip, users.nama_user AS nama_user, positions.singkatan_jbt AS singkatan_jbt, archives_access.tgl_akses AS tgl_akses, archives_access.keterangan AS keterangan')
+        ->join('users', 'users.kd_user = archives_access.kd_user', 'left')
+        ->join('positions', 'positions.kd_jabatan = users.kd_jabatan', 'left')
+        ->where('kd_arsip', $getArc['kd_arsip'])->findAll(),
     ];
     return view('archives_view/detail', $data);
   }
@@ -303,8 +314,10 @@ class Archives extends BaseController
       'title'        => 'Arsip Terhapus',
       'navbar'       => 'Master Arsip',
       'card'         => 'List Arsip Terhapus',
-      'archives'     => $this->arc_model->onlyDeleted()
+      'archives'     => $this->arc_model
+        ->select('archives.kd_arsip AS kd_arsip, categories.nama_kat AS kategori, archives.nama_arsip AS nama_arsip, archives.nomor_arsip AS nomor_arsip, archives.nama_pembuat AS pembuat, archives.deleted_at AS tgl_delete')
         ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
+        ->onlyDeleted()
         ->findAll(),
     ];
     return view('archives_view/deleted', $data);
@@ -313,7 +326,7 @@ class Archives extends BaseController
   // Fitur Restore Arsip Terhapus --> Start
   public function restore_one($id)
   {
-    $this->arc_model->save(['id' => $id, 'deleted_at' => null]);
+    $this->arc_model->save(['kd_arsip' => $id, 'deleted_at' => null]);
 
     $getArc = $this->arc_model->find($id);
 
@@ -375,7 +388,7 @@ class Archives extends BaseController
     // Unlink file
     unlink($path);
 
-    $this->arc_model->where('id', $id)->purgeDeleted();
+    $this->arc_model->where('kd_arsip', $id)->purgeDeleted();
 
     flashAlert('success', $msg);
     return redirect()->to(base_url('/arsip/terhapus'));

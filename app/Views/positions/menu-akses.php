@@ -9,26 +9,24 @@
   <div class="col-12 mb-3">
     <a href="<?= base_url('/jabatan'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
-  <div class="col-12">
-    <div class="card text-dark shadow overflow-hidden rounded-3">
+  <div class="col-6">
+    <div class="card text-dark shadow overflow-hidden rounded-4">
       <div class="card-header fw-bold fs-5">
-        <?= 'Tabel ' . $card; ?>
+        <?= $card; ?>
       </div>
       <div class="card-body">
         <div class="table-responsive">
           <table class="table align-middle">
             <thead>
               <tr>
-                <th scope="col">#</th>
                 <th scope="col">Nama Menu</th>
                 <th scope="col">Aksi</th>
               </tr>
             </thead>
             <tbody>
-              <?php $i = 1;
+              <?php
               foreach ($menus as $m) : ?>
                 <tr>
-                  <th scope="row"><?= $i++; ?></th>
                   <td><?= $m['nama_menu']; ?></td>
                   <td>
                     <div class="form-check">

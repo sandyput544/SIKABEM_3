@@ -5,14 +5,14 @@ toggleSideNav.onclick = function () {
   sideNavBar.classList.toggle("toggle-me");
 };
 
-function cardLogoPreview() {
-  const logo = document.querySelector("#inputFileLogo");
-  const imgPreview = document.querySelector(".card-img-preview");
+function imgPreview() {
+  const foto = document.querySelector("#foto");
+  const imgPreview = document.querySelector(".img-preview");
 
-  const fileLogo = new FileReader();
-  fileLogo.readAsDataURL(logo.files[0]);
+  const fileFoto = new FileReader();
+  fileFoto.readAsDataURL(foto.files[0]);
 
-  fileLogo.onload = function (e) {
+  fileFoto.onload = function (e) {
     imgPreview.src = e.target.result;
   };
 }

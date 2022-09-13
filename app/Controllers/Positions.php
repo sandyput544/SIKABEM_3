@@ -93,7 +93,7 @@ class Positions extends BaseController
         'jbt_active' => $jbt_active,
       ]);
 
-      $msg = "Anda berhasil menambah jabatan " . $getName . ".";
+      $msg = "Anda berhasil menambah data jabatan : " . $getName . ".";
       flashAlert('success', $msg);
       return redirect()->to(base_url('/jabatan'));
     }
@@ -175,7 +175,11 @@ class Positions extends BaseController
         'jml_kursi' => $getSeat,
         'jbt_active' => $jbt_active,
       ]);
-      $msg = "Anda berhasil memperbarui jabatan user.";
+      if ($getName == $getPos['nama_jbt']) {
+        $msg = "Anda berhasil memperbarui data jabatan : " . $getName . ".";
+      } else {
+        $msg = "Anda berhasil memperbarui data jabatan : " . $getPos['nama_jbt'] . " <span class='bi-arrow-right'></span> " . $getName . ".";
+      }
       flashAlert('success', $msg);
       return redirect()->to(base_url('/jabatan'));
     }
@@ -196,7 +200,7 @@ class Positions extends BaseController
 
     $this->positions_model->delete($id);
 
-    $msg = "Anda berhasil menghapus jabatan " . $getPos['nama_jbt'];
+    $msg = "Anda berhasil menghapus data jabatan : " . $getPos['nama_jbt'];
     flashAlert('success', $msg);
     return redirect()->to(base_url('/jabatan'));
   }
@@ -222,7 +226,7 @@ class Positions extends BaseController
 
     $getPos = $this->positions_model->find($id);
 
-    $msg = "Berhasil memulihkan " . $getPos['nama_jbt'] . ".";
+    $msg = "Berhasil memulihkan data jabatan : " . $getPos['nama_jbt'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/jabatan/terhapus'));
   }
@@ -235,7 +239,7 @@ class Positions extends BaseController
       ->set(['deleted_at' => null])
       ->update();
 
-    $msg = "Berhasil memulihkan semua jabatan yang terhapus.";
+    $msg = "Berhasil memulihkan semua data jabatan yang terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/jabatan/terhapus'));
   }
@@ -252,7 +256,7 @@ class Positions extends BaseController
 
     $this->positions_model->purgeDeleted();
 
-    $msg = "Berhasil menghapus permanen semua jabatan yang terhapus. Semua data tersebut tidak dapat dikembalikan/dipulihkan.";
+    $msg = "Berhasil menghapus permanen semua data jabatan yang terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('/jabatan/terhapus'));
   }
@@ -264,7 +268,7 @@ class Positions extends BaseController
 
     // Ambil nama jabatan
     $getPos = $this->positions_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus permanen " . $getPos['nama_jbt'] . ". Data " . $getPos['nama_jbt'] . " tidak bisa dikembalikan/dipulihkan.";
+    $msg = "Berhasil menghapus permanen data jabatan : " . $getPos['nama_jbt'] . ".";
 
     $this->positions_model->where(['kd_jabatan' => $id])->purgeDeleted();
 

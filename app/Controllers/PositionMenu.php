@@ -25,10 +25,11 @@ class PositionMenu extends BaseController
     $id = $this->request->uri->getSegment(3);
     // Ambil data posisi dan menu
     $getPos = $this->positions_model->find($id);
+
     $getMenus = $this->menus_model->where('menu_active', 1)->findAll();
     $data = [
-      'title'     => 'List Hak Akses Menu ' . $getPos['nama_jbt'],
-      'card'      => 'List Hak Akses Menu ' . $getPos['nama_jbt'],
+      'title'     => 'List Akses Menu ' . $getPos['nama_jbt'],
+      'card'      => 'List Akses Menu ' . $getPos['nama_jbt'],
       'navbar'    => 'Master Jabatan',
       'menus'     => $getMenus,
       'kd_jabatan' => $id

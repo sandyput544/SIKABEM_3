@@ -21,7 +21,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-3">
-            <img src="<?= base_url('/foto_profil/' . $user['photo']); ?>" alt="" class="rounded-circle show-profpic mb-3">
+            <img src="<?= base_url('/foto_profil/' . $user['foto']); ?>" alt="" class="rounded-circle show-profpic mb-3">
             <h4 class="text-center"><?= $user['pos_name']; ?></h4>
           </div>
           <div class="col-9">

@@ -21,7 +21,7 @@ class Categories extends BaseController
       'navbar'      => 'Master Kategori',
       'card'        => 'List Kategori',
       'instance'    => $this->arc_model,
-      'categories'  => $this->cat_model->findAll()
+      'categories'  => $this->cat_model->orderBy('nama_kat', 'ASC')->findAll()
     ];
 
     return view('categories/index', $data);
@@ -143,7 +143,11 @@ class Categories extends BaseController
         'slug' => $slug,
       ]);
 
-      $msg = "Anda berhasil memperbarui kategori" . $postName . ".";
+      if ($postName == $getCat['nama_kat']) {
+        $msg = "Anda berhasil memperbarui kategori : " . $postName . ".";
+      } else {
+        $msg = "Anda berhasil memperbarui kategori : " . $getCat['nama_kat'] . " <span class='bi-arrow-right'></span> " . $postName . ".";
+      }
       flashAlert('success', $msg);
       return redirect()->to(base_url('kategori'));
     }
@@ -154,7 +158,7 @@ class Categories extends BaseController
   public function delete($id)
   {
     $getCat = $this->cat_model->find($id);
-    $msg = "Anda berhasil menghapus kategori " . $getCat['nama_kat'] . ".";
+    $msg = "Anda berhasil menghapus kategori : " . $getCat['nama_kat'] . ".";
     // Menghapus kd_kategori dari arsip.
     $getArchives = $this->arc_model->where('kd_kategori', $id)->findAll();
     foreach ($getArchives as $a) {
@@ -187,7 +191,7 @@ class Categories extends BaseController
 
     $getCat = $this->cat_model->find($id);
 
-    $msg = "Berhasil mengembalikan kategori " . $getCat['nama_kat'] . ".";
+    $msg = "Berhasil memulihkan data kategori : " . $getCat['nama_kat'] . ".";
     flashAlert('success', $msg);
     return redirect()->to(base_url('kategori/terhapus'));
   }
@@ -200,7 +204,7 @@ class Categories extends BaseController
       ->set(['deleted_at' => null])
       ->update();
 
-    $msg = "Berhasil mengembalikan semua kategori yang terhapus.";
+    $msg = "Berhasil memulihkan semua data kategori yang terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('kategori/terhapus'));
   }
@@ -210,7 +214,7 @@ class Categories extends BaseController
   public function permanent_delete_one($id)
   {
     $getCat = $this->cat_model->onlyDeleted()->find($id);
-    $msg = "Berhasil menghapus permanen kategori " . $getCat['nama_kat'] . ". Semua data yang terhapus secara permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus permanen kategori " . $getCat['nama_kat'] . ".";
 
     $this->cat_model->where('kd_kategori', $id)->purgeDeleted();
 
@@ -224,7 +228,7 @@ class Categories extends BaseController
   {
     $this->cat_model->purgeDeleted();
 
-    $msg = "Berhasil menghapus permanen semua kategori yang terhapus. Semua data yang terhapus secara permanen tidak dapat dipulihkan.";
+    $msg = "Berhasil menghapus permanen semua kategori yang terhapus.";
     flashAlert('success', $msg);
     return redirect()->to(base_url('kategori/terhapus'));
   }

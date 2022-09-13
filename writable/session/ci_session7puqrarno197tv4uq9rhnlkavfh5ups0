@@ -1,8 +1,0 @@
-__ci_last_regenerate|i:1660449574;_ci_previous_url|s:37:"http://localhost:8080/posisi/terhapus";email|s:15:"mansur@mail.com";pos_id|s:1:"2";full_name|s:13:"Rendi Karisma";photo|s:11:"default.svg";is_logged_in|b:1;pesan|s:430:"
-        <div class="col-12">
-            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
-                <i class="bi-check-circle-fill flex-shrink-0 me-2"></i>
-                Berhasil memulihkan Kepala Departemen Komunikasi dan Informasi.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"new";}

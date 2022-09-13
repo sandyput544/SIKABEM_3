@@ -18,10 +18,8 @@ class Profile extends BaseController
   public function index()
   {
     $getuser = $this->user_model
-      ->join('user_position', 'user_position.user_id = users.id')
-      ->join('positions', 'positions.id = user_position.pos_id')
-      ->where('email',  session('email'))
-      ->first();
+      ->join('positions', 'positions.kd_jabatan = users.kd_jabatan', 'LEFT')
+      ->find(session('kd_user'));
 
     $data = [
       'title' => 'Profil Saya',
@@ -31,7 +29,7 @@ class Profile extends BaseController
       'validation' => \Config\Services::validation(),
     ];
 
-    return view('profile/index', $data);
+    return view('profile/edit', $data);
   }
 
   public function edit_page()
@@ -49,14 +47,14 @@ class Profile extends BaseController
   {
 
     $getUser = $this->user_model->where('email',  session('email'))->first();
-    $postFname = htmlspecialchars($this->request->getVar('full_name'));
-    $postBplace = htmlspecialchars($this->request->getVar('birthplace'));
-    $postBdate = htmlspecialchars($this->request->getVar('birthdate'));
-    $postRel = htmlspecialchars($this->request->getVar('religion'));
-    $postGender = htmlspecialchars($this->request->getVar('gender'));
-    $postPhone = htmlspecialchars($this->request->getVar('phone'));
+    $postFname = htmlspecialchars($this->request->getVar('nama_user'));
+    $postBplace = htmlspecialchars($this->request->getVar('tmp_lahir'));
+    $postBdate = htmlspecialchars($this->request->getVar('tgl_lahir'));
+    $postRel = htmlspecialchars($this->request->getVar('agama'));
+    $postGender = htmlspecialchars($this->request->getVar('jk'));
+    $postPhone = htmlspecialchars($this->request->getVar('no_hp'));
     $postEmail = htmlspecialchars($this->request->getVar('email'));
-    $postAddress = htmlspecialchars($this->request->getVar('address'));
+    $postAddress = htmlspecialchars($this->request->getVar('alamat'));
 
     // Cek apakah email baru = email yang lama
     if ($postEmail != $getUser['email']) {
@@ -66,7 +64,7 @@ class Profile extends BaseController
     }
 
     $validate = [
-      'full_name' => [
+      'nama_user' => [
         'rules'     => 'required|max_length[100]|alpha_space',
         'errors'    => [
           'required'      => 'Mohon isi kolom nama lengkap.',
@@ -74,31 +72,31 @@ class Profile extends BaseController
           'alpha_space'   => 'Yang anda masukkan bukan karakter alfabet dan spasi.'
         ]
       ],
-      'birthplace' => [
+      'tmp_lahir' => [
         'rules' => 'permit_empty|alpha_space',
         'errors' => [
           'alpha_space' => 'Yang anda masukkan bukan karakter alfabet dan spasi.',
         ]
       ],
-      'birthdate' => [
+      'tgl_lahir' => [
         'rules' => 'permit_empty|alpha_dash',
         'errors' => [
           'alpha_dash' => 'Yang anda masukkan tidak sesuai placeholder.',
         ]
       ],
-      'religion' => [
+      'agama' => [
         'rules' => 'in_list[0,Buddha,Hindhu,Islam,Katholik,Konghucu,Kristen]',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.',
         ]
       ],
-      'gender' => [
+      'jk' => [
         'rules' => 'in_list[Pria,Wanita]',
         'errors' => [
           'in_list' => 'Pilihan tidak terdaftar.'
         ]
       ],
-      'phone' => [
+      'no_hp' => [
         'rules' => 'permit_empty|numeric',
         'errors' => [
           'numeric' => 'Yang anda masukkan bukan karakter numerik.',
@@ -112,13 +110,13 @@ class Profile extends BaseController
           'is_unique'     => 'Email sudah terdaftar.'
         ]
       ],
-      'address' => [
+      'alamat' => [
         'rules' => 'permit_empty|alpha_numeric_punct',
       ],
     ];
     // validasi
     if (!$this->validate($validate)) {
-      redirect()->to(base_url('profil/edit'))->withInput();
+      redirect()->to(base_url('profil'))->withInput();
     }
 
     // Cek pilih agama atau tidak
@@ -128,44 +126,44 @@ class Profile extends BaseController
       $rel = $postRel;
     }
 
-    // Cek birthdate terisi
+    // Cek tgl_lahir terisi
     if ($postBdate == null) {
       $bdate = null;
-    } elseif ($postBdate == $getUser['birthdate']) {
-      $bdate = $getUser['birthdate'];
+    } elseif ($postBdate == $getUser['tgl_lahir']) {
+      $bdate = $getUser['tgl_lahir'];
     } else {
       $bdate = $this->time->createFromFormat('d-m-Y', $postBdate);
     }
 
     $this->user_model->save([
-      'id' => $getUser['id'],
-      'full_name' => $postFname,
-      'birthplace' => $postBplace,
-      'birthdate' => $bdate,
-      'religion' => $rel,
-      'gender' => $postGender,
-      'phone' => $postPhone,
+      'kd_user' => $getUser['kd_user'],
+      'nama_user' => $postFname,
+      'tmp_lahir' => $postBplace,
+      'tgl_lahir' => $bdate,
+      'agama' => $rel,
+      'jk' => $postGender,
+      'no_hp' => $postPhone,
       'email' => $postEmail,
-      'address' => $postAddress,
+      'alamat' => $postAddress,
     ]);
 
     $session = session();
-    $session->remove(['email', 'full_name']);
-    $session->set(['email' => $postEmail, 'full_name' => $postFname]);
+    $session->remove(['email', 'nama_user']);
+    $session->set(['email' => $postEmail, 'nama_user' => $postFname]);
 
     $msg = "Anda berhasil memperbarui akun anda!";
-    flashAlert('success', $msg, 'bi-check-circle-fill');
-    return redirect()->to(base_url('profil/edit'));
+    flashAlert('success', $msg);
+    return redirect()->to(base_url('profil'));
   }
 
   public function change_photo()
   {
     $getUser = $this->user_model->where('email',  session('email'))->first();
-    $postFoto = $this->request->getFile('photo');
+    $postFoto = $this->request->getFile('foto');
 
     $validate = [
-      'photo' => [
-        'rules' => 'max_size[photo,5120]|mime_in[photo,image/png,image/jpg]',
+      'foto' => [
+        'rules' => 'max_size[foto,5120]|mime_in[foto,image/png,image/jpg]',
         'errors' => [
           'max_size' => 'Ukuran file melebihi 5Mb.',
           'mime_in' => 'File yang diunggah bukan gambar.'
@@ -175,7 +173,7 @@ class Profile extends BaseController
 
     // validasi
     if (!$this->validate($validate)) {
-      redirect()->to(base_url('profil/edit'))->withInput();
+      redirect()->to(base_url('profil'))->withInput();
     }
 
     $new_name = $postFoto->getRandomName();
@@ -190,26 +188,26 @@ class Profile extends BaseController
         mkdir('/foto_profil', 0777, TRUE);
       }
       // Cek apakah ada file foto milik user ini di folder foto_profil
-      if ($getUser['photo'] == "default.svg") {
+      if ($getUser['foto'] == "default.svg") {
         $postFoto->move('foto_profil/', $new_name);
-      } else if (fileExists('foto_profil/' . $getUser['photo']) && $getUser['photo'] != "default.svg") {
-        unlink('foto_profil/' . $getUser['photo']);
+      } else if (fileExists('foto_profil/' . $getUser['foto']) && $getUser['foto'] != "default.svg") {
+        unlink('foto_profil/' . $getUser['foto']);
         $postFoto->move('foto_profil/', $new_name);
       }
       $this->user_model->save([
-        'id' => $getUser['id'],
-        'photo' => $new_name,
+        'kd_user' => $getUser['kd_user'],
+        'foto' => $new_name,
       ]);
 
       $msg = "Berhasil mengganti foto profil anda!";
       $icon = 'bi-check-circle-fill';
       $alert = "success";
       $session = session();
-      $session->remove('photo');
-      $session->set('photo', $new_name);
+      $session->remove('foto');
+      $session->set('foto', $new_name);
     }
     flashAlert($alert, $msg, $icon);
-    return redirect()->to(base_url('profil/edit'));
+    return redirect()->to(base_url('profil'));
   }
 
   public function delete_photo()
@@ -217,26 +215,26 @@ class Profile extends BaseController
     $getUser = $this->user_model->where('email',  session('email'))->first();
 
     // cek photo bukan default.png atau null
-    if ($getUser['photo'] != null || $getUser['photo'] == "default.svg") {
-      unlink('foto_profil/' . $getUser['photo']);
+    if ($getUser['foto'] != null || $getUser['foto'] == "default.svg") {
+      unlink('foto_profil/' . $getUser['foto']);
       $new_name = 'default.svg';
       $this->user_model->save([
-        'id' => $getUser['id'],
-        'photo' => $new_name
+        'kd_user' => $getUser['kd_user'],
+        'foto' => $new_name
       ]);
       $msg = "Anda berhasil menghapus foto profil anda!";
       $alert = "success";
       $icon = 'bi-check-circle-fill';
       $session = session();
-      $session->remove('photo');
-      $session->set('photo', $new_name);
+      $session->remove('foto');
+      $session->set('foto', $new_name);
     } else {
       $msg = "Anda tidak memiliki foto untuk dihapus.";
       $alert = "danger";
       $icon = 'bi-exclamation-circle-fill';
     }
     flashAlert($alert, $msg, $icon);
-    return redirect()->to(base_url('profil/edit'));
+    return redirect()->to(base_url('profil'));
   }
 
   public function change_password()
@@ -264,7 +262,7 @@ class Profile extends BaseController
 
     // validasi
     if (!$this->validate($validate)) {
-      redirect()->to(base_url('profil/edit'))->withInput();
+      redirect()->to(base_url('profil'))->withInput();
     }
 
     // Cek password baru = password lama
@@ -276,7 +274,7 @@ class Profile extends BaseController
       $password_hash = password_hash($postPass1, PASSWORD_DEFAULT);
 
       $this->user_model->save([
-        'id' => $getUser['id'],
+        'kd_user' => $getUser['kd_user'],
         'password' => $postPass1,
         'password_hash' => $password_hash,
       ]);
@@ -285,6 +283,6 @@ class Profile extends BaseController
       $icon = 'bi-check-circle-fill';
     }
     flashAlert($alert, $msg, $icon);
-    return redirect()->to(base_url('profil/edit'));
+    return redirect()->to(base_url('profil'));
   }
 }

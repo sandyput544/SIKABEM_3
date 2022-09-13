@@ -1,0 +1,579 @@
+ERROR - 2022-09-04 01:03:06 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+     ...' at line 4 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 01:03:06 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+     ...' at line 4
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(24): CodeIgniter\Database\BaseConnection->query('
+        SELECT * FROM outgoing_mail a
+        LEFT JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        AND
+        LEFT JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 01:05:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 01:05:23 --> Cannot use object of type mysqli as array
+in APPPATH\Views\outmail_view\index.php on line 40.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('outmail_view/index', [], true)
+ 4 APPPATH\Controllers\OutgoingMail.php(29): view('outmail_view/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 01:09:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 01:09:25 --> Cannot use object of type mysqli as array
+in APPPATH\Views\outmail_view\index.php on line 40.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('outmail_view/index', [], true)
+ 4 APPPATH\Controllers\OutgoingMail.php(29): view('outmail_view/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 01:24:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 01:24:48 --> Cannot use object of type mysqli as array
+in APPPATH\Views\outmail_view\index.php on line 40.
+ 1 SYSTEMPATH\View\View.php(213): include()
+ 2 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('outmail_view/index', [], true)
+ 4 APPPATH\Controllers\OutgoingMail.php(29): view('outmail_view/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 6 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 01:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 01:31:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 01:32:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 01:49:39 --> Invalid file: outmail_views/add.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('outmail_views/add.php')
+ 2 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('outmail_views/add', [], true)
+ 3 APPPATH\Controllers\OutgoingMail.php(42): view('outmail_views/add', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->add()
+ 5 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 01:50:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:32:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:33:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:35:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:36:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:43:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 05:45:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:44:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:45:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:46:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:46:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:46:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:46:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:46:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:46:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:50:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:51:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 12:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2022-09-04 12:58:14 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user as nama_user, a.created_at as waktu_buat
+        FROM outgoing_ma...' at line 3 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 12:58:14 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user as nama_user, a.created_at as waktu_buat
+        FROM outgoing_ma...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT
+        a.kd_suratkeluar as id_surat, b.nama_jenis as jenis_surat, a.nomor_surat as nomor_surat
+        c.nama_user as nama_user, a.created_at as waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT
+        a.kd_suratkeluar as id_surat, b.nama_jenis as jenis_surat, a.nomor_surat as nomor_surat
+        c.nama_user as nama_user, a.created_at as waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT
+        a.kd_suratkeluar as id_surat, b.nama_jenis as jenis_surat, a.nomor_surat as nomor_surat
+        c.nama_user as nama_user, a.created_at as waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('
+        SELECT
+        a.kd_suratkeluar as id_surat, b.nama_jenis as jenis_surat, a.nomor_surat as nomor_surat
+        c.nama_user as nama_user, a.created_at as waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-04 12:59:00 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user nama_user, a.created_at waktu_buat
+        FROM outgoing_mail a
+ ...' at line 3 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 12:59:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user nama_user, a.created_at waktu_buat
+        FROM outgoing_mail a
+ ...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT
+        a.kd_suratkeluar id_surat, b.nama_jenis jenis_surat, a.nomor_surat nomor_surat
+        c.nama_user nama_user, a.created_at waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT
+        a.kd_suratkeluar id_surat, b.nama_jenis jenis_surat, a.nomor_surat nomor_surat
+        c.nama_user nama_user, a.created_at waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT
+        a.kd_suratkeluar id_surat, b.nama_jenis jenis_surat, a.nomor_surat nomor_surat
+        c.nama_user nama_user, a.created_at waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('
+        SELECT
+        a.kd_suratkeluar id_surat, b.nama_jenis jenis_surat, a.nomor_surat nomor_surat
+        c.nama_user nama_user, a.created_at waktu_buat
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-04 14:14:29 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail...' at line 3 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 14:14:29 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-04 14:14:57 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail...' at line 3 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 14:14:57 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('
+        SELECT
+        a.kd_suratkeluar "id_surat", b.nama_jenis "jenis_surat", a.nomor_surat "nomor_surat"
+        c.nama_user "nama_user", a.created_at "waktu_buat"
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+ERROR - 2022-09-04 14:15:40 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user `nama_user`, a.created_at `waktu_buat`
+        FROM outgoing_mail...' at line 3 in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 14:15:40 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'c.nama_user `nama_user`, a.created_at `waktu_buat`
+        FROM outgoing_mail...' at line 3
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT
+        a.kd_suratkeluar `id_surat`, b.nama_jenis `jenis_surat`, a.nomor_surat `nomor_surat`
+        c.nama_user `nama_user`, a.created_at `waktu_buat`
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT
+        a.kd_suratkeluar `id_surat`, b.nama_jenis `jenis_surat`, a.nomor_surat `nomor_surat`
+        c.nama_user `nama_user`, a.created_at `waktu_buat`
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT
+        a.kd_suratkeluar `id_surat`, b.nama_jenis `jenis_surat`, a.nomor_surat `nomor_surat`
+        c.nama_user `nama_user`, a.created_at `waktu_buat`
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('
+        SELECT
+        a.kd_suratkeluar `id_surat`, b.nama_jenis `jenis_surat`, a.nomor_surat `nomor_surat`
+        c.nama_user `nama_user`, a.created_at `waktu_buat`
+        FROM outgoing_mail a
+        INNER JOIN mail_type b ON b.kd_jenissurat = a.kd_jenissurat
+        INNER JOIN users c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL
+        ORDER BY a.kd_suratkeluar DESC
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 15:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 17:50:26 --> syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+in APPPATH\Controllers\OutgoingMail.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\OutgoingMail.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\OutgoingMail')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\OutgoingMail')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\OutgoingMail')
+ 5 SYSTEMPATH\CodeIgniter.php(854): class_exists('\\App\\Controllers\\OutgoingMail', true)
+ 6 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+CRITICAL - 2022-09-04 17:50:28 --> syntax error, unexpected ']', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$'
+in APPPATH\Controllers\OutgoingMail.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(259): CodeIgniter\Autoloader\Autoloader->includeFile('APPPATH\\Controllers\\OutgoingMail.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(237): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\OutgoingMail')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\OutgoingMail')
+ 4 [internal function]: spl_autoload_call('App\\Controllers\\OutgoingMail')
+ 5 SYSTEMPATH\CodeIgniter.php(854): class_exists('\\App\\Controllers\\OutgoingMail', true)
+ 6 SYSTEMPATH\CodeIgniter.php(444): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 17:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 17:51:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 17:51:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:01:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:06:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:29:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:41:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:41:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:44:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 18:44:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 19:16:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 19:17:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2022-09-04 21:22:37 --> mysqli_sql_exception: Unknown column 'c.is_active' in 'where clause' in F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:292
+Stack trace:
+#0 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(292): mysqli->query('\n        SELECT...', 0)
+#1 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('\n        SELECT...')
+#2 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('\n        SELECT...')
+#3 F:\xampp file\sikabem_3\app\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('\n        SELECT...')
+#4 F:\xampp file\sikabem_3\app\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+#5 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+#6 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+#7 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 F:\xampp file\sikabem_3\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 F:\xampp file\sikabem_3\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(43): require_once('F:\\xampp file\\s...')
+#10 {main}
+CRITICAL - 2022-09-04 21:22:37 --> Unknown column 'c.is_active' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 292.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(292): mysqli->query('
+        SELECT
+        a.kd_suratkeluar AS id_surat, b.nama_jenis AS jenis_surat, a.nomor_surat AS nomor_surat, c.nama_user AS nama_user, a.created_at AS waktu_buat
+        FROM outgoing_mail AS a
+        JOIN mail_type AS b ON b.kd_jenissurat = a.kd_jenissurat
+        JOIN users AS c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL AND c.is_active != 0 AND c.deleted_at = NULL
+        ', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('
+        SELECT
+        a.kd_suratkeluar AS id_surat, b.nama_jenis AS jenis_surat, a.nomor_surat AS nomor_surat, c.nama_user AS nama_user, a.created_at AS waktu_buat
+        FROM outgoing_mail AS a
+        JOIN mail_type AS b ON b.kd_jenissurat = a.kd_jenissurat
+        JOIN users AS c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL AND c.is_active != 0 AND c.deleted_at = NULL
+        ')
+ 3 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->simpleQuery('
+        SELECT
+        a.kd_suratkeluar AS id_surat, b.nama_jenis AS jenis_surat, a.nomor_surat AS nomor_surat, c.nama_user AS nama_user, a.created_at AS waktu_buat
+        FROM outgoing_mail AS a
+        JOIN mail_type AS b ON b.kd_jenissurat = a.kd_jenissurat
+        JOIN users AS c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL AND c.is_active != 0 AND c.deleted_at = NULL
+        ')
+ 4 APPPATH\Models\OutgoingMailModel.php(25): CodeIgniter\Database\BaseConnection->query('
+        SELECT
+        a.kd_suratkeluar AS id_surat, b.nama_jenis AS jenis_surat, a.nomor_surat AS nomor_surat, c.nama_user AS nama_user, a.created_at AS waktu_buat
+        FROM outgoing_mail AS a
+        JOIN mail_type AS b ON b.kd_jenissurat = a.kd_jenissurat
+        JOIN users AS c ON c.kd_user = a.kd_user
+        WHERE a.deleted_at = NULL AND c.is_active != 0 AND c.deleted_at = NULL
+        ')
+ 5 APPPATH\Controllers\OutgoingMail.php(26): App\Models\OutgoingMailModel->GetMails()
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 21:23:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 21:24:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 21:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 21:36:09 --> Undefined index: jenis_surat
+in APPPATH\Views\outmail_view\index.php on line 40.
+ 1 APPPATH\Views\outmail_view\index.php(40): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: jenis_surat', 'APPPATH\\Views\\outmail_view\\index.php', 40, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\outmail_view\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('outmail_view/index', [], true)
+ 5 APPPATH\Controllers\OutgoingMail.php(32): view('outmail_view/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 21:37:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 21:37:05 --> Undefined index: jenis_surat
+in APPPATH\Views\outmail_view\index.php on line 55.
+ 1 APPPATH\Views\outmail_view\index.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: jenis_surat', 'APPPATH\\Views\\outmail_view\\index.php', 55, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\outmail_view\\index.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1137): CodeIgniter\View\View->render('outmail_view/index', [], true)
+ 5 APPPATH\Controllers\OutgoingMail.php(32): view('outmail_view/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\OutgoingMail->index()
+ 7 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\OutgoingMail))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(43): require_once('FCPATH\\index.php')
+INFO - 2022-09-04 21:37:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 21:37:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 21:37:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 21:41:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 22:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2022-09-04 22:28:44 --> Maximum execution time of 60 seconds exceeded
+in VENDORPATH\kint-php\kint\src\Parser\ArrayObjectPlugin.php on line 64.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2022-09-04 22:28:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 22:28:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 22:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 22:34:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 23:14:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2022-09-04 23:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

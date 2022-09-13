@@ -13,7 +13,7 @@
       <div class="col-12">
         <form action="<?= base_url('arsip/save'); ?>" method="POST" enctype="multipart/form-data">
           <?= csrf_field(); ?>
-          <div class="card text-dark mb-3 shadow overflow-hidden rounded-3">
+          <div class="card text-dark mb-3 shadow overflow-hidden rounded-4">
             <div class="card-header fw-bold fs-5"><?= $card; ?></div>
             <div class="card-body">
               <div class="row">
@@ -29,7 +29,7 @@
                       <?= showError('kd_kategori'); ?>
                     </div>
                     <div class="col-6">
-                      <label for="inputNo" class="form-label">Nama Arsip</label>
+                      <label for="inputNo" class="form-label">Nomor Arsip</label>
                       <input type="text" class="form-control" id="inputNo" placeholder="003/SK/XI/2022" name="nomor_arsip" value="<?= old('nomor_arsip'); ?>">
                       <?= showError('nomor_arsip'); ?>
                     </div>

@@ -8,7 +8,8 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.3 || ^8.0",
-        "codeigniter4/framework": "^4"
+        "codeigniter4/framework": "^4",
+        "phpoffice/phpword": "^0.18.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
