@@ -5,17 +5,20 @@ namespace App\Controllers;
 use \App\Models\CategoriesModel;
 use \App\Models\ArchivesModel;
 use \App\Models\ArchivesAccessModel;
+use \App\Models\UsersModel;
 
 class Archives extends BaseController
 {
   protected $arc_model;
   protected $cat_model;
   protected $acc_model;
+  protected $user_model;
   public function __construct()
   {
     $this->arc_model = new ArchivesModel();
     $this->cat_model = new CategoriesModel();
     $this->acc_model = new ArchivesAccessModel();
+    $this->user_model = new UsersModel();
   }
 
   // Menampilkan list archives -> Start
@@ -130,6 +133,7 @@ class Archives extends BaseController
           'tgl_buat' => $postCreatedDate,
           'nama_pembuat' => $postNamaPembuat,
           'id_uploader' => session('kd_user'),
+          'id_contributor' => session('kd_user'),
           'nama_file' => $get_randname,
           'ukuran_file' => $get_size,
           'mime' => $get_mime,
@@ -255,6 +259,7 @@ class Archives extends BaseController
         'nama_file' => $file_name,
         'ukuran_file' => $get_size,
         'mime' => $get_mime,
+        'id_contributor' => session('kd_user'),
       ]);
 
       if ($postNamaArsip == $getArc['nama_arsip']) {
@@ -286,17 +291,21 @@ class Archives extends BaseController
   public function detail($slug)
   {
     $getArc = $this->arc_model
-      ->select('archives.kd_kategori AS kd_kategori, archives.kd_arsip AS kd_arsip, archives.nama_arsip AS nama_arsip, categories.nama_kat AS kategori, archives.nomor_arsip AS nomor_arsip, archives.nama_pembuat AS pembuat, archives.tgl_buat AS tgl_buat, archives.ukuran_file AS ukuran_file, archives.created_at AS pertama_up, archives.updated_at AS tgl_modif, archives.nama_file AS nama_file, archives.mime AS mime, users.nama_user AS nama_uploader')
+      ->select('archives.kd_kategori AS kd_kategori, archives.kd_arsip AS kd_arsip, archives.nama_arsip AS nama_arsip, categories.nama_kat AS kategori, archives.nomor_arsip AS nomor_arsip, archives.nama_pembuat AS pembuat, archives.tgl_buat AS tgl_buat, archives.ukuran_file AS ukuran_file, archives.created_at AS pertama_up, archives.updated_at AS tgl_modif, archives.nama_file AS nama_file, archives.mime AS mime, archives.id_contributor AS id_contributor, archives.id_uploader AS id_uploader')
       ->join('categories', 'categories.kd_kategori = archives.kd_kategori')
-      ->join('users', 'users.kd_user = archives.id_uploader')
       ->where('archives.nama_file = ', $slug)
       ->first();
+
+    $nama_uploader = $this->user_model->find($getArc['id_uploader']);
+    $nama_kontributor = $this->user_model->find($getArc['id_contributor']);
 
     $data = [
       'title'        => 'Detail Arsip',
       'navbar'       => 'Master Arsip',
       'accessing'    => 'List Akun Pengakses Arsip',
       'card'         => 'Detail Arsip',
+      'nama_uploader' => $nama_uploader['nama_user'],
+      'nama_kontributor' => $nama_kontributor['nama_user'],
       'archives'     => $getArc,
       'list_access'  => $this->acc_model
         ->select('archives_access.kd_arsip AS id_arsip, users.nama_user AS nama_user, positions.singkatan_jbt AS singkatan_jbt, archives_access.tgl_akses AS tgl_akses, archives_access.keterangan AS keterangan')

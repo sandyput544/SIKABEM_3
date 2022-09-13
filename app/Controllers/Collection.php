@@ -3,15 +3,18 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use CodeIgniter\I18n\Time;
 
 class Collection extends BaseController
 {
   protected $cat_model;
   protected $arc_model;
+  protected $acc_model;
   public function __construct()
   {
     $this->cat_model = new \App\Models\CategoriesModel();
     $this->arc_model = new \App\Models\ArchivesModel();
+    $this->acc_model = new \App\Models\ArchivesAccessModel();
   }
 
   public function index()
@@ -48,6 +51,16 @@ class Collection extends BaseController
       'archives'    => $getArc,
     ];
 
+    // Simpan archives access
+    $savedata = [
+      'kd_arsip' => $getArc['kd_arsip'],
+      'kd_user' => session('kd_user'),
+      'tgl_akses' => new Time('now'),
+      'keterangan' => 'Lihat'
+    ];
+
+    $this->acc_model->save($savedata);
+
     return view('collection/detail', $data);
   }
 
@@ -55,6 +68,14 @@ class Collection extends BaseController
   {
     // Ambil data arsip
     $getArc = $this->arc_model->where('nama_file', $nama_file)->first();
+
+    // Simpan archives access
+    $this->acc_model->save([
+      'kd_arsip' => $getArc['kd_arsip'],
+      'kd_user' => session('kd_user'),
+      'tgl_akses' => new Time('now'),
+      'keterangan' => 'Unduh'
+    ]);
 
     $name = $getArc['nama_arsip'] . '.pdf';
     return $this->response->download('archives/' . $nama_file, null)->setFileName($name);

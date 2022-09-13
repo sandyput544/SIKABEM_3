@@ -67,17 +67,17 @@
                   <td>:</td>
                   <td><?= $archives['tgl_buat']; ?></td>
                 </tr>
+                <tr>
+                  <td>Ukuran File</td>
+                  <td>:</td>
+                  <td><?= $archives['ukuran_file']; ?> Mb</td>
+                </tr>
               </tbody>
             </table>
           </div>
           <div class="col-md-6 col-sm-12">
             <table class="table table-borderless">
               <tbody>
-                <tr>
-                  <td>Ukuran File</td>
-                  <td>:</td>
-                  <td><?= $archives['ukuran_file']; ?> Mb</td>
-                </tr>
                 <tr>
                   <td>MIME Type</td>
                   <td>:</td>
@@ -96,7 +96,12 @@
                 <tr>
                   <td>Nama Uploader</td>
                   <td>:</td>
-                  <td><?= $archives['nama_uploader']; ?></td>
+                  <td><?= $nama_uploader; ?></td>
+                </tr>
+                <tr>
+                  <td>Nama Kontibutor</td>
+                  <td>:</td>
+                  <td><?= $nama_kontributor; ?></td>
                 </tr>
               </tbody>
             </table>
@@ -121,7 +126,7 @@
 <script>
   $(document).ready(function() {
     $('#access').DataTable({
-      
+
     });
   });
 </script>
