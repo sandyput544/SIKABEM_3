@@ -38,7 +38,7 @@
                   <tr>
                     <td><?= $m['nama_jenis']; ?></td>
                     <td><?= $m['nomor_surat']; ?></td>
-                    <td><?= ($m['id_user'] = 0) ? $m['nama_user'] : "-"; ?></td>
+                    <td><?= ($m['id_user'] == 0) ? "-" : $m['nama_user']; ?></td>
                     <td><?= $m['waktu_buat']; ?></td>
                     <td>
                       <div class="dropdown">
@@ -46,6 +46,14 @@
                           Aksi
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown_<?= $m['kd_suratkeluar']; ?>">
+                          <li>
+                            <div>
+                              <form id="downloadMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat-keluar/unduh/' . $m['kd_suratkeluar']); ?>" method="post">
+                                <input type="hidden" name="_method" value="PUT">
+                                <a href="javascript:void(0);" onclick="return downloadMe('<?= $m['kd_suratkeluar']; ?>');" class="dropdown-item">Unduh</a>
+                              </form>
+                            </div>
+                          </li>
                           <li><a class="dropdown-item" href="<?= base_url('/surat-keluar/edit/' . $m['kd_suratkeluar']); ?>">Ubah</a></li>
                           <li>
                             <div>
@@ -72,6 +80,10 @@
 
 <?= $this->section('script'); ?>
 <script>
+  function downloadMe(id) {
+    document.getElementById('downloadMe_' + id).submit();
+  }
+
   function confirmation(nama, nomor, id) {
     if (confirm("Yakin ingin menghapus data surat : " + nama + " dengan nomor surat : " + nomor + "?")) {
       document.getElementById('deleteMe_' + id).submit();
@@ -82,7 +94,7 @@
   $(document).ready(function() {
     $('#surat').DataTable({
       order: [
-        [1, 'desc']
+        [3, 'desc']
       ],
     });
   });

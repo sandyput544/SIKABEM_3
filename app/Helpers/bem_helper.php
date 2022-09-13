@@ -145,10 +145,15 @@ function createWord($judul, $nomor)
     $section->addTextBreak(2);
     $section->addText("Ketikkan dan isi surat anda disini.", $defaultFontStyle, $defaultParagraphStyle);
 
-    $nama_file = $nomor . "_" . $judul;
+    $nama_file = $nomor . "_" . $judul . ".docx";
 
-    header('Content-Type: application/msword');
-    header('Content-Disposition: attachment;filename="' . $nama_file . '.docx"');
-    header('Cache-Control: max-age=0');
-    return $writer->save("php://output");
+    header("Content-Description: File Transfer");
+    header('Content-Disposition: attachment; filename="' . $nama_file . '"');
+    header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+    header('Content-Transfer-Encoding: binary');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Expires: 0');
+    $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+    $download = $xmlWriter->save("php://output");
+    return $download;
 }

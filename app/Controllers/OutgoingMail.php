@@ -10,6 +10,7 @@ class OutgoingMail extends BaseController
   protected $outmail;
   public function __construct()
   {
+    helper('bem');
     $this->phpWord = new \PhpOffice\PhpWord\PhpWord();
     $this->word = new \PhpOffice\PhpWord\Writer\Word2007();
     $this->mailtype = new \App\Models\MailTypeModel;
@@ -27,8 +28,6 @@ class OutgoingMail extends BaseController
         ->select('outgoing_mail.kd_suratkeluar AS kd_suratkeluar, mail_type.nama_jenis AS nama_jenis, outgoing_mail.nomor_surat AS nomor_surat, outgoing_mail.kd_user AS id_user, users.nama_user AS nama_user, outgoing_mail.created_at AS waktu_buat')
         ->join('mail_type', 'mail_type.kd_jenissurat = outgoing_mail.kd_jenissurat', 'LEFT')
         ->join('users', 'users.kd_user = outgoing_mail.kd_user', 'LEFT')
-        // ->orderBy('mail_type.kd_jenissurat', 'ASC')
-        ->orderBy('nomor_surat', 'DESC')
         ->findAll()
     ];
 
@@ -79,21 +78,34 @@ class OutgoingMail extends BaseController
 
       $getMType = $this->mailtype->find($postJenisSurat);
 
-      createWord($getMType['nama_jenis'], $postNoSurat);
 
-      $this->outmail->save([
+      $save = $this->outmail->save([
         'kd_jenissurat' => $postJenisSurat,
         'nomor_surat' => $postNoSurat,
         'perihal' => $postPerihal,
         'lampiran' => $postLampiran,
         'tgl_buat' => $postTglBuat,
         'tgl_ttd' => $postTglTtd,
+        'kd_user' => session('kd_user')
       ]);
 
       $msg = "Berhasil membuat surat keluar.";
       flashAlert('success', $msg);
+
+      if ($save) {
+        createWord($getMType['nama_jenis'], $postNoSurat);
+      }
       return redirect()->to(base_url('surat-keluar'));
     }
+  }
+
+  public function download($id)
+  {
+    $getMail = $this->outmail
+      ->join('mail_type', 'mail_type.kd_jenissurat = outgoing_mail.kd_jenissurat', 'LEFT')
+      ->find($id);
+
+    return createWord($getMail['nama_jenis'], $getMail['nomor_surat']);
   }
 
   // Fitur hapus

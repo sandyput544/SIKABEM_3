@@ -150,6 +150,7 @@ $routes->group('surat-keluar', ["filter" => "auth"], function ($routes) {
     $routes->post('create', 'OutgoingMail::insert');
     $routes->add('edit/(:num)', 'OutgoingMail::edit/$1');
     $routes->post('update/(:num)', 'OutgoingMail::update/$1');
+    $routes->put('unduh/(:num)', 'OutgoingMail::download/$1');
     $routes->delete('hapus/(:num)', 'OutgoingMail::delete/$1');
     $routes->add('terhapus', 'OutgoingMail::show_all_deleted');
     $routes->put('pulihkan/(:num)', 'OutgoingMail::restore_one/$1');
