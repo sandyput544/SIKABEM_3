@@ -24,28 +24,6 @@ class Auth extends BaseController
         return view('/auth/index', $data);
     }
 
-    public function forgotten()
-    {
-        $inputEmail = htmlspecialchars($this->request->getVar('email'));
-        $getAccount = $this->user_model->where(['email' => $inputEmail])->first();
-        // cek apakah email sudah terdaftar
-        if ($getAccount['email']) {
-            session()->setFlashdata('pesan', '
-            <div class="col-12"><div class="alert alert-success" role="alert">
-            Mohon untuk mengecek email dan mengaktivasi akun!
-            </div></div>
-            ');
-            return redirect()->to(base_url('/auth/lupa-password'));
-        } else {
-            session()->setFlashdata('pesan', '
-            <div class="col-12"><div class="alert alert-danger" role="alert">
-            Email salah!
-            </div></div>
-            ');
-            return redirect()->to(base_url('/auth/lupa-password'));
-        }
-    }
-
     public function login()
     {
         // Validasi form
@@ -133,6 +111,10 @@ class Auth extends BaseController
 
     public function blocked()
     {
-        echo "access blocked.";
+        $data = [
+            'title' => '403 - Forbidden'
+        ];
+
+        return view('errors/403', $data);
     }
 }

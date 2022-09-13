@@ -2,10 +2,12 @@
 
 namespace App\Filters;
 
-use CodeIgniter\Database\Database;
 use CodeIgniter\Filters\FilterInterface;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
+
+use \App\Models\MenusModel;
+use \App\Models\PositionMenuModel;
 
 class Auth implements FilterInterface
 {
@@ -24,33 +26,48 @@ class Auth implements FilterInterface
      *
      * @return mixed
      */
+    protected $menus_model;
+    protected $posmenu_model;
+    public function __construct()
+    {
+        $this->menus_model = new MenusModel();
+        $this->posmenu_model = new PositionMenuModel();
+    }
     public function before(RequestInterface $request, $arguments = null)
     {
-        // if (!session()->get('is_logged_in')) {
-        //     return redirect()->to(base_url('auth/'));
-        // } else {
-        //     $uri = new \CodeIgniter\HTTP\URI();
-        //     $getUri = $uri->getSegment(1);
+        if (!session()->get('is_logged_in')) {
+            return redirect()->to(base_url('auth/'));
+        } else {
+            $curr_url = current_url(true);
+            $uri = new \CodeIgniter\HTTP\URI($curr_url);
+            $getUri = $uri->getSegment(1);
 
-        //     if ($getUri === 'profil') {
-        //         return redirect()->to(base_url('profil'));
-        //     } else {
-        // $db =  \Config\Database::connect();
-        // // Ambil data session pos_id lalu cek dengan uri segment dan mengambil data menu id
-        // $pos_id = session('pos_id');
-        // $menu_id = $db->query('
-        // SELECT id FROM menus WHERE menu_url=' . $getUri . '
-        // ');
+            if ($getUri === "profil") {
+                redirect()->to(base_url('/profil'));
+            } elseif ($getUri === "koleksi") {
+                redirect()->to(base_url('/koleksi'));
+            } else {
+                // $db =  \Config\Database::connect();
+                // Ambil data session id_jabatan lalu cek dengan uri segment dan mengambil data menu id
+                // $kd_jbt = session('id_jabatan');
+                // Ambil menu id
+                // $kd_menu = $db->query('
+                // SELECT kd_menu FROM menus WHERE url_menu="' . $getUri . '"
+                // ');
+                // $get_posmenu = $db->query('
+                // SELECT * FROM position_menu WHERE kd_jabatan="' . $kd_jbt . '" AND kd_menu="' . $kd_menu . '"
+                // ');
 
-        // $get_posmenu = $db->query('
-        // SELECT * FROM position_menu WHERE pos_id=' . $pos_id . ' AND menu_id=' . $menu_id . '
-        // ');
+                // Ambil kd_menu
+                $getMenu = $this->menus_model->where('url_menu', $getUri)->first();
+                // Ambil posmenu
+                $getPosMenu = $this->posmenu_model->where(['kd_jabatan' => session('id_jabatan'), 'kd_menu' => $getMenu['kd_menu']])->get();
 
-        // if ($get_posmenu->getNumRows() < 1) {
-        //     return redirect()->to(base_url('auth/blocked'));
-        // }
-        //     }
-        // }
+                if ($getPosMenu->getNumRows() < 1) {
+                    return redirect()->to(base_url('auth/blocked'));
+                }
+            }
+        }
     }
 
     /**
