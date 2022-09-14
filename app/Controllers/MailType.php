@@ -62,7 +62,7 @@ class MailType extends BaseController
     ];
 
     if (!$this->validate($validate)) {
-      return redirect()->to(base_url('jenis-surat/tambah'))->withInput();
+      return redirect()->to(base_url('surat/jenis/tambah'))->withInput();
     } else {
       $this->mailtype->save([
         'nama_jenis' => $postNama,
@@ -71,7 +71,7 @@ class MailType extends BaseController
 
       $msg = 'Berhasil menambah jenis surat.';
       flashAlert('success', $msg);
-      return redirect()->to(base_url('jenis-surat'));
+      return redirect()->to(base_url('surat/jenis'));
     }
   }
 
@@ -128,7 +128,7 @@ class MailType extends BaseController
     ];
 
     if (!$this->validate($validate)) {
-      return redirect()->to(base_url('jenis-surat/edit/' . $id))->withInput();
+      return redirect()->to(base_url('surat/jenis/edit/' . $id))->withInput();
     } else {
       $this->mailtype->save([
         'kd_jenissurat' => $id,
@@ -138,7 +138,7 @@ class MailType extends BaseController
 
       $msg = 'Berhasil mengubah jenis surat.';
       flashAlert('success', $msg);
-      return redirect()->to(base_url('jenis-surat'));
+      return redirect()->to(base_url('surat/jenis'));
     }
   }
 
@@ -150,7 +150,7 @@ class MailType extends BaseController
     flashAlert('success', $msg);
     $this->mailtype->delete($id);
 
-    return redirect()->to(base_url('jenis-surat'));
+    return redirect()->to(base_url('surat/jenis'));
   }
 
   // Fitur tampil data yang terhapus
@@ -173,7 +173,7 @@ class MailType extends BaseController
 
     $msg = "Berhasil memulihkan semua data jenis surat yang terhapus.";
     flashAlert('success', $msg);
-    return redirect()->to(base_url('jenis-surat/terhapus'));
+    return redirect()->to(base_url('surat/jenis/terhapus'));
   }
 
   // Fitur pulihkan satu
@@ -187,7 +187,7 @@ class MailType extends BaseController
 
     $msg = "Berhasil memulihkan data jenis surat : " . $getMType['nama_jenis'] . ".";
     flashAlert('success', $msg);
-    return redirect()->to(base_url('jenis-surat/terhapus'));
+    return redirect()->to(base_url('surat/jenis/terhapus'));
   }
 
   // Fitur hapus permanen semua
@@ -197,7 +197,7 @@ class MailType extends BaseController
 
     $msg = "Berhasil menghapus permanen semua data jenis surat yang terhapus.";
     flashAlert('success', $msg);
-    return redirect()->to(base_url('jenis-surat/terhapus'));
+    return redirect()->to(base_url('surat/jenis/terhapus'));
   }
 
   // Fitur hapus permanen satu
@@ -209,6 +209,6 @@ class MailType extends BaseController
     $this->mailtype->where('kd_jenissurat', $id)->purgeDeleted();
 
     flashAlert('success', $msg);
-    return redirect()->to(base_url('jenis-surat/terhapus'));
+    return redirect()->to(base_url('surat/jenis/terhapus'));
   }
 }

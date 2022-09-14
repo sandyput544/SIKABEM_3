@@ -6,7 +6,7 @@
     <a href="<?= base_url('surat'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
   <div class="col-12 col-md-9">
-    <form action="<?= base_url('surat/create'); ?>" method="POST">
+    <form action="<?= base_url('surat/update'); ?>" method="POST">
       <?= csrf_field(); ?>
       <div class="card text-dark mb-3 shadow overflow-hidden rounded-4">
         <div class="card-header fw-bold fs-5">Buat Surat Keluar</div>

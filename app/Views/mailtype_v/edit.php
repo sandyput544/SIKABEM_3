@@ -3,10 +3,10 @@
 
 <div class="row g-3">
   <div class="col-12">
-    <a href="<?= base_url('jenis-surat'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
+    <a href="<?= base_url('surat/jenis'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
   </div>
   <div class="col-6">
-    <form action="<?= base_url('jenis-surat/update/' . $mt['kd_jenissurat']); ?>" method="POST">
+    <form action="<?= base_url('surat/jenis/update/' . $mt['kd_jenissurat']); ?>" method="POST">
       <?= csrf_field(); ?>
       <div class="card text-dark mb-3 shadow overflow-hidden rounded-4">
         <div class="card-header fw-bold fs-5"><?= $card; ?></div>

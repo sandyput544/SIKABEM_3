@@ -31,7 +31,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Dashboard::index', ["filter" => "auth"]);
+$routes->add('dashboard', 'Dashboard::index', ["filter" => "auth"]);
 
 // Auth
 $routes->add('auth', 'Auth::index', ["filter" => "noauth"]);
@@ -127,24 +127,8 @@ $routes->group('arsip', ["filter" => "auth"], function ($routes) {
     $routes->delete('hapusPermanen/(:num)', 'Archives::permanent_delete_one/$1');
 });
 
-// Grup Routes Jenis Surat
-$routes->group('jenis-surat', ["filter" => "auth"], function ($routes) {
-    $routes->add('', 'MailType::index');
-    $routes->add('tambah', 'MailType::add');
-    $routes->post('save', 'MailType::insert');
-    $routes->add('edit/(:num)', 'MailType::edit/$1');
-    $routes->post('update/(:num)', 'MailType::update/$1');
-    $routes->delete('hapus/(:num)', 'MailType::delete/$1');
-    $routes->add('detail/(:any)', 'MailType::detail/$1');
-    $routes->add('terhapus', 'MailType::show_all_deleted');
-    $routes->put('pulihkan/(:num)', 'MailType::restore_one/$1');
-    $routes->put('pulihkanSemua/', 'MailType::restore_all');
-    $routes->delete('hapusPermanenSemua', 'MailType::permanent_delete_all');
-    $routes->delete('hapusPermanen/(:num)', 'MailType::permanent_delete_one/$1');
-});
-
 // Grup Routes Surat Keluar
-$routes->group('surat-keluar', ["filter" => "auth"], function ($routes) {
+$routes->group('surat', ["filter" => "auth"], function ($routes) {
     $routes->add('', 'OutgoingMail::index');
     $routes->add('buat', 'OutgoingMail::add');
     $routes->post('create', 'OutgoingMail::insert');
@@ -157,6 +141,20 @@ $routes->group('surat-keluar', ["filter" => "auth"], function ($routes) {
     $routes->put('pulihkanSemua/', 'OutgoingMail::restore_all');
     $routes->delete('hapusPermanenSemua', 'OutgoingMail::permanent_delete_all');
     $routes->delete('hapusPermanen/(:num)', 'OutgoingMail::permanent_delete_one/$1');
+    $routes->group('jenis', ["filter" => "auth"], function ($routes) {
+        $routes->add('', 'MailType::index');
+        $routes->add('tambah', 'MailType::add');
+        $routes->post('save', 'MailType::insert');
+        $routes->add('edit/(:num)', 'MailType::edit/$1');
+        $routes->post('update/(:num)', 'MailType::update/$1');
+        $routes->delete('hapus/(:num)', 'MailType::delete/$1');
+        $routes->add('detail/(:any)', 'MailType::detail/$1');
+        $routes->add('terhapus', 'MailType::show_all_deleted');
+        $routes->put('pulihkan/(:num)', 'MailType::restore_one/$1');
+        $routes->put('pulihkanSemua/', 'MailType::restore_all');
+        $routes->delete('hapusPermanenSemua', 'MailType::permanent_delete_all');
+        $routes->delete('hapusPermanen/(:num)', 'MailType::permanent_delete_one/$1');
+    });
 });
 
 // Grup Routes Koleksi Arsip

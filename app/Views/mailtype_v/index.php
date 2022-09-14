@@ -9,11 +9,11 @@
     <div class="row g-3">
       <div class="col-12 d-flex">
         <div class="me-auto">
-          <a href="<?= base_url('surat-keluar'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
+          <a href="<?= base_url('surat'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
         </div>
         <div class="ms-auto">
-          <a href="<?= base_url('jenis-surat/tambah'); ?>" class="btn btn-primary rounded-3"><i class="bi-plus-lg"></i><span>Tambah Jenis Surat</span></a>
-          <a href="<?= base_url('jenis-surat/terhapus'); ?>" class="btn btn-danger rounded-3"><i class="bi-trash3-fill me-2"></i><span>Jenis Surat Terhapus</span></a>
+          <a href="<?= base_url('surat/jenis/tambah'); ?>" class="btn btn-primary rounded-3"><i class="bi-plus-lg"></i><span>Tambah Jenis Surat</span></a>
+          <a href="<?= base_url('surat/jenis/terhapus'); ?>" class="btn btn-danger rounded-3"><i class="bi-trash3-fill me-2"></i><span>Jenis Surat Terhapus</span></a>
         </div>
       </div>
       <div class="col-12">
@@ -45,10 +45,10 @@
                             Aksi
                           </a>
                           <ul class="dropdown-menu" aria-labelledby="dropdown<?= $m['kd_jenissurat']; ?>">
-                            <li><a class="dropdown-item" href="<?= base_url('/jenis-surat/edit/' . $m['kd_jenissurat']) ?>">Ubah</a></li>
+                            <li><a class="dropdown-item" href="<?= base_url('/surat/jenis/edit/' . $m['kd_jenissurat']) ?>">Ubah</a></li>
                             <li>
                               <div>
-                                <form id="deleteMe" action="<?= base_url('jenis-surat/hapus/' . $m['kd_jenissurat']) ?>" method="post">
+                                <form id="deleteMe" action="<?= base_url('surat/jenis/hapus/' . $m['kd_jenissurat']) ?>" method="post">
                                   <input type="hidden" name="_method" value="DELETE">
                                   <a href="javascript:void(0);" onclick="return confirmation('<?= $m['nama_jenis']; ?>');" class="dropdown-item">Hapus</a>
                                 </form>

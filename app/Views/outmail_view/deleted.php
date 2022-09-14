@@ -8,13 +8,13 @@
   <div class="col-12">
     <div class="row g-3">
       <div class="col-12 d-flex justify-content-between">
-        <a href="<?= base_url('surat-keluar'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
+        <a href="<?= base_url('surat'); ?>" class="btn btn-secondary rounded-3"><i class="bi-arrow-left me-2"></i><span>Kembali</span></a>
         <div>
-          <form action="<?= base_url('surat-keluar/pulihkanSemua'); ?>" class="d-inline" method="post">
+          <form action="<?= base_url('surat/pulihkanSemua'); ?>" class="d-inline" method="post">
             <input type="hidden" name="_method" value="PUT">
             <button type="submit" class="btn btn-primary rounded-3" onclick="return confirm('Apakah anda ingin benar-benar memulihkan semua data surat keluar yang terhapus?');"><i class="bi-arrow-counterclockwise me-2"></i><span>Pulihkan Semua</span></button>
           </form>
-          <form action="<?= base_url('surat-keluar/hapusPermanenSemua'); ?>" class="d-inline" method="post">
+          <form action="<?= base_url('surat/hapusPermanenSemua'); ?>" class="d-inline" method="post">
             <input type="hidden" name="_method" value="DELETE">
             <button type="submit" class="btn btn-danger rounded-3" onclick="return confirm('Apakah anda yakin ingin benar-benar menghapus permanen semua data surat keluar yang terhapus secara permanen?');"><i class="bi-trash3-fill me-2"></i><span>Hapus Semua</span></button>
           </form>
@@ -52,7 +52,7 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown<?= $m['kd_suratkeluar']; ?>">
                           <li>
                             <div>
-                              <form id="restoreMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat-keluar/pulihkan/' . $m['kd_suratkeluar']) ?>" method="post">
+                              <form id="restoreMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat/pulihkan/' . $m['kd_suratkeluar']) ?>" method="post">
                                 <input type="hidden" name="_method" value="PUT">
                                 <a href="javascript:void(0);" onclick="return restConf('<?= $m['nama_jenis']; ?>','<?= $m['nomor_surat']; ?>','<?= $m['kd_suratkeluar']; ?>');" class="dropdown-item">Pulihkan</a>
                               </form>
@@ -60,7 +60,7 @@
                           </li>
                           <li>
                             <div>
-                              <form id="deleteMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat-keluar/hapusPermanen/' . $m['kd_suratkeluar']) ?>" method="post">
+                              <form id="deleteMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat/hapusPermanen/' . $m['kd_suratkeluar']) ?>" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <a href="javascript:void(0);" onclick="return delConf('<?= $m['nama_jenis']; ?>','<?= $m['nomor_surat']; ?>','<?= $m['kd_suratkeluar']; ?>');" class="dropdown-item">Hapus</a>
                               </form>

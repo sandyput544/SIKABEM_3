@@ -3,12 +3,12 @@
 namespace App\Controllers;
 
 use App\Models\UsersModel;
+use \CodeIgniter\I18n\Time;
 
 class Auth extends BaseController
 {
     protected $session;
     protected $user_model;
-
     public function __construct()
     {
         helper('bem');
@@ -70,6 +70,7 @@ class Auth extends BaseController
                     $this->user_model->save([
                         'kd_user' => $getAccount['kd_user'],
                         'is_login' => 1,
+                        'log_date' => new Time('now'),
                     ]);
 
                     session()->set($userdata);
@@ -99,7 +100,8 @@ class Auth extends BaseController
         // Ganti is_login menjadi 0
         $this->user_model->save([
             'kd_user' => session('kd_user'),
-            'is_login' => 0
+            'is_login' => 0,
+            'log_date' => null
         ]);
 
         session()->destroy();

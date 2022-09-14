@@ -49,7 +49,6 @@ class Auth implements FilterInterface
             } else {
                 // $db =  \Config\Database::connect();
                 // Ambil data session id_jabatan lalu cek dengan uri segment dan mengambil data menu id
-                // $kd_jbt = session('id_jabatan');
                 // Ambil menu id
                 // $kd_menu = $db->query('
                 // SELECT kd_menu FROM menus WHERE url_menu="' . $getUri . '"
@@ -58,6 +57,7 @@ class Auth implements FilterInterface
                 // SELECT * FROM position_menu WHERE kd_jabatan="' . $kd_jbt . '" AND kd_menu="' . $kd_menu . '"
                 // ');
 
+                $kd_jbt = session('id_jabatan');
                 // Ambil kd_menu
                 $getMenu = $this->menus_model->where('url_menu', $getUri)->first();
                 // Ambil posmenu

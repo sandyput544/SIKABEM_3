@@ -9,11 +9,11 @@
     <div class="row g-3">
       <div class="col-12 d-flex">
         <div class="me-auto">
-          <a href="<?= base_url('jenis-surat'); ?>" class="btn btn-secondary"><i class="bi-bookmark-fill me-2"></i><span>Jenis Surat</span></a>
+          <a href="<?= base_url('surat/jenis'); ?>" class="btn btn-secondary"><i class="bi-bookmark-fill me-2"></i><span>Jenis Surat</span></a>
         </div>
         <div class="ms-auto">
-          <a href="<?= base_url('surat-keluar/buat'); ?>" class="btn btn-primary"><i class="bi-plus-lg me-2"></i><span>Buat Surat</span></a>
-          <a href="<?= base_url('surat-keluar/terhapus'); ?>" class="btn btn-danger"><i class="bi-trash3-fill me-2"></i><span>Surat Terhapus</span></a>
+          <a href="<?= base_url('surat/buat'); ?>" class="btn btn-primary"><i class="bi-plus-lg me-2"></i><span>Buat Surat</span></a>
+          <a href="<?= base_url('surat/terhapus'); ?>" class="btn btn-danger"><i class="bi-trash3-fill me-2"></i><span>Surat Terhapus</span></a>
         </div>
       </div>
       <div class="col-12">
@@ -48,16 +48,16 @@
                         <ul class="dropdown-menu" aria-labelledby="dropdown_<?= $m['kd_suratkeluar']; ?>">
                           <li>
                             <div>
-                              <form id="downloadMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat-keluar/unduh/' . $m['kd_suratkeluar']); ?>" method="post">
+                              <form id="downloadMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat/unduh/' . $m['kd_suratkeluar']); ?>" method="post">
                                 <input type="hidden" name="_method" value="PUT">
                                 <a href="javascript:void(0);" onclick="return downloadMe('<?= $m['kd_suratkeluar']; ?>');" class="dropdown-item">Unduh</a>
                               </form>
                             </div>
                           </li>
-                          <li><a class="dropdown-item" href="<?= base_url('/surat-keluar/edit/' . $m['kd_suratkeluar']); ?>">Ubah</a></li>
+                          <li><a class="dropdown-item" href="<?= base_url('/surat/edit/' . $m['kd_suratkeluar']); ?>">Ubah</a></li>
                           <li>
                             <div>
-                              <form id="deleteMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat-keluar/hapus/' . $m['kd_suratkeluar']); ?>" method="post">
+                              <form id="deleteMe_<?= $m['kd_suratkeluar']; ?>" action="<?= base_url('surat/hapus/' . $m['kd_suratkeluar']); ?>" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <a href="javascript:void(0);" onclick="return confirmation('<?= $m['nama_jenis']; ?>','<?= $m['nomor_surat']; ?>','<?= $m['kd_suratkeluar']; ?>');" class="dropdown-item">Hapus</a>
                               </form>

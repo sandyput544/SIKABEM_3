@@ -14,17 +14,11 @@ $query = $menus
 ?>
 
 <nav class="d-flex flex-column p-3 text-white bg-dark-bem left-side" id="leftSideContent">
-  <a href="/" class="d-flex justify-content-center text-white text-decoration-none">
+  <a href="<?= base_url('profil'); ?>" class="d-flex justify-content-center align-content-center text-white text-decoration-none">
     <span class="fs-4 fw-bold">SIKABEM PNC</span>
   </a>
   <hr class="text-orange-bem">
   <ul class="nav d-flex flex-row mb-auto gap-3">
-    <li>
-      <a href="/profil" class="navlink <?= ($navbar == 'Profil Saya') ? "active" : ''; ?>">
-        <i class="bi-person-fill"></i>
-        <span>Profil Saya</span>
-      </a>
-    </li>
 
     <!-- Tampilkan menu dari user_menu_accesses berdasarkan  -->
     <?php foreach ($query as $q) : ?>
@@ -37,13 +31,19 @@ $query = $menus
     <?php endforeach; ?>
 
     <li>
-      <a href="/koleksi" class="navlink <?= ($navbar == 'Koleksi Arsip') ? "active" : ''; ?>">
+      <a href="<?= base_url('/koleksi'); ?>" class="navlink <?= ($navbar == 'Koleksi Arsip') ? "active" : ''; ?>">
         <i class="bi-collection-fill"></i>
         <span>Koleksi Arsip</span>
       </a>
     </li>
     <li>
-      <a href="/auth/logout" class="navlink">
+      <a href="<?= base_url('/profil'); ?>" class="navlink <?= ($navbar == 'Profil Saya') ? "active" : ''; ?>">
+        <i class="bi-person-fill"></i>
+        <span>Profil Saya</span>
+      </a>
+    </li>
+    <li>
+      <a href="<?= base_url('/auth/logout'); ?>" class="navlink">
         <i class="bi-box-arrow-right"></i>
         <span>Log Out</span>
       </a>
