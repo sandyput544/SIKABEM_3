@@ -9,8 +9,8 @@
     <div class="row g-3">
       <div class="col-12 d-flex justify-content-end">
         <div>
-          <a href="<?= base_url('arsip/tambah'); ?>" class="btn btn-primary rounded-3"><i class="bi-plus-lg me-2"></i><span>Tambah Posisi</span></a>
-          <a href="<?= base_url('arsip/terhapus'); ?>" class="btn btn-danger rounded-3"><i class="bi-trash3-fill me-2"></i><span>Posisi Terhapus</span></a>
+          <a href="<?= base_url('arsip/tambah'); ?>" class="btn btn-primary rounded-3"><i class="bi-plus-lg me-2"></i><span>Tambah Arsip</span></a>
+          <a href="<?= base_url('arsip/terhapus'); ?>" class="btn btn-danger rounded-3"><i class="bi-trash3-fill me-2"></i><span>Arsip Terhapus</span></a>
         </div>
       </div>
       <div class="col-12">

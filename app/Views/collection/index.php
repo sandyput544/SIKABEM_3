@@ -28,7 +28,7 @@
                   <td><?= $a['nama_arsip']; ?></td>
                   <td><?= $a['tgl_buat']; ?></td>
                   <td>
-                    <a href="<?= base_url('koleksi/detail/' . $a['nama_file']); ?>" class="btn btn-sm btn-info bi-eye-fill"></a>
+                    <a href="<?= base_url('koleksi/detail/' . $a['nama_file']); ?>" class="btn btn-sm btn-info bi-eye-fill text-white"></a>
                   </td>
                 </tr>
               <?php endforeach; ?>

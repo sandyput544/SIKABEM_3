@@ -6,7 +6,7 @@
   <div class="col-12 col-sm-3">
     <div class="card text-white bg-danger shadow overflow-hidden rounded-4">
       <div class="card-body">
-        <h2>10<i class="bi-send ms-2"></i></h2>
+        <h2><?= $totalMail; ?><i class="bi-send ms-2"></i></h2>
         <span>Surat Keluar</span>
       </div>
     </div>
@@ -14,7 +14,7 @@
   <div class="col-12 col-sm-3">
     <div class="card text-white bg-blue-bem shadow overflow-hidden rounded-4">
       <div class="card-body">
-        <h2>10<i class="bi-send ms-2"></i></h2>
+        <h2><?= $totalArc; ?><i class="bi-archive ms-2"></i></h2>
         <span>Total Arsip</span>
       </div>
     </div>
@@ -22,16 +22,16 @@
   <div class="col-12 col-sm-3">
     <div class="card text-white bg-success shadow overflow-hidden rounded-4">
       <div class="card-body">
-        <h2>10<i class="bi-send ms-2"></i></h2>
-        <span>Surat Keluar</span>
+        <h2><?= $totalUser; ?><i class="bi-people ms-2"></i></h2>
+        <span>Total User</span>
       </div>
     </div>
   </div>
   <div class="col-12 col-sm-3 mb-3">
     <div class="card text-white bg-secondary shadow overflow-hidden rounded-4">
       <div class="card-body">
-        <h2>10<i class="bi-send ms-2"></i></h2>
-        <span>Surat Keluar</span>
+        <h2><?= $totalNonActive; ?><i class="bi-people ms-2"></i></h2>
+        <span>Total User Nonaktif</span>
       </div>
     </div>
   </div>

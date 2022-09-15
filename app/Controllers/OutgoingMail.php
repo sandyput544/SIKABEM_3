@@ -111,9 +111,9 @@ class OutgoingMail extends BaseController
       'validation'  => \Config\Services::validation()
     ];
 
-    return view('outmail_view/add', $data);
+    return view('outmail_view/edit', $data);
   }
-  public function update()
+  public function update($id)
   {
     $postJenisSurat = $this->request->getVar('kd_jenissurat');
     $postNoSurat = $this->request->getVar('nomor_surat');
@@ -144,8 +144,8 @@ class OutgoingMail extends BaseController
 
       $getMType = $this->mailtype->find($postJenisSurat);
 
-
       $save = $this->outmail->save([
+        'kd_suratkeluar' => $id,
         'kd_jenissurat' => $postJenisSurat,
         'nomor_surat' => $postNoSurat,
         'perihal' => $postPerihal,
@@ -155,7 +155,7 @@ class OutgoingMail extends BaseController
         'kd_user' => session('kd_user')
       ]);
 
-      $msg = "Berhasil membuat surat keluar.";
+      $msg = "Berhasil memperbarui surat keluar: ".$getMType['nama_jenis']." dengan nomor : ".$postNoSurat.".";
       flashAlert('success', $msg);
 
       if ($save) {

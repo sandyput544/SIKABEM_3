@@ -1,0 +1,7 @@
+__ci_last_regenerate|i:1663136912;_ci_previous_url|s:28:"http://localhost:8080/profil";kd_user|s:1:"8";email|s:21:"user_sekjend@mail.com";id_jabatan|s:1:"9";nama_user|s:12:"User Sekjend";is_logged_in|b:1;foto|s:11:"default.svg";pesan|s:394:"
+        <div class="col-12">
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert">
+                <span class="bi-check-circle-fill" flex-shrink-0">  Anda berhasil menghapus foto profil anda!</span>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>";__ci_vars|a:1:{s:5:"pesan";s:3:"old";}
